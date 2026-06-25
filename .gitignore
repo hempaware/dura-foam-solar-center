@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.env
+.DS_Store
+
+# Old vanilla build files
+index.html
+css/
+js/
+assets/
+LOCAL-SEO-ANALYSIS.md
+SCHEMA-REPORT.md
+SITE-STRUCTURE.md
+generated-schema.json

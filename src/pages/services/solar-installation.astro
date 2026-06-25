@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/solar-installation' },
+  { label: 'Solar Installation', href: '/services/solar-installation' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Residential Solar Panel Installation',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Solar Center by Dura-Foam',
+    telephone: '+1-661-596-2477',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, Suite 5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+    },
+  },
+  areaServed: {
+    '@type': 'State',
+    name: 'California',
+  },
+  description: 'Custom-designed residential solar panel installation in Bakersfield and throughout California\'s Central Valley. Ownership model — no PPAs or leases.',
+  serviceType: 'Solar Panel Installation',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does solar installation take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The full process from consultation to activation typically takes 6-10 weeks. The actual installation on your roof usually takes just 1-3 days. Most of the timeline is for permitting and utility interconnection.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What size solar system do I need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'System size depends on your electricity usage, roof space, and energy goals. Most Central Valley homes need between 6-12 kW systems. During your free consultation, we analyze your utility bills and design a system sized specifically for your home.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a new roof before installing solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your roof is more than 15 years old, we recommend evaluating it first. As a division of Dura-Foam Roofing, we can handle both your roof and solar in one integrated project, saving you time and money.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Panel Installation Bakersfield | Central Valley Solar Experts"
+  description="Custom residential solar panel installation in Bakersfield and Central Valley. Own your system from day one — no PPAs or leases. Free consultation from Solar Center by Dura-Foam."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Residential Solar Panel Installation"
+    subtitle="Custom-designed solar systems for Central Valley homeowners. Own your panels, own your savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Solar That You Own From Day One</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>At Solar Center by Dura-Foam, we believe in true solar ownership. Unlike companies that push Power Purchase Agreements (PPAs) or leases, we design and install systems that you own outright — putting all the financial benefits in your hands.</p>
+              <p>Every installation starts with a detailed analysis of your home's energy usage, roof orientation, and shading patterns. Our engineers design a system sized specifically for your needs, using premium, high-efficiency panels and inverters.</p>
+              <p>As a division of Dura-Foam Roofing & Solar Center, we bring over 40 years of California roofing expertise to every installation. That means your solar system is integrated with your roof — not just bolted on top.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">What's Included</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">Free site assessment & shade analysis</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">Custom system design & engineering</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">All permits & utility paperwork</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">Professional installation by certified crews</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">City inspection & utility interconnection</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">System monitoring setup & training</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">25-year manufacturer warranty</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-sm text-ink">Workmanship guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24">
+            <QuoteForm heading="Get Your Free Solar Quote" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white font-headline text-center mb-12">Our Installation Process</h2>
+      <div class="grid gap-8 md:grid-cols-5">
+        {[
+          { step: '01', title: 'Free Consultation', desc: 'We review your energy usage, discuss your goals, and explain your options — no pressure, no obligation.' },
+          { step: '02', title: 'Custom Design', desc: 'Our engineers design a system optimized for your roof, shading, and energy needs.' },
+          { step: '03', title: 'Permitting', desc: 'We handle all permits and utility paperwork. You just sign and we take care of the rest.' },
+          { step: '04', title: 'Installation', desc: 'Our certified crews install your system in 1-3 days with minimal disruption to your home.' },
+          { step: '05', title: 'Activation', desc: 'After inspection and utility approval, your system goes live and you start saving immediately.' },
+        ].map((item) => (
+          <div class="text-center">
+            <span class="text-3xl font-extrabold text-solar-amber/40 font-headline">{item.step}</span>
+            <h3 class="text-lg font-bold text-white font-headline mt-2 mb-2">{item.title}</h3>
+            <p class="text-white/70 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Solar Installation FAQ" />
+      <div class="space-y-4">
+        {[
+          { q: 'How long does solar installation take?', a: 'The full process from consultation to activation typically takes 6-10 weeks. The actual installation on your roof usually takes just 1-3 days. Most of the timeline is for permitting and utility interconnection.' },
+          { q: 'What size solar system do I need?', a: 'System size depends on your electricity usage, roof space, and energy goals. Most Central Valley homes need between 6-12 kW systems. During your free consultation, we analyze your utility bills and design a system sized specifically for your home.' },
+          { q: 'Do I need a new roof before installing solar?', a: 'If your roof is more than 15 years old, we recommend evaluating it first. As a division of Dura-Foam Roofing, we can handle both your roof and solar in one integrated project, saving you time and money.' },
+          { q: 'What happens on cloudy days?', a: 'Solar panels still produce energy on cloudy days, just at reduced output. In the Central Valley, we enjoy over 270 sunny days per year — one of the highest in the nation. Your system is designed to account for seasonal variations.' },
+          { q: 'What is net metering?', a: 'Net metering allows you to sell excess solar energy back to the utility. When your panels produce more than you use, the surplus flows to the grid and you receive credits on your bill. This helps offset energy costs during nighttime and cloudy periods.' },
+        ].map((faq) => (
+          <details class="group rounded-xl border border-gray-200 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+              {faq.q}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/solar-installation' },
+  { label: 'Solar + Roofing', href: '/services/solar-roofing' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Solar + Roofing Installation',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Solar Center by Dura-Foam',
+    telephone: '+1-661-596-2477',
+  },
+  areaServed: { '@type': 'State', name: 'California' },
+  description: 'Combined solar and roofing installation by Dura-Foam. Get a new roof and solar panels in one integrated project — saving time and money.',
+  serviceType: 'Solar and Roofing Installation',
+};
+---
+
+<BaseLayout
+  title="Solar + Roofing Installation | Combined Roof & Solar | Dura-Foam"
+  description="Need a new roof and solar panels? Solar Center by Dura-Foam handles both in one integrated project. 40+ years of California roofing expertise meets modern solar technology."
+  schema={schema}
+>
+  <PageHero
+    title="Solar + Roofing"
+    subtitle="New roof and solar panels — one team, one project, maximum savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">The Dura-Foam Advantage: Roof + Solar Together</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Most solar companies can't touch your roof. We're different. Solar Center is a division of Dura-Foam Roofing & Solar Center — one of California's most trusted roofing companies since 1981.</p>
+              <p>If your roof needs replacement in the next 10 years, it makes sense to do both together. You avoid paying to remove and reinstall solar panels later, and you get a fully integrated system designed to work together from day one.</p>
+              <p>Our crews are trained in both roofing and solar installation. One project manager, one timeline, one warranty — it's the simplest and most cost-effective way to upgrade your home.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Combine Roof + Solar?</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Save Money</h4>
+                <p class="text-sm text-slate">Avoid the $2,000-$5,000 cost of removing and reinstalling panels when you eventually need a new roof.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">One Warranty</h4>
+                <p class="text-sm text-slate">No finger-pointing between roofer and solar installer. We cover both under a single comprehensive warranty.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Better Integration</h4>
+                <p class="text-sm text-slate">Your mounting system is installed as part of the roof, not bolted on after. This means better waterproofing and aesthetics.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Faster Timeline</h4>
+                <p class="text-sm text-slate">One crew, one project. Combining both saves weeks compared to coordinating separate contractors.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Roofing Materials We Work With</h3>
+            <ul class="grid gap-3 sm:grid-cols-2">
+              {['Composition Shingle', 'Tile Roofing', 'Metal Roofing', 'Flat/Low-Slope Roofing', 'Foam Roofing (Dura-Foam specialty)', 'Cool Roof Systems'].map((item) => (
+                <li class="flex items-center gap-3 text-sm text-ink">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24">
+            <QuoteForm heading="Get a Roof + Solar Quote" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white font-headline mb-4">Not Sure if You Need a New Roof?</h2>
+      <p class="text-white/80 text-lg mb-8">We'll evaluate your roof for free during your solar consultation and give you an honest assessment.</p>
+      <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Schedule Your Free Roof Assessment</a>
+    </div>
+  </section>
+</BaseLayout>

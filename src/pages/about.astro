@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Solar Center by Dura-Foam',
+  url: 'https://solarcenterca.com/about',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    foundingDate: '1981',
+    description: 'Solar Center is a division of Dura-Foam Roofing & Solar Center, bringing decades of California roofing and solar expertise to the Central Valley.',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Dura-Foam Roofing & Solar Center',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, Suite 5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+      addressCountry: 'US',
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'California',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="About Solar Center by Dura-Foam | Bakersfield Solar Experts Since 1981"
+  description="Learn about Solar Center by Dura-Foam — a trusted division of Dura-Foam Roofing & Solar Center, serving California homeowners with premium solar installations since 1981."
+  schema={schema}
+>
+  <PageHero title="About Solar Center" subtitle="Decades of California expertise. One mission: your energy independence." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Our Heritage</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Backed by Dura-Foam Roofing & Solar Center</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Solar Center is a division of the legendary Dura-Foam Roofing & Solar Center. Since 1981, Dura-Foam has been a trusted name in California, known for top-tier roofing and solar expertise.</p>
+            <p>When you choose Solar Center, you're choosing a company with decades of experience protecting and powering California homes. We understand your roof because we've been working on them for over four decades.</p>
+            <p>That expertise means your solar installation isn't just efficient — it's integrated with your home's roofing system for maximum performance and longevity.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-warm-sand p-8 lg:p-12">
+          <div class="grid grid-cols-2 gap-8 text-center">
+            <div>
+              <p class="text-4xl font-extrabold text-solar-navy font-headline">40+</p>
+              <p class="text-sm text-slate mt-1">Years in California</p>
+            </div>
+            <div>
+              <p class="text-4xl font-extrabold text-solar-navy font-headline">500+</p>
+              <p class="text-sm text-slate mt-1">Happy Homeowners</p>
+            </div>
+            <div>
+              <p class="text-4xl font-extrabold text-solar-navy font-headline">A+</p>
+              <p class="text-sm text-slate mt-1">BBB Rating</p>
+            </div>
+            <div>
+              <p class="text-4xl font-extrabold text-solar-navy font-headline">100%</p>
+              <p class="text-sm text-slate mt-1">Ownership Model</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Why Homeowners Choose Solar Center" subtitle="We combine old-school craftsmanship with modern solar technology." />
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Roofing + Solar Expertise</h3>
+          <p class="text-slate text-sm">We understand roofs inside and out. Your solar system is designed to complement your roofing system, not compromise it.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">You Own Your System</h3>
+          <p class="text-slate text-sm">No PPAs, no leases. You own your panels from day one, keeping all the financial benefits including tax credits and equity.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Hassle-Free Process</h3>
+          <p class="text-slate text-sm">From design to permits to final inspection — we handle everything. You just sit back and watch your savings grow.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Premium Equipment</h3>
+          <p class="text-slate text-sm">We use only high-efficiency panels and inverters from trusted manufacturers, backed by industry-leading warranties.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Local Team</h3>
+          <p class="text-slate text-sm">We live and work in the Central Valley. Our team knows the local climate, utility rates, and permitting requirements inside and out.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">5-Star Reviews</h3>
+          <p class="text-slate text-sm">Our homeowners consistently rate us 5 stars for professionalism, communication, and quality of work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Ready to Join 500+ Happy Central Valley Homeowners?</h2>
+      <p class="text-white/80 text-lg mb-8">Get a free, no-obligation solar consultation and see how much you can save.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+          Get Your Free Quote
+        </a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">
+          Call (661) 596-2477
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

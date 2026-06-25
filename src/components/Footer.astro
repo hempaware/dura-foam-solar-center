@@ -1,0 +1,55 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-solar-navy text-white pt-16 pb-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4 pb-12 border-b border-white/20">
+      <div>
+        <img src="/logos/logo-white.svg" alt="Solar Center by Dura-Foam" width="180" height="45" loading="lazy" class="h-10 w-auto mb-4" />
+        <p class="text-sm text-white/70 leading-relaxed max-w-xs">
+          California's trusted partner for custom solar solutions. A proud division of Dura-Foam Roofing & Solar Center.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-solar-amber mb-4 font-label">Services</h4>
+        <nav class="flex flex-col gap-2" aria-label="Footer services navigation">
+          <a href="/services/solar-installation" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Solar Installation</a>
+          <a href="/services/battery-storage" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Battery Storage</a>
+          <a href="/services/solar-financing" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Solar Financing</a>
+          <a href="/services/solar-roofing" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Solar + Roofing</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-solar-amber mb-4 font-label">Company</h4>
+        <nav class="flex flex-col gap-2" aria-label="Footer company navigation">
+          <a href="/about" class="text-sm text-white/70 hover:text-white no-underline transition-colors">About Us</a>
+          <a href="/reviews" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Reviews</a>
+          <a href="/faq" class="text-sm text-white/70 hover:text-white no-underline transition-colors">FAQ</a>
+          <a href="/blog" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Blog</a>
+          <a href="/contact" class="text-sm text-white/70 hover:text-white no-underline transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-solar-amber mb-4 font-label">Contact</h4>
+        <address class="not-italic flex flex-col gap-3 text-sm text-white/70">
+          <p>Solar Center by Dura-Foam</p>
+          <p>6730 Charity Ave, Suite 5<br />Bakersfield, CA 93308</p>
+          <a href="tel:+16615962477" class="text-white hover:text-solar-amber no-underline transition-colors font-semibold">(661) 596-2477</a>
+          <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs text-white/50">
+      <p>&copy; {currentYear} Solar Center by Dura-Foam. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="/privacy-policy" class="hover:text-white no-underline transition-colors">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-white no-underline transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

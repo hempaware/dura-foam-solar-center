@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://solarcenterca.com/#localbusiness',
+  name: 'Solar Center by Dura-Foam',
+  alternateName: 'SolarCenterCA',
+  description: 'Take control of your energy bills with custom solar solutions in California. Backed by the legacy of Dura-Foam Roofing & Solar Center.',
+  url: 'https://solarcenterca.com',
+  telephone: '(661) 596-2477',
+  email: 'contact@solarcenterca.com',
+  foundingDate: '1981',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  logo: 'https://solarcenterca.com/logos/logo-primary.svg',
+  priceRange: '$$',
+  currenciesAccepted: 'USD',
+  paymentAccepted: 'Cash, Credit Card, Financing',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '35.3733',
+    longitude: '-119.0187',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Bakersfield' },
+    { '@type': 'City', name: 'Fresno' },
+    { '@type': 'City', name: 'Sacramento' },
+    { '@type': 'City', name: 'Stockton' },
+    { '@type': 'City', name: 'Modesto' },
+    { '@type': 'City', name: 'Visalia' },
+    { '@type': 'City', name: 'Clovis' },
+    { '@type': 'City', name: 'Tulare' },
+    { '@type': 'City', name: 'Merced' },
+    { '@type': 'City', name: 'Elk Grove' },
+    { '@type': 'City', name: 'Roseville' },
+  ],
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  }],
+  sameAs: [],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Solar Energy Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Solar Panel Installation' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Battery Backup Solutions' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Solar Financing' } },
+    ],
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://solarcenterca.com/#organization',
+  name: 'Solar Center by Dura-Foam',
+  url: 'https://solarcenterca.com',
+  logo: 'https://solarcenterca.com/logos/logo-primary.svg',
+  description: "California's trusted partner for custom solar solutions. A proud division of Dura-Foam Roofing & Solar Center.",
+  foundingDate: '1981',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing and Solar Center',
+    url: 'https://dura-foam.com',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '(661) 596-2477',
+    contactType: 'sales',
+    email: 'contact@solarcenterca.com',
+    areaServed: 'US-CA',
+    availableLanguage: ['English', 'Spanish'],
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://solarcenterca.com/#website',
+  name: 'Solar Center by Dura-Foam',
+  url: 'https://solarcenterca.com',
+  publisher: { '@id': 'https://solarcenterca.com/#organization' },
+  inLanguage: 'en-US',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does it cost to switch to solar?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Every home is different, but our zero-down financing options mean you can start saving immediately with no upfront cost.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will solar panels work during a power outage?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Standard grid-tied systems shut down during outages for safety. However, we offer battery backup solutions that keep your essential appliances running.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the installation process take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most physical installations take just 1-2 days. The longest part is permitting, which we handle completely for you from start to finish.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer warranties?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes! We provide comprehensive 25-year warranties on both our premium equipment and our expert workmanship.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will solar panels damage my roof?',
+      acceptedAnswer: { '@type': 'Answer', text: "Not at all. With our background in Dura-Foam Roofing, we use specialized mounting techniques that protect your roof's integrity and prevent leaks." },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does owning compare to a PPA (Power Purchase Agreement)?',
+      acceptedAnswer: { '@type': 'Answer', text: 'While PPAs can offer lower initial rates, owning your system allows you to build equity in your home and maximize your long-term savings. We provide zero-down financing to make ownership just as accessible as a PPA.' },
+    },
+  ],
+};
+
+const faqs = faqSchema.mainEntity;
+---
+
+<BaseLayout
+  title="Solar Installation Bakersfield & Central Valley | Solar Center by Dura-Foam"
+  description="Take control of your energy bills with custom solar solutions in Bakersfield and California's Central Valley. Backed by decades of Dura-Foam expertise. Free quotes, zero-down financing."
+  schema={[localBusinessSchema, organizationSchema, websiteSchema, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-midnight via-solar-navy to-midnight overflow-hidden py-20 lg:py-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 right-10 w-96 h-96 rounded-full bg-solar-amber blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-clean-sky blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white/80 mb-6 font-label">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="9" cy="9" r="4" fill="#F8A623"/><line x1="9" y1="1" x2="9" y2="4" stroke="#F8A623" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="14" x2="9" y2="17" stroke="#F8A623" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="9" x2="4" y2="9" stroke="#F8A623" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="9" x2="17" y2="9" stroke="#F8A623" stroke-width="1.5" stroke-linecap="round"/></svg>
+          California's Premier Solar Experts
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] font-headline">
+          Stop Overpaying for Electricity in California.
+        </h1>
+        <p class="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
+          Take control of your energy bills with custom solar solutions backed by decades of California expertise. Start saving from day one.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#quote" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+            Get Your Free Solar Quote
+          </a>
+          <a href="#how-it-works" class="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">
+            See How It Works
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-4">
+          <div class="flex -space-x-2">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-energy-green text-xs font-bold text-white ring-2 ring-midnight">JK</span>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-clean-sky text-xs font-bold text-white ring-2 ring-midnight">ML</span>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-sunrise-orange text-xs font-bold text-white ring-2 ring-midnight">SR</span>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-solar-amber text-xs font-bold text-midnight ring-2 ring-midnight">DP</span>
+          </div>
+          <p class="text-sm text-white/70">Join 500+ happy homeowners in the Central Valley</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="py-20 lg:py-24 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Power Purchase Agreements (PPAs) Can Limit Your Savings"
+        subtitle="While PPAs might seem like a good idea, you often miss out on the long-term financial benefits of owning your solar system."
+      />
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-solar-amber/10">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 4L8 22h10l-2 14 14-18H20l2-14z" fill="#F8A623"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Skyrocketing Rates</h3>
+          <p class="text-slate leading-relaxed">PG&amp;E and local utilities have consistently raised rates year over year. You have no control over what you'll pay next month.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-solar-amber/10">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 34V16l14-10 14 10v18H6z" stroke="#F8A623" stroke-width="2.5" fill="none"/><rect x="15" y="22" width="10" height="12" stroke="#F8A623" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Missed Equity</h3>
+          <p class="text-slate leading-relaxed">With a PPA, you don't own the system, meaning you miss out on adding value to your home. Ownership lets you capture all the financial upside.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-solar-amber/10">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="20" cy="20" r="6" stroke="#F8A623" stroke-width="2.5" fill="none"/><path d="M20 14V8M20 32v-6M26 20h6M8 20h6" stroke="#F8A623" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="36" x2="28" y2="36" stroke="#F8A623" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Grid Unreliability</h3>
+          <p class="text-slate leading-relaxed">Summer heatwaves in the Central Valley often mean rolling blackouts. Relying solely on the grid leaves your family vulnerable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Heritage -->
+  <section id="about" class="py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block rounded-full border border-slate/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate mb-2 font-label">Trusted Heritage</span>
+          <span class="block text-sm text-energy-green font-semibold mb-4">Backed by Dura-Foam Roofing</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Your Trusted Guide to Energy Independence</h2>
+          <p class="text-slate leading-relaxed mb-6">We are Solar Center by Dura-Foam. As a division of the legendary Dura-Foam Roofing and Solar Center, we bring decades of top-tier roofing and solar expertise right here to the Central Valley.</p>
+          <ul class="space-y-3 mb-6">
+            {['Decades of California solar & roofing experience', 'Custom designs tailored to your home\'s unique needs', 'Premium, high-efficiency equipment', 'Hassle-free permitting and installation process'].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 flex-shrink-0" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6BA630"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-ink">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-slate leading-relaxed">We know that going solar can feel complicated. That's why we handle everything from design to permits to final inspection, so you can just sit back and watch your savings grow.</p>
+        </div>
+        <div class="rounded-2xl bg-warm-sand aspect-[4/3] flex items-center justify-center border-2 border-dashed border-slate/20">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate/50 font-label">Solar Installation Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-20 lg:py-24 bg-gradient-to-br from-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-4">A Simple Path to Lower Bills</h2>
+      <p class="text-white/70 max-w-2xl mx-auto mb-12">We've streamlined the process so getting solar is as easy as flipping a switch.</p>
+      <div class="grid gap-8 md:grid-cols-3">
+        {[
+          { num: '01', title: 'Schedule a Free Consultation', desc: "Fill out our simple form. We'll review your current energy usage and discuss your goals without any pressure." },
+          { num: '02', title: 'Get a Custom Solar Design', desc: "Our engineers will design a system specifically for your roof and energy needs, showing you exactly how much you'll save." },
+          { num: '03', title: 'Enjoy Day-One Savings', desc: 'We handle the installation and permits. Once activated, you immediately start saving money and generating clean energy.' },
+        ].map((step) => (
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-8 text-left backdrop-blur-sm">
+            <span class="text-5xl font-extrabold text-solar-amber/30 font-headline">{step.num}</span>
+            <h3 class="mt-4 text-xl font-bold text-white font-headline">{step.title}</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <a href="#quote" class="mt-12 inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+        Start Step 1 Today
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        badge="Trusted by Central Valley Homeowners"
+        title="Don't just take our word for it. See what your neighbors are saying."
+      />
+      <div class="grid gap-8 md:grid-cols-3">
+        {[
+          { quote: 'Switching to Solar Center was the best decision for our home. Our summer energy bills dropped by 80%, and the installation team was incredibly professional.', name: 'Sarah Jenkins', location: 'Bakersfield, CA', initials: 'SJ' },
+          { quote: "We were hesitant about the upfront costs, but their financing options made it easy. The system looks sleek on our roof, and we love tracking our energy production.", name: 'David & Maria Lopez', location: 'Clovis, CA', initials: 'DL' },
+          { quote: 'Top-notch customer service from start to finish. They handled all the permits and kept us informed every step of the way. Highly recommend their expertise.', name: 'Michael Chen', location: 'Madera, CA', initials: 'MC' },
+        ].map((t) => (
+          <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="#F8A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84L17.5 6.5l-3.75 3.66.89 5.17L10 13l-4.64 2.33.89-5.17L2.5 6.5l5.11-.66L10 1z"/></svg>
+              ))}
+            </div>
+            <blockquote class="text-ink leading-relaxed mb-6">{t.quote}</blockquote>
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-solar-navy text-xs font-bold text-white">{t.initials}</span>
+              <div>
+                <strong class="text-sm text-solar-navy">{t.name}</strong>
+                <span class="block text-xs text-slate">{t.location}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-20 lg:py-24 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Proudly Serving California"
+        subtitle="From Sacramento down to Bakersfield, and every community across the vast Central Valley."
+      />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { region: 'Sacramento Area', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { region: 'San Joaquin Valley', cities: 'Stockton, Modesto, Merced', href: '/locations/stockton' },
+          { region: 'Central Valley', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { region: 'Southern Central Valley', cities: 'Bakersfield (HQ)', href: '/locations/bakersfield' },
+        ].map((area) => (
+          <a href={area.href} class="group rounded-2xl bg-white p-6 shadow-sm border border-gray-100 no-underline transition hover:shadow-md hover:border-solar-amber/30">
+            <h3 class="text-lg font-bold text-solar-navy font-headline group-hover:text-solar-amber transition-colors">{area.region}</h3>
+            <p class="mt-2 text-sm text-slate">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Frequently Asked Questions"
+        subtitle="Got questions about going solar in the Central Valley? We've got answers."
+      />
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-solar-navy font-headline [&::-webkit-details-marker]:hidden list-none">
+              {faq.name}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-slate leading-relaxed">
+              {faq.acceptedAnswer.text}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="py-20 lg:py-24 bg-gradient-to-br from-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-flex items-center rounded-full border border-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white/80 mb-6 font-label">Free No-Obligation Consultation</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-headline leading-tight mb-6">Get a free, no-obligation custom solar design and savings estimate for your California home.</h2>
+          <ul class="space-y-4">
+            {['See exactly how much you can save', 'Learn about tax incentives and rebates', 'Zero-down financing options available'].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 flex-shrink-0" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#6BA630"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-white/90">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const faqSection = document.getElementById('faq');
+  if (faqSection) {
+    const detailsElements = faqSection.querySelectorAll('details');
+    detailsElements.forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          detailsElements.forEach((other) => {
+            if (other !== detail) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+  }
+</script>

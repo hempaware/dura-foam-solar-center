@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Bakersfield', href: '/locations/bakersfield' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Bakersfield',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/bakersfield',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.3733,
+    longitude: -119.0187,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Bakersfield' },
+    { '@type': 'City', name: 'Oildale' },
+    { '@type': 'City', name: 'Shafter' },
+    { '@type': 'City', name: 'Wasco' },
+    { '@type': 'City', name: 'Delano' },
+    { '@type': 'City', name: 'Tehachapi' },
+    { '@type': 'City', name: 'Arvin' },
+    { '@type': 'City', name: 'Lamont' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Bakersfield?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The average residential solar installation in Bakersfield costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most homeowners pay $10,500-$21,000. System size depends on your energy usage — most Bakersfield homes need 6-12 kW systems. We offer $0-down financing options to make solar affordable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Bakersfield good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Bakersfield is one of the best cities in America for solar energy. With over 270 sunny days per year and high summer electricity rates from PG&E, Bakersfield homeowners see some of the highest returns on solar investment in the country. The hot Central Valley climate means high AC usage, making solar savings even more significant.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Bakersfield?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern solar panels are designed to last 25-30+ years. Most manufacturers warranty their panels for 25 years of performance. In Bakersfield\'s sunny climate, panels typically maintain 85-90% of their original output even after 25 years.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Bakersfield CA | #1 Local Solar Company | Solar Center"
+  description="Bakersfield's trusted solar installer. 270+ sunny days, massive savings on PG&E bills. Free consultation, $0 down financing. Solar Center by Dura-Foam — 6730 Charity Ave, Suite 5. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Bakersfield, CA"
+    subtitle="Your local headquarters for solar energy. 270+ sunny days. Maximum savings on PG&E bills."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Bakersfield's Trusted Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Bakersfield is our home base. Located at 6730 Charity Ave, Suite 5, Solar Center by Dura-Foam is the Central Valley's premier solar installation company. We've helped hundreds of Bakersfield homeowners take control of their energy bills with custom-designed solar systems.</p>
+              <p>With over 270 sunny days per year, Bakersfield is one of the best cities in America for solar energy. Combined with rising PG&E rates and summer temperatures that push AC bills through the roof, going solar in Bakersfield isn't just smart — it's essential.</p>
+              <p>As a division of Dura-Foam Roofing & Solar Center, we bring 40+ years of local expertise. We know Kern County permitting, PG&E interconnection, and the specific climate challenges that affect solar performance in the southern Central Valley.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Bakersfield Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$200+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Bakersfield Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Northwest Bakersfield', 'Southwest Bakersfield', 'Northeast Bakersfield', 'Downtown', 'Riverwalk', 'Seven Oaks', 'Stockdale', 'Rosedale', 'Oildale', 'Shafter', 'Wasco', 'Delano', 'Tehachapi', 'Arvin', 'Lamont'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Bakersfield Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Bakersfield?', a: 'The average residential solar installation in Bakersfield costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most homeowners pay $10,500-$21,000. We offer $0-down financing options.' },
+                { q: 'Is Bakersfield good for solar panels?', a: 'Bakersfield is one of the best cities in America for solar. With 270+ sunny days per year and high summer electricity rates from PG&E, homeowners see some of the highest returns on solar investment in the country.' },
+                { q: 'How long do solar panels last in Bakersfield?', a: 'Modern solar panels last 25-30+ years with manufacturer warranties covering 25 years of performance. In Bakersfield\'s sunny climate, panels typically maintain 85-90% of their original output after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Bakersfield Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Stockton', cities: 'Stockton, Modesto, Merced', href: '/locations/stockton' },
+          { name: 'Kern County', cities: 'Bakersfield, Delano, Tehachapi', href: '/locations/bakersfield' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

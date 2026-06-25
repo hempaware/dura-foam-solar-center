@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Solar Center by Dura-Foam',
+  url: 'https://solarcenterca.com/contact',
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    name: 'Solar Center by Dura-Foam',
+    telephone: '+1-661-596-2477',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, Suite 5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+      addressCountry: 'US',
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="Contact Us | Solar Center by Dura-Foam | Bakersfield, CA"
+  description="Get in touch with Solar Center by Dura-Foam for a free solar consultation. Call (661) 596-2477 or fill out our form. Located at 6730 Charity Ave, Suite 5, Bakersfield, CA 93308."
+  schema={schema}
+>
+  <PageHero title="Contact Us" subtitle="Ready to go solar? Get in touch for your free consultation." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-bold text-solar-navy font-headline mb-6">Get Your Free Solar Quote</h2>
+          <p class="text-slate mb-8">Fill out the form and one of our solar experts will reach out within 24 hours to discuss your energy needs and schedule a free consultation.</p>
+          <QuoteForm />
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl font-bold text-solar-navy font-headline mb-6">Visit Our Office</h2>
+            <address class="not-italic space-y-4 text-ink">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-1 flex-shrink-0" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <p class="font-semibold">Solar Center by Dura-Foam</p>
+                  <p>6730 Charity Ave, Suite 5</p>
+                  <p>Bakersfield, CA 93308</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+16615962477" class="text-solar-navy font-semibold hover:text-solar-amber transition-colors no-underline">(661) 596-2477</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div>
+                  <p class="font-semibold">Business Hours</p>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                  <p>Saturday - Sunday: Closed</p>
+                </div>
+              </div>
+            </address>
+          </div>
+
+          <div class="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-8 text-center">
+            <p class="text-slate text-sm">Map placeholder — embed Google Map here</p>
+            <p class="text-xs text-slate/60 mt-2">6730 Charity Ave, Suite 5, Bakersfield, CA 93308</p>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-6">
+            <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Service Area</h3>
+            <p class="text-slate text-sm">We serve homeowners throughout the Central Valley, from Sacramento to Bakersfield. Our team covers Fresno, Visalia, Stockton, Modesto, Merced, and all surrounding communities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

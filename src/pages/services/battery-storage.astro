@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/solar-installation' },
+  { label: 'Battery Storage', href: '/services/battery-storage' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Home Battery Storage Installation',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Solar Center by Dura-Foam',
+    telephone: '+1-661-596-2477',
+  },
+  areaServed: { '@type': 'State', name: 'California' },
+  description: 'Home battery storage solutions for backup power and energy independence. Pair with solar panels to store excess energy and power your home during outages.',
+  serviceType: 'Battery Storage Installation',
+};
+---
+
+<BaseLayout
+  title="Home Battery Storage Bakersfield | Solar Battery Installation | Solar Center"
+  description="Add battery storage to your solar system for backup power and energy independence. Protect your family from Central Valley blackouts. Free consultation from Solar Center by Dura-Foam."
+  schema={schema}
+>
+  <PageHero
+    title="Home Battery Storage"
+    subtitle="Store your solar energy. Power your home during outages. Maximize your savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Energy Security for Your Home</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Central Valley summers bring extreme heat — and with it, rolling blackouts and grid instability. A home battery system stores excess solar energy so you have backup power when the grid goes down.</p>
+              <p>With battery storage, you're not just saving money on electricity — you're gaining true energy independence. Your solar panels charge the battery during the day, and the stored energy powers your home at night or during outages.</p>
+              <p>We install leading battery systems that integrate seamlessly with your solar panels. Whether you're adding batteries to an existing solar system or installing both together, our team designs a solution sized for your home's needs.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Benefits of Battery Storage</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Backup Power</h4>
+                <p class="text-sm text-slate">Keep your lights, fridge, and essential systems running during grid outages and PSPS events.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Peak Shaving</h4>
+                <p class="text-sm text-slate">Use stored energy during peak rate hours (4-9 PM) to avoid the highest utility charges.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">NEM 3.0 Ready</h4>
+                <p class="text-sm text-slate">Under California's new net metering rules, batteries help you maximize the value of every kilowatt your panels produce.</p>
+              </div>
+              <div class="rounded-xl bg-warm-sand p-6">
+                <h4 class="font-bold text-solar-navy mb-2">Tax Credits</h4>
+                <p class="text-sm text-slate">Battery storage qualifies for the 30% federal tax credit when paired with solar panels.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">How Battery Storage Works</h3>
+            <ol class="space-y-4">
+              {[
+                { title: 'Solar panels generate electricity', desc: 'During daylight hours, your panels produce clean energy to power your home.' },
+                { title: 'Excess energy charges the battery', desc: 'Any energy your home doesn\'t use immediately flows into the battery for later.' },
+                { title: 'Battery powers your home', desc: 'At night or during outages, the battery provides seamless backup power to your home.' },
+                { title: 'Smart management', desc: 'The system automatically decides when to use solar, battery, or grid power based on rates and your preferences.' },
+              ].map((step, i) => (
+                <li class="flex gap-4">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-solar-amber text-midnight font-bold text-sm flex items-center justify-center">{i + 1}</span>
+                  <div>
+                    <p class="font-semibold text-solar-navy">{step.title}</p>
+                    <p class="text-sm text-slate">{step.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24">
+            <QuoteForm heading="Get a Battery Quote" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white font-headline mb-4">Ready for Energy Independence?</h2>
+      <p class="text-white/80 text-lg mb-8">Get a free consultation to find the right battery solution for your home.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Sacramento', href: '/locations/sacramento' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Sacramento',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/sacramento',
+  areaServed: [
+    { '@type': 'City', name: 'Sacramento' },
+    { '@type': 'City', name: 'Elk Grove' },
+    { '@type': 'City', name: 'Roseville' },
+    { '@type': 'City', name: 'Folsom' },
+    { '@type': 'City', name: 'Rancho Cordova' },
+    { '@type': 'City', name: 'Citrus Heights' },
+  ],
+  priceRange: '$$',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+---
+
+<BaseLayout
+  title="Solar Installation Sacramento CA | Elk Grove, Roseville Solar | Solar Center"
+  description="Sacramento area solar installation by Solar Center by Dura-Foam. Serving Sacramento, Elk Grove, Roseville, Folsom, and surrounding communities. Free consultation. Call (661) 596-2477."
+  schema={schema}
+>
+  <PageHero
+    title="Solar Installation in Sacramento"
+    subtitle="Serving Sacramento, Elk Grove, Roseville, Folsom, and the greater Sacramento area."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Sacramento Solar Installation</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Sacramento homeowners face some of the highest electricity rates in the nation, especially during peak summer months. With SMUD and PG&E rates climbing year over year, solar provides a proven path to lower bills and energy independence.</p>
+              <p>Solar Center by Dura-Foam brings our Central Valley expertise to the Sacramento metro area, including Elk Grove, Roseville, Folsom, Rancho Cordova, and Citrus Heights. Our team understands the specific utility rate structures and permitting requirements across Sacramento County and Placer County.</p>
+              <p>With over 260 sunny days per year and hot summers driving AC usage, Sacramento is an ideal location for residential solar. Most homeowners see a payback period of 6-8 years and save over $40,000 over the life of their system.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Sacramento Solar Facts</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">269</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">5.2</p>
+                <p class="text-sm text-slate">Peak sun hours/day</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">6-8 yr</p>
+                <p class="text-sm text-slate">Typical payback period</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$40K+</p>
+                <p class="text-sm text-slate">25-year savings potential</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Communities We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Sacramento', 'Elk Grove', 'Roseville', 'Folsom', 'Rancho Cordova', 'Citrus Heights', 'Rocklin', 'Lincoln', 'Woodland', 'Davis', 'West Sacramento', 'Carmichael'].map((city) => (
+                <span class="text-sm text-ink">{city}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Our Services</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {[
+                { title: 'Solar Installation', desc: 'Custom residential solar systems.', href: '/services/solar-installation' },
+                { title: 'Battery Storage', desc: 'Backup power and peak shaving.', href: '/services/battery-storage' },
+                { title: 'Solar Financing', desc: '$0-down financing available.', href: '/services/solar-financing' },
+                { title: 'Solar + Roofing', desc: 'Combined roof and solar projects.', href: '/services/solar-roofing' },
+              ].map((svc) => (
+                <a href={svc.href} class="rounded-xl border border-gray-200 p-5 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+                  <h4 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors mb-1">{svc.title}</h4>
+                  <p class="text-sm text-slate">{svc.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Sacramento Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Contact Us</h3>
+              <div class="text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>Serving Sacramento from our Bakersfield HQ</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

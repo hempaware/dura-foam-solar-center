@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Fresno', href: '/locations/fresno' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Fresno',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/fresno',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.7378,
+    longitude: -119.7871,
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Fresno' },
+    { '@type': 'City', name: 'Clovis' },
+    { '@type': 'City', name: 'Visalia' },
+    { '@type': 'City', name: 'Tulare' },
+    { '@type': 'City', name: 'Hanford' },
+    { '@type': 'City', name: 'Madera' },
+    { '@type': 'City', name: 'Selma' },
+    { '@type': 'City', name: 'Sanger' },
+  ],
+  priceRange: '$$',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+---
+
+<BaseLayout
+  title="Solar Installation Fresno CA | Clovis, Visalia Solar | Solar Center"
+  description="Fresno and Central Valley solar installation by Solar Center by Dura-Foam. Serving Fresno, Clovis, Visalia, Tulare, and surrounding communities. Free consultation. Call (661) 596-2477."
+  schema={schema}
+>
+  <PageHero
+    title="Solar Installation in Fresno & Central Valley"
+    subtitle="Serving Fresno, Clovis, Visalia, Tulare, and all Central Valley communities."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Fresno Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>The Fresno metro area is one of California's hottest markets for solar — and for good reason. With scorching summers pushing electricity bills past $300/month and over 260 sunny days per year, Fresno homeowners stand to save tens of thousands over the life of a solar system.</p>
+              <p>Solar Center by Dura-Foam serves the entire greater Fresno area, including Clovis, Visalia, Tulare, Hanford, Madera, Selma, and Sanger. Our team knows the local PG&E rate structures, Fresno County permitting process, and climate factors that affect system performance.</p>
+              <p>Whether you're in a newer subdivision in Clovis or an established neighborhood in central Fresno, we design systems tailored to your specific home and energy needs.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Fresno Solar by the Numbers</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">260+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$300+</p>
+                <p class="text-sm text-slate">Average summer electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">5.5</p>
+                <p class="text-sm text-slate">Peak sun hours/day</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$40K+</p>
+                <p class="text-sm text-slate">25-year savings potential</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Communities We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Fresno', 'Clovis', 'Visalia', 'Tulare', 'Hanford', 'Madera', 'Selma', 'Sanger', 'Kingsburg', 'Reedley', 'Dinuba', 'Porterville', 'Lemoore', 'Coalinga', 'Kerman'].map((city) => (
+                <span class="text-sm text-ink">{city}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Our Services in Fresno</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {[
+                { title: 'Solar Installation', desc: 'Custom-designed residential solar systems with premium equipment.', href: '/services/solar-installation' },
+                { title: 'Battery Storage', desc: 'Backup power for blackouts and peak rate optimization.', href: '/services/battery-storage' },
+                { title: 'Solar Financing', desc: '$0-down financing options with competitive rates.', href: '/services/solar-financing' },
+                { title: 'Solar + Roofing', desc: 'Combined roof replacement and solar installation.', href: '/services/solar-roofing' },
+              ].map((svc) => (
+                <a href={svc.href} class="rounded-xl border border-gray-200 p-5 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+                  <h4 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors mb-1">{svc.title}</h4>
+                  <p class="text-sm text-slate">{svc.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Fresno Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Contact Us</h3>
+              <div class="text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>Serving Fresno from our Bakersfield HQ</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

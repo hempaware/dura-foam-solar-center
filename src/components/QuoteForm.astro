@@ -1,0 +1,107 @@
+---
+interface Props {
+  heading?: string;
+  compact?: boolean;
+}
+
+const { heading = 'Request Your Free Quote', compact = false } = Astro.props;
+---
+
+<div class:list={['rounded-2xl bg-white shadow-xl border border-gray-100', compact ? 'p-6' : 'p-8 lg:p-10']}>
+  <div id="quote-step-1">
+    <h3 class="text-2xl font-bold text-solar-navy font-headline mb-2">{heading}</h3>
+    <p class="text-slate text-sm mb-6">Tell us a little about yourself — it only takes 60 seconds.</p>
+    <form id="lead-capture-form" class="space-y-4">
+      <div>
+        <label for="lead-name" class="sr-only">Full Name</label>
+        <input
+          type="text"
+          id="lead-name"
+          required
+          placeholder="Full Name"
+          class="w-full rounded-lg border border-gray-200 px-4 py-3 text-base text-ink placeholder:text-slate/50 focus:border-clean-sky focus:outline-none focus:ring-2 focus:ring-clean-sky/20"
+        />
+      </div>
+      <div>
+        <label for="lead-email" class="sr-only">Email Address</label>
+        <input
+          type="email"
+          id="lead-email"
+          required
+          placeholder="Email Address"
+          class="w-full rounded-lg border border-gray-200 px-4 py-3 text-base text-ink placeholder:text-slate/50 focus:border-clean-sky focus:outline-none focus:ring-2 focus:ring-clean-sky/20"
+        />
+      </div>
+      <div>
+        <label for="lead-phone" class="sr-only">Phone Number</label>
+        <input
+          type="tel"
+          id="lead-phone"
+          required
+          placeholder="Phone Number"
+          class="w-full rounded-lg border border-gray-200 px-4 py-3 text-base text-ink placeholder:text-slate/50 focus:border-clean-sky focus:outline-none focus:ring-2 focus:ring-clean-sky/20"
+        />
+      </div>
+      <button type="submit" class="w-full rounded-lg bg-solar-amber px-6 py-3.5 text-base font-bold text-midnight transition hover:bg-[#e6951a] font-label">
+        Get My Free Quote
+      </button>
+      <p class="text-xs text-slate text-center">We'll never spam you. Unsubscribe anytime.</p>
+    </form>
+  </div>
+
+  <div id="quote-step-2" class="hidden" style="min-height: 900px;">
+    <h3 class="text-2xl font-bold text-solar-navy font-headline mb-4">Almost there! Complete your details.</h3>
+    <iframe
+      src="https://link.dura-foam.com/widget/form/ct7vInGFAGOZduVv5zOA"
+      style="width:100%;border:none;border-radius:8px;min-height:880px"
+      id="inline-ct7vInGFAGOZduVv5zOA"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Solar Center Website Quote Form"
+      data-height="1136"
+      data-layout-iframe-id="inline-ct7vInGFAGOZduVv5zOA"
+      data-form-id="ct7vInGFAGOZduVv5zOA"
+      title="Solar Center Website Quote Form"
+    ></iframe>
+  </div>
+</div>
+
+<script src="https://link.dura-foam.com/js/form_embed.js" is:inline></script>
+
+<script>
+  const leadForm = document.getElementById('lead-capture-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('lead-name') as HTMLInputElement)?.value.trim();
+      const email = (document.getElementById('lead-email') as HTMLInputElement)?.value.trim();
+      const phone = (document.getElementById('lead-phone') as HTMLInputElement)?.value.trim();
+      if (!name || !email || !phone) return;
+
+      const step1 = document.getElementById('quote-step-1');
+      const step2 = document.getElementById('quote-step-2');
+      if (step1) step1.style.display = 'none';
+      if (step2) {
+        step2.classList.remove('hidden');
+        const iframe = step2.querySelector('iframe') as HTMLIFrameElement;
+        if (iframe) {
+          const nameParts = name.split(' ');
+          const firstName = nameParts[0];
+          const lastName = nameParts.slice(1).join(' ');
+          const params = new URLSearchParams();
+          if (firstName) params.set('first_name', firstName);
+          if (lastName) params.set('last_name', lastName);
+          params.set('email', email);
+          params.set('phone', phone);
+          const sep = iframe.src.includes('?') ? '&' : '?';
+          iframe.src = iframe.src + sep + params.toString();
+        }
+      }
+    });
+  }
+</script>

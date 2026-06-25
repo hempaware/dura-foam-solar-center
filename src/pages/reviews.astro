@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Reviews', href: '/reviews' },
+];
+
+const reviews = [
+  { name: 'Sarah Jenkins', location: 'Bakersfield, CA', initials: 'SJ', rating: 5, text: 'Switching to Solar Center was the best decision for our home. Our summer energy bills dropped by 80%, and the installation team was incredibly professional. They handled everything from permits to final inspection.' },
+  { name: 'David & Maria Lopez', location: 'Clovis, CA', initials: 'DL', rating: 5, text: 'We were hesitant about the upfront costs, but their financing options made it easy. The system looks sleek on our roof, and we love tracking our energy production. Already saved more than we expected in the first year.' },
+  { name: 'Michael Chen', location: 'Madera, CA', initials: 'MC', rating: 5, text: 'Top-notch customer service from start to finish. They handled all the permits and kept us informed every step of the way. Highly recommend their expertise. The system has exceeded our production estimates.' },
+  { name: 'Patricia Williams', location: 'Bakersfield, CA', initials: 'PW', rating: 5, text: 'We needed a new roof before we could go solar. Dura-Foam handled both the roof replacement and solar installation in one project. It saved us weeks of time and thousands of dollars compared to hiring two separate companies.' },
+  { name: 'Robert Garcia', location: 'Visalia, CA', initials: 'RG', rating: 5, text: 'The team was knowledgeable and transparent about everything. No hard sell, no pushy tactics. They showed us exactly what we would save and delivered on every promise. Our PG&E bill went from $350 to under $50.' },
+  { name: 'Jennifer Thompson', location: 'Fresno, CA', initials: 'JT', rating: 5, text: 'We got quotes from five different solar companies. Solar Center was the only one that recommended we own our system instead of leasing. Best advice we ever received — we kept the entire tax credit and our home value went up.' },
+  { name: 'James & Linda Kim', location: 'Elk Grove, CA', initials: 'JK', rating: 5, text: 'The battery storage system has been a game-changer. During the last power outage, our neighbors were in the dark while our house ran like normal. The peace of mind alone is worth the investment.' },
+  { name: 'Thomas Rodriguez', location: 'Stockton, CA', initials: 'TR', rating: 5, text: 'Professional from the first phone call to the final walkthrough. The design team optimized our panel layout to maximize production given our partially shaded roof. Very impressed with the technical expertise.' },
+  { name: 'Angela Morrison', location: 'Bakersfield, CA', initials: 'AM', rating: 5, text: 'As a Dura-Foam roofing customer for years, I trusted them when they launched their solar division. They didn\'t disappoint. Same quality, same professionalism, same attention to detail. Our system has been running flawlessly for two years.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: String(reviews.length),
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: reviews.map((r) => ({
+    '@type': 'Review',
+    reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
+    author: { '@type': 'Person', name: r.name },
+    reviewBody: r.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Solar Center Reviews | 5-Star Customer Testimonials | Bakersfield CA"
+  description="Read reviews from Solar Center by Dura-Foam customers across the Central Valley. See why homeowners in Bakersfield, Fresno, and Sacramento rate us 5 stars for solar installation."
+  schema={schema}
+>
+  <PageHero title="Customer Reviews" subtitle="See what our neighbors across the Central Valley are saying." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center gap-1 mb-3">
+          {Array.from({ length: 5 }).map(() => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#F8A623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          ))}
+        </div>
+        <p class="text-2xl font-bold text-solar-navy font-headline">5.0 out of 5 Stars</p>
+        <p class="text-slate mt-1">Based on {reviews.length} customer reviews</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {reviews.map((review) => (
+          <div class="rounded-xl bg-white border border-gray-100 p-6 shadow-sm">
+            <div class="flex items-center gap-1 mb-3">
+              {Array.from({ length: review.rating }).map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F8A623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              ))}
+            </div>
+            <p class="text-sm text-ink leading-relaxed mb-4">{review.text}</p>
+            <div class="flex items-center gap-3 pt-3 border-t border-gray-100">
+              <div class="w-10 h-10 rounded-full bg-solar-navy flex items-center justify-center">
+                <span class="text-xs font-bold text-white">{review.initials}</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-ink">{review.name}</p>
+                <p class="text-xs text-slate">{review.location}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white font-headline mb-4">Ready to Join Our Happy Homeowners?</h2>
+      <p class="text-white/80 text-lg mb-8">Get a free, no-obligation solar consultation and start saving today.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
