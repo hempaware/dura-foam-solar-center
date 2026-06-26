@@ -8,10 +8,59 @@ const { currentPath = '/' } = Astro.props;
 const navLinks = [
   { href: '/services/solar-installation', label: 'Solar Installation' },
   { href: '/services/battery-storage', label: 'Battery Storage' },
-  { href: '/locations/bakersfield', label: 'Service Areas' },
   { href: '/about', label: 'About' },
   { href: '/reviews', label: 'Reviews' },
 ];
+
+const serviceAreas = {
+  'Kern County': [
+    { href: '/locations/bakersfield', label: 'Bakersfield' },
+    { href: '/locations/oildale', label: 'Oildale' },
+    { href: '/locations/rosedale', label: 'Rosedale' },
+    { href: '/locations/lamont', label: 'Lamont' },
+    { href: '/locations/arvin', label: 'Arvin' },
+    { href: '/locations/shafter', label: 'Shafter' },
+    { href: '/locations/wasco', label: 'Wasco' },
+    { href: '/locations/mcfarland', label: 'McFarland' },
+    { href: '/locations/delano', label: 'Delano' },
+    { href: '/locations/tehachapi', label: 'Tehachapi' },
+    { href: '/locations/taft', label: 'Taft' },
+    { href: '/locations/california-city', label: 'California City' },
+    { href: '/locations/ridgecrest', label: 'Ridgecrest' },
+  ],
+  'Fresno Area': [
+    { href: '/locations/fresno', label: 'Fresno' },
+    { href: '/locations/clovis', label: 'Clovis' },
+    { href: '/locations/sanger', label: 'Sanger' },
+    { href: '/locations/selma', label: 'Selma' },
+    { href: '/locations/reedley', label: 'Reedley' },
+    { href: '/locations/kerman', label: 'Kerman' },
+    { href: '/locations/coalinga', label: 'Coalinga' },
+    { href: '/locations/kingsburg', label: 'Kingsburg' },
+  ],
+  'Sacramento': [
+    { href: '/locations/sacramento', label: 'Sacramento' },
+  ],
+  'Los Angeles Area': [
+    { href: '/locations/los-angeles', label: 'Los Angeles' },
+    { href: '/locations/long-beach', label: 'Long Beach' },
+    { href: '/locations/santa-clarita', label: 'Santa Clarita' },
+    { href: '/locations/glendale', label: 'Glendale' },
+    { href: '/locations/lancaster', label: 'Lancaster' },
+    { href: '/locations/palmdale', label: 'Palmdale' },
+    { href: '/locations/pomona', label: 'Pomona' },
+    { href: '/locations/torrance', label: 'Torrance' },
+    { href: '/locations/pasadena', label: 'Pasadena' },
+    { href: '/locations/el-monte', label: 'El Monte' },
+    { href: '/locations/downey', label: 'Downey' },
+    { href: '/locations/inglewood', label: 'Inglewood' },
+    { href: '/locations/burbank', label: 'Burbank' },
+    { href: '/locations/west-covina', label: 'West Covina' },
+    { href: '/locations/norwalk', label: 'Norwalk' },
+  ],
+};
+
+const isLocationPage = currentPath.startsWith('/locations');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm" id="site-header">
@@ -22,7 +71,89 @@ const navLinks = [
       </a>
 
       <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
-        {navLinks.map((link) => (
+        {navLinks.slice(0, 2).map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-medium transition-colors hover:text-solar-navy no-underline',
+              currentPath === link.href ? 'text-solar-navy font-semibold' : 'text-slate',
+            ]}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+
+        <!-- Service Areas Dropdown -->
+        <div class="relative" id="service-areas-dropdown">
+          <button
+            type="button"
+            class:list={[
+              'flex items-center gap-1 text-sm font-medium transition-colors hover:text-solar-navy no-underline bg-transparent border-none cursor-pointer',
+              isLocationPage ? 'text-solar-navy font-semibold' : 'text-slate',
+            ]}
+            aria-expanded="false"
+            aria-haspopup="true"
+            id="service-areas-trigger"
+          >
+            Service Areas
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="dropdown-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <div
+            id="service-areas-menu"
+            class="invisible opacity-0 absolute top-full right-0 mt-2 w-[640px] rounded-xl bg-white border border-gray-200 shadow-xl p-6 transition-all duration-200 -translate-y-2"
+            role="menu"
+          >
+            <div class="grid grid-cols-3 gap-6">
+              <!-- Kern County -->
+              <div>
+                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2">Kern County</h3>
+                <ul class="space-y-1 list-none p-0 m-0">
+                  {serviceAreas['Kern County'].map((city) => (
+                    <li>
+                      <a href={city.href} class:list={['block text-sm py-0.5 no-underline transition-colors hover:text-solar-amber', currentPath === city.href ? 'text-solar-navy font-semibold' : 'text-slate']} role="menuitem">{city.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Fresno + Sacramento -->
+              <div>
+                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2">Fresno Area</h3>
+                <ul class="space-y-1 list-none p-0 m-0">
+                  {serviceAreas['Fresno Area'].map((city) => (
+                    <li>
+                      <a href={city.href} class:list={['block text-sm py-0.5 no-underline transition-colors hover:text-solar-amber', currentPath === city.href ? 'text-solar-navy font-semibold' : 'text-slate']} role="menuitem">{city.label}</a>
+                    </li>
+                  ))}
+                </ul>
+                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2 mt-4">Sacramento</h3>
+                <ul class="space-y-1 list-none p-0 m-0">
+                  {serviceAreas['Sacramento'].map((city) => (
+                    <li>
+                      <a href={city.href} class:list={['block text-sm py-0.5 no-underline transition-colors hover:text-solar-amber', currentPath === city.href ? 'text-solar-navy font-semibold' : 'text-slate']} role="menuitem">{city.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Los Angeles -->
+              <div>
+                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2">Los Angeles Area</h3>
+                <ul class="space-y-1 list-none p-0 m-0">
+                  {serviceAreas['Los Angeles Area'].map((city) => (
+                    <li>
+                      <a href={city.href} class:list={['block text-sm py-0.5 no-underline transition-colors hover:text-solar-amber', currentPath === city.href ? 'text-solar-navy font-semibold' : 'text-slate']} role="menuitem">{city.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {navLinks.slice(2).map((link) => (
           <a
             href={link.href}
             class:list={[
@@ -58,9 +189,57 @@ const navLinks = [
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white pb-6 px-4 sm:px-6">
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white pb-6 px-4 sm:px-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
     <nav class="flex flex-col gap-1 pt-4" aria-label="Mobile navigation">
-      {navLinks.map((link) => (
+      {navLinks.slice(0, 2).map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'rounded-lg px-4 py-3 text-base font-medium transition-colors no-underline',
+            currentPath === link.href ? 'bg-warm-sand text-solar-navy font-semibold' : 'text-ink hover:bg-gray-50',
+          ]}
+          aria-current={currentPath === link.href ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+
+      <!-- Mobile Service Areas Accordion -->
+      <div class="rounded-lg">
+        <button
+          type="button"
+          class:list={[
+            'flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-medium transition-colors bg-transparent border-none cursor-pointer text-left',
+            isLocationPage ? 'bg-warm-sand text-solar-navy font-semibold' : 'text-ink hover:bg-gray-50',
+          ]}
+          id="mobile-areas-toggle"
+          aria-expanded="false"
+        >
+          Service Areas
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="mobile-areas-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="mobile-areas-panel" class="hidden pl-4 pb-2">
+          {Object.entries(serviceAreas).map(([region, cities]) => (
+            <div class="mt-3 first:mt-1">
+              <p class="px-4 text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-1">{region}</p>
+              {cities.map((city) => (
+                <a
+                  href={city.href}
+                  class:list={[
+                    'block rounded-lg px-4 py-2 text-sm no-underline transition-colors',
+                    currentPath === city.href ? 'text-solar-navy font-semibold bg-warm-sand' : 'text-slate hover:bg-gray-50 hover:text-solar-navy',
+                  ]}
+                >
+                  {city.label}
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {navLinks.slice(2).map((link) => (
         <a
           href={link.href}
           class:list={[
@@ -86,6 +265,7 @@ const navLinks = [
 <div class="h-20"></div>
 
 <script>
+  // Mobile menu toggle
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
   const openIcon = document.getElementById('menu-open-icon');
@@ -107,6 +287,62 @@ const navLinks = [
         closeIcon.classList.add('hidden');
         toggle.setAttribute('aria-expanded', 'false');
       });
+    });
+  }
+
+  // Desktop dropdown
+  const dropdown = document.getElementById('service-areas-dropdown');
+  const trigger = document.getElementById('service-areas-trigger');
+  const dropdownMenu = document.getElementById('service-areas-menu');
+  const chevron = document.getElementById('dropdown-chevron');
+
+  if (dropdown && trigger && dropdownMenu && chevron) {
+    let hideTimeout: ReturnType<typeof setTimeout>;
+
+    const show = () => {
+      clearTimeout(hideTimeout);
+      dropdownMenu.classList.remove('invisible', 'opacity-0', '-translate-y-2');
+      dropdownMenu.classList.add('visible', 'opacity-100', 'translate-y-0');
+      chevron.classList.add('rotate-180');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+
+    const hide = () => {
+      hideTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('invisible', 'opacity-0', '-translate-y-2');
+        dropdownMenu.classList.remove('visible', 'opacity-100', 'translate-y-0');
+        chevron.classList.remove('rotate-180');
+        trigger.setAttribute('aria-expanded', 'false');
+      }, 150);
+    };
+
+    dropdown.addEventListener('mouseenter', show);
+    dropdown.addEventListener('mouseleave', hide);
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      isOpen ? hide() : show();
+    });
+    trigger.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        isOpen ? hide() : show();
+      }
+      if (e.key === 'Escape') hide();
+    });
+  }
+
+  // Mobile service areas accordion
+  const mobileAreasToggle = document.getElementById('mobile-areas-toggle');
+  const mobileAreasPanel = document.getElementById('mobile-areas-panel');
+  const mobileAreasChevron = document.getElementById('mobile-areas-chevron');
+
+  if (mobileAreasToggle && mobileAreasPanel && mobileAreasChevron) {
+    mobileAreasToggle.addEventListener('click', () => {
+      const isOpen = !mobileAreasPanel.classList.contains('hidden');
+      mobileAreasPanel.classList.toggle('hidden');
+      mobileAreasChevron.classList.toggle('rotate-180');
+      mobileAreasToggle.setAttribute('aria-expanded', String(!isOpen));
     });
   }
 </script>
