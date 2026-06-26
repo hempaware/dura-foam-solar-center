@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'West Covina', href: '/locations/west-covina' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — West Covina',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/west-covina',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.0686,
+    longitude: -117.9390,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'West Covina' },
+    { '@type': 'City', name: 'Covina' },
+    { '@type': 'City', name: 'Azusa' },
+    { '@type': 'City', name: 'Glendora' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in West Covina?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '$15,000-$30,000 before 30% credit. West Covina\'s hot summers mean larger systems may be needed, but the savings are proportionally greater.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is solar especially valuable in West Covina?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'West Covina\'s inland location means hotter summers than coastal LA, driving higher AC costs. SCE\'s time-of-use rates make solar peak production perfectly aligned with peak electricity prices.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can solar panels handle West Covina\'s heat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Modern panels are engineered for high temperatures. We use heat-tolerant panels and optimize airflow under the array to maintain peak efficiency even on 100°F+ days.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation West Covina CA | Expert Solar Installers | Solar Center"
+  description="West Covina solar installation. San Gabriel Valley solar savings. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in West Covina, CA"
+    subtitle="Eastern San Gabriel Valley solar experts. Beat inland heat with solar savings. Top SCE bill reduction."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">West Covina Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>West Covina sits in the heart of the Eastern San Gabriel Valley, where hot inland summers drive some of the highest electricity bills in the LA metro area. With 287 sunny days per year and SCE's rising time-of-use rates, West Covina homeowners have every reason to go solar. Solar Center by Dura-Foam brings decades of California solar expertise to this growing suburban community, helping families take control of their energy costs.</p>
+              <p>As an SCE (Southern California Edison) high-rate territory, West Covina residents face steep electricity prices — especially during summer peak hours when air conditioning demand spikes. Solar energy production peaks at the same time SCE charges the most, creating a perfect alignment that maximizes your savings. Our systems are designed to offset the heavy AC loads that come with inland San Gabriel Valley summers.</p>
+              <p>West Covina's suburban landscape features large single-family homes with spacious roofs ideal for solar installation. From the hillside properties in West Covina Hills to the established neighborhoods near Eastland Center, the city's housing stock offers excellent solar potential. Near the San Gabriel Mountains foothills, these homes enjoy unobstructed southern exposure that maximizes energy production year-round.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why West Covina Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">287</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$185+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">West Covina Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['East Covina', 'South Hills', 'West Covina Hills', 'Cameron Park', 'Woodside Village', 'Glendora', 'Azusa', 'Covina', 'Vincent', 'Charter Oak', 'Irwindale', 'Sunflower Gardens', 'Cortez Park', 'Merced', 'Shadow Oak Park'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">West Covina Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in West Covina?', a: '$15,000-$30,000 before 30% credit. West Covina\'s hot summers mean larger systems may be needed, but the savings are proportionally greater.' },
+                { q: 'Why is solar especially valuable in West Covina?', a: 'West Covina\'s inland location means hotter summers than coastal LA, driving higher AC costs. SCE\'s time-of-use rates make solar peak production perfectly aligned with peak electricity prices.' },
+                { q: 'Can solar panels handle West Covina\'s heat?', a: 'Yes. Modern panels are engineered for high temperatures. We use heat-tolerant panels and optimize airflow under the array to maintain peak efficiency even on 100°F+ days.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your West Covina Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Pomona', cities: 'Pomona, Claremont, La Verne', href: '/locations/pomona' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

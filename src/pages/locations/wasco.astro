@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Wasco', href: '/locations/wasco' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Wasco',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/wasco',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.5940,
+    longitude: -119.3408,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Wasco' },
+    { '@type': 'City', name: 'Shafter' },
+    { '@type': 'City', name: 'Lost Hills' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Wasco?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Wasco typically cost between $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. Most Wasco homes need 5-9 kW systems. With affordable home prices, the return on solar investment is particularly strong here. We offer $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Wasco good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wasco is excellent for solar energy. Known as the "Rose Capital of California," this northwest Kern County city enjoys 270+ sunny days per year with flat, unobstructed terrain ideal for solar production. PG&E rates continue to climb, making solar an increasingly smart investment for Wasco homeowners.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Wasco?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels installed in Wasco are built to last 25-30+ years. Manufacturers provide 25-year performance warranties. In the sunny Central Valley climate, panels typically maintain 85-90% of their original output even after decades of operation.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Wasco CA | Local Solar Company | Solar Center"
+  description="Wasco's trusted solar installer. The Rose Capital meets solar capital — 270+ sunny days, big PG&E savings. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Wasco, CA"
+    subtitle="From the Rose Capital of California to the solar capital. 270+ sunny days of clean energy."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Wasco's Trusted Solar Team</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Known as the "Rose Capital of California," Wasco has a rich tradition of growing beautiful things under the Central Valley sun. Now that same abundant sunshine is helping Wasco homeowners grow something else — substantial savings on their electricity bills through solar energy.</p>
+              <p>Located in northwest Kern County between Shafter and Delano, Wasco's flat terrain and clear skies create ideal conditions for solar panels. With 270+ sunny days per year and PG&E rates that seem to rise every season, the math on solar in Wasco is compelling: most homeowners see their investment pay off within 5-7 years while cutting their electric bills by 80% or more.</p>
+              <p>Solar Center by Dura-Foam serves Wasco from our Bakersfield headquarters, just 25 minutes south on Highway 43. Our team handles everything from Wasco city permits to PG&E interconnection. As a division of Dura-Foam Roofing & Solar Center with 40+ years in Kern County, we bring deep local knowledge and a commitment to this community.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Wasco Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Wasco Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Wasco', 'Lost Hills', 'Shafter', 'Buttonwillow', 'Semitropic', 'Pond'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Wasco Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Wasco?', a: 'Solar installations in Wasco typically cost $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. With affordable home prices, the return on investment is particularly strong. We offer $0-down financing.' },
+                { q: 'Is Wasco good for solar panels?', a: 'Wasco is excellent for solar. With 270+ sunny days per year and flat, unobstructed terrain, solar systems here produce optimally. PG&E rates keep rising, making solar an increasingly smart investment for Wasco families.' },
+                { q: 'How long do solar panels last in Wasco?', a: 'Solar panels last 25-30+ years with 25-year manufacturer warranties. In the sunny Central Valley climate, panels maintain 85-90% of their original output even after decades of operation.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Wasco Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Shafter', cities: 'Shafter, Gossamer Grove', href: '/locations/shafter' },
+          { name: 'Delano', cities: 'Delano, McFarland, Earlimart', href: '/locations/delano' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

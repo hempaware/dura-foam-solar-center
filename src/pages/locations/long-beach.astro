@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Long Beach', href: '/locations/long-beach' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Long Beach',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/long-beach',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.7701,
+    longitude: -118.1937,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Long Beach' },
+    { '@type': 'City', name: 'Signal Hill' },
+    { '@type': 'City', name: 'Lakewood' },
+    { '@type': 'City', name: 'Carson' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Long Beach?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A typical residential solar installation in Long Beach costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most Long Beach homeowners pay $10,500-$21,000. System size depends on your energy consumption — most homes in Long Beach need 5-9 kW systems due to the mild coastal climate. We offer $0-down financing to make solar accessible.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does SCE NEM 3.0 affect Long Beach solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under NEM 3.0 (Net Billing Tariff), SCE customers in Long Beach receive lower export credits for solar energy sent back to the grid. This makes it more important to maximize self-consumption of your solar energy and consider battery storage. Despite NEM 3.0 changes, solar still delivers significant savings — especially with SCE\'s rising electricity rates and Long Beach\'s excellent sunshine.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do solar panels work well in Long Beach\'s coastal climate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels perform excellently in Long Beach. While the coastal marine layer can reduce morning production, the 286 sunny days per year and mild temperatures actually help panel efficiency — solar panels produce more electricity in moderate temperatures compared to extreme heat. The ocean breeze keeps panels cool and operating at peak efficiency throughout the afternoon.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Long Beach CA | Coastal Solar Experts | Solar Center"
+  description="Long Beach solar installation experts. SCE savings, coastal solar optimization. Free consultation, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Long Beach, CA"
+    subtitle="Coastal solar done right. 286 sunny days and expert SCE optimization for maximum savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Long Beach's Coastal Solar Specialists</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Long Beach combines the best of coastal living with outstanding solar potential. As Southern California's port city, Long Beach enjoys 286 sunny days per year — and the mild ocean temperatures actually boost solar panel performance. Solar Center by Dura-Foam designs coastal-optimized systems for homes from Belmont Shore to Bixby Knolls.</p>
+              <p>Long Beach homeowners on SCE (Southern California Edison) face some of the highest electricity rates in the state. With tiered pricing that punishes higher usage, solar delivers substantial savings — especially for families running air conditioning during the warm summer months. Our team navigates SCE interconnection and NEM 3.0 policies to maximize your return on investment.</p>
+              <p>The diverse housing stock in Long Beach — from Craftsman bungalows in Cal Heights to mid-century ranches in Los Altos — means every solar installation is custom-designed. We account for roof orientation, shading from mature trees, and the morning marine layer to ensure your system produces maximum energy throughout the day.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Long Beach Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">286</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$175+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Long Beach Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Belmont Shore', 'Naples', 'Bixby Knolls', 'Cal Heights', 'Wrigley', 'Signal Hill', 'Lakewood', 'Carson', 'Los Altos', 'Park Estates', 'El Dorado Park', 'Belmont Heights', 'Rose Park', 'Zaferia', 'Traffic Circle'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Long Beach Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Long Beach?', a: 'A typical residential solar installation in Long Beach costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most homeowners pay $10,500-$21,000. We offer $0-down financing to fit every budget.' },
+                { q: 'How does SCE NEM 3.0 affect Long Beach solar?', a: 'Under NEM 3.0, SCE customers receive lower export credits, making self-consumption and battery storage more important. Despite these changes, solar still delivers significant savings with SCE\'s rising rates and Long Beach\'s excellent sunshine.' },
+                { q: 'Do solar panels work well in Long Beach\'s coastal climate?', a: 'Solar panels perform excellently in Long Beach. The marine layer may reduce morning production, but 286 sunny days and mild temperatures actually help efficiency — panels produce more electricity in moderate temperatures compared to extreme heat.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Long Beach Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Los Angeles', cities: 'Los Angeles, Hollywood, Silver Lake', href: '/locations/los-angeles' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

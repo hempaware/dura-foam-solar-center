@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Coalinga', href: '/locations/coalinga' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Coalinga',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/coalinga',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.1397,
+    longitude: -120.3600,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Coalinga' },
+    { '@type': 'City', name: 'Huron' },
+    { '@type': 'City', name: 'Avenal' },
+    { '@type': 'City', name: 'Lemoore' },
+    { '@type': 'City', name: 'Firebaugh' },
+    { '@type': 'City', name: 'Mendota' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much can Coalinga homeowners save with solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Coalinga homeowners typically save $150-$250+ per month on electricity after going solar. With approximately 290 sunny days per year and extreme summer heat driving high AC costs, solar panels in Coalinga deliver some of the fastest payback periods in California — often 5-7 years. The 30% federal tax credit further reduces the upfront investment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Coalinga a good location for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Coalinga is an exceptional location for solar energy. Situated in western Fresno County with nearly 290 sunny days per year and very little cloud cover, Coalinga receives some of the highest solar irradiance in the state. The hot, dry climate means heavy air conditioning usage during summer, making solar the ideal way to offset high PG&E bills.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Solar Center serve Coalinga and western Fresno County?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Solar Center by Dura-Foam proudly serves Coalinga and all of western Fresno County, including Huron, Avenal, and surrounding communities. Our team handles every step from free on-site consultation and custom system design to permitting, installation, and PG&E interconnection. We offer $0-down financing to make solar accessible for every homeowner.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Coalinga CA | Local Solar Company | Solar Center"
+  description="Coalinga's trusted solar installer. 290 sunny days, beat the heat and slash PG&E bills. Free consultation, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Coalinga, CA"
+    subtitle="Harness western Fresno County's 290 sunny days. Cut your PG&E bill and beat the valley heat with solar."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Coalinga's Solar Energy Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Coalinga sits in the heart of western Fresno County where scorching summers and year-round sunshine create the perfect conditions for solar energy. Solar Center by Dura-Foam helps Coalinga homeowners turn that relentless heat into real savings — converting rooftop sunlight into clean electricity that offsets skyrocketing PG&E bills.</p>
+              <p>With approximately 290 sunny days per year, Coalinga consistently ranks among the sunniest communities in California. Summer temperatures regularly push past 100 degrees, driving air conditioning costs through the roof. A properly sized solar system can eliminate 80% or more of your annual electricity bill, turning your biggest energy liability into a long-term asset.</p>
+              <p>As a division of Dura-Foam Roofing & Solar Center with 40+ years of Central Valley experience, we understand the unique demands of Coalinga's climate — from extreme heat exposure on roofing materials to dust buildup on panels. We design systems built to perform in the toughest conditions western Fresno County can throw at them.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Coalinga Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">290</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$250+</p>
+                <p class="text-sm text-slate">Average summer electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">5-7 yr</p>
+                <p class="text-sm text-slate">Typical payback period</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Coalinga Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Coalinga', 'East Coalinga', 'West Coalinga', 'Pleasant Valley', 'Huron', 'Avenal', 'Lemoore', 'Firebaugh', 'Mendota', 'Harris Ranch Area', 'Jacalitos Canyon', 'Coalinga Mineral Springs'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Coalinga Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much can Coalinga homeowners save with solar?', a: 'Coalinga homeowners typically save $150-$250+ per month on electricity after going solar. With approximately 290 sunny days per year and extreme summer heat driving high AC costs, solar panels deliver some of the fastest payback periods in California — often 5-7 years.' },
+                { q: 'Is Coalinga a good location for solar panels?', a: 'Coalinga is an exceptional location for solar energy. With nearly 290 sunny days per year and very little cloud cover, Coalinga receives some of the highest solar irradiance in the state. The hot, dry climate means heavy AC usage, making solar the ideal way to offset high PG&E bills.' },
+                { q: 'Does Solar Center serve Coalinga and western Fresno County?', a: 'Yes, Solar Center by Dura-Foam proudly serves Coalinga and all of western Fresno County, including Huron, Avenal, and surrounding communities. We handle everything from free consultation and system design to permitting, installation, and PG&E interconnection.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Coalinga Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Wasco', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Kingsburg', cities: 'Kingsburg, Selma, Reedley, Parlier', href: '/locations/kingsburg' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

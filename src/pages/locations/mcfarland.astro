@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'McFarland', href: '/locations/mcfarland' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — McFarland',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/mcfarland',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.6771,
+    longitude: -119.2293,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'McFarland' },
+    { '@type': 'City', name: 'Delano' },
+    { '@type': 'City', name: 'Wasco' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in McFarland?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in McFarland typically cost between $11,000-$24,000 before the 30% federal tax credit. After the credit, most homeowners pay $7,700-$16,800. McFarland homes generally need 4-9 kW systems. With some of the most affordable housing in Kern County, solar offers an exceptional return on investment. We provide $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is McFarland good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'McFarland is great for solar energy. The small agricultural city between Bakersfield and Delano enjoys 270+ sunny days per year with flat, open terrain that maximizes solar exposure. PG&E serves the area, and solar panels help McFarland families take control of rising electricity costs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in McFarland?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels in McFarland last 25-30+ years with manufacturer warranties covering 25 years of performance. The panels are built to handle Central Valley heat and maintain 85-90% of their original output even after two and a half decades.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation McFarland CA | Local Solar Company | Solar Center"
+  description="McFarland's trusted solar installer. 270+ sunny days, affordable solar for a community that runs on heart. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in McFarland, CA"
+    subtitle="Affordable solar energy for McFarland's tight-knit community. 270+ sunny days of savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">McFarland's Community Solar Partner</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>McFarland is a city that knows what it means to go the distance. Made famous by its legendary cross-country running program, this tight-knit agricultural community between Bakersfield and Delano runs on grit, heart, and determination. Solar Center by Dura-Foam brings that same dedication to helping McFarland homeowners cross the finish line on energy independence.</p>
+              <p>Surrounded by almond orchards, vineyards, and rose fields, McFarland sits in the sweet spot of the Central Valley's solar belt. With 270+ sunny days per year and flat terrain that gives panels unobstructed access to sunlight, residential solar systems here perform at peak efficiency. That means maximum savings on your PG&E bill — typically 80% or more.</p>
+              <p>We believe solar should be accessible to every community, regardless of size. Our $0-down financing options make it possible for McFarland families to start saving from day one. From permit applications with the city to PG&E net metering enrollment, our experienced team handles every detail while you focus on what matters most.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why McFarland Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$175+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">McFarland Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['McFarland', 'Delano', 'Wasco', 'Famoso', 'Cecil Avenue', 'Browning Road'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">McFarland Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in McFarland?', a: 'Solar installations in McFarland typically cost $11,000-$24,000 before the 30% federal tax credit. After the credit, most homeowners pay $7,700-$16,800. With affordable housing, solar offers exceptional ROI here. We provide $0-down financing.' },
+                { q: 'Is McFarland good for solar panels?', a: 'McFarland is great for solar. With 270+ sunny days per year and flat, open terrain, solar systems perform at peak efficiency. Rising PG&E rates make solar an increasingly smart choice for McFarland families.' },
+                { q: 'How long do solar panels last in McFarland?', a: 'Solar panels last 25-30+ years with 25-year manufacturer warranties. Built for Central Valley heat, they maintain 85-90% of their original output even after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your McFarland Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Delano', cities: 'Delano, Earlimart, Richgrove', href: '/locations/delano' },
+          { name: 'Wasco', cities: 'Wasco, Lost Hills, Buttonwillow', href: '/locations/wasco' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

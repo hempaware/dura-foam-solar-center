@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Delano', href: '/locations/delano' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Delano',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/delano',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.7688,
+    longitude: -119.2471,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Delano' },
+    { '@type': 'City', name: 'McFarland' },
+    { '@type': 'City', name: 'Earlimart' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Delano?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Delano typically cost between $13,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$19,600. Most Delano homes need 5-11 kW systems depending on size. As the second-largest city in Kern County, Delano has a wide range of home sizes and energy needs. We offer $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Delano good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Delano is excellent for solar energy. With 265+ sunny days per year and the flat terrain of the southern San Joaquin Valley, Delano homes receive abundant, consistent sunlight. PG&E serves the area, and the combination of hot summers and rising rates makes solar a smart financial decision for Delano families.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Delano?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern solar panels installed in Delano are built to last 25-30+ years. Manufacturers provide 25-year performance warranties. Panels are engineered for the Central Valley\'s hot climate and typically maintain 85-90% of their original output even after 25 years.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Delano CA | Local Solar Company | Solar Center"
+  description="Delano's trusted solar installer. Kern County's second-largest city deserves big solar savings. 265+ sunny days, $0 down financing. Free consultation. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Delano, CA"
+    subtitle="Big city solar savings for Kern County's second-largest community. 265+ sunny days."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Delano's Reliable Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Delano is the second-largest city in Kern County and a cornerstone of California's agricultural economy. Known worldwide as the table grape capital, Delano's rich heritage is built on the land and the sun. Solar Center by Dura-Foam helps Delano homeowners put that same legendary sunshine to work — powering homes and slashing electricity bills.</p>
+              <p>With a diverse, growing population and neighborhoods ranging from historic downtown to modern developments on the city's edges, Delano offers homes of every size and style. What they all have in common: punishing summer PG&E bills driven by Central Valley heat. Solar panels change that equation, reducing monthly electricity costs by 80% or more for most Delano families.</p>
+              <p>Our team serves Delano from our Bakersfield office, about 30 minutes south on Highway 99. We work with Delano's building department regularly and understand the city's permitting requirements inside and out. With 40+ years of Kern County experience through our parent company Dura-Foam, we bring the reliability and professionalism that Delano homeowners deserve.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Delano Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">265+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$190+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Delano Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Delano', 'North Delano', 'South Delano', 'McFarland', 'Earlimart', 'Richgrove', 'Pixley'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Delano Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Delano?', a: 'Solar installations in Delano typically cost $13,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$19,600. As Kern County\'s second-largest city, homes vary widely in size. We offer $0-down financing.' },
+                { q: 'Is Delano good for solar panels?', a: 'Delano is excellent for solar. With 265+ sunny days per year and flat San Joaquin Valley terrain, homes receive abundant sunlight. Hot summers and rising PG&E rates make solar a smart financial decision for Delano families.' },
+                { q: 'How long do solar panels last in Delano?', a: 'Modern solar panels last 25-30+ years with 25-year manufacturer warranties. Engineered for the Central Valley\'s hot climate, panels maintain 85-90% of their original output even after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Delano Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'McFarland', cities: 'McFarland, Famoso', href: '/locations/mcfarland' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Wasco', cities: 'Wasco, Lost Hills, Buttonwillow', href: '/locations/wasco' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

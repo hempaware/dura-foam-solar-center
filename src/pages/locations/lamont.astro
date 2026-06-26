@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Lamont', href: '/locations/lamont' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Lamont',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/lamont',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.2594,
+    longitude: -118.9145,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Lamont' },
+    { '@type': 'City', name: 'Arvin' },
+    { '@type': 'City', name: 'Bakersfield' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Lamont?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Lamont typically cost between $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. Lamont homes generally need 5-9 kW systems. With affordable home prices in the area, solar offers an excellent return on investment. We provide $0-down financing options.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Lamont good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lamont is outstanding for solar energy. Located in southern Kern County with wide-open skies and 275+ sunny days per year, the area receives exceptional solar irradiance. The agricultural community sees some of the hottest temperatures in the valley, which drives up electricity costs — making solar savings even more impactful.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Lamont?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern solar panels installed in Lamont last 25-30+ years. Manufacturers warranty panels for 25 years of performance. Despite the hot summers, today\'s panels are engineered for extreme heat and typically maintain 85-90% of their original output after 25 years.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Lamont CA | Local Solar Company | Solar Center"
+  description="Lamont's trusted solar installer. 275+ sunny days in southern Kern County. Affordable solar for hardworking families. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Lamont, CA"
+    subtitle="Affordable solar energy for southern Kern County's hardworking community."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Lamont's Trusted Solar Partner</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Lamont is the heart of southern Kern County's agricultural community. Surrounded by the farms and orchards that feed the nation, Lamont families work hard — and deserve energy costs that work just as hard for them. Solar Center by Dura-Foam brings affordable, reliable solar energy to Lamont homeowners with $0-down financing and systems designed for maximum savings.</p>
+              <p>With 275+ sunny days per year and wide-open skies, Lamont receives some of the best solar exposure in all of California. Summer temperatures regularly exceed 105 degrees, and PG&E bills can be punishing. Solar panels turn that abundant sunshine into real savings — typically reducing electricity costs by 80% or more.</p>
+              <p>As an unincorporated community in Kern County, Lamont solar installations are permitted through the county building department. Our team handles every detail — from Kern County permits to PG&E net metering enrollment — so homeowners can focus on what matters while we handle the paperwork and installation.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Lamont Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">275+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Lamont Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Lamont', 'Weedpatch', 'Arvin', 'Di Giorgio', 'Edison', 'South Bakersfield'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Lamont Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Lamont?', a: 'Solar installations in Lamont typically cost $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. With affordable home prices in the area, solar offers excellent return on investment. We provide $0-down financing.' },
+                { q: 'Is Lamont good for solar panels?', a: 'Lamont is outstanding for solar. With 275+ sunny days per year and wide-open skies, the area receives exceptional sunlight. Hot summers drive up PG&E bills, making solar savings even more impactful for Lamont families.' },
+                { q: 'How long do solar panels last in Lamont?', a: 'Modern solar panels last 25-30+ years with 25-year manufacturer warranties. Despite hot summers, today\'s panels are engineered for extreme heat and maintain 85-90% output after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Lamont Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Arvin', cities: 'Arvin, Bear Mountain', href: '/locations/arvin' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Delano', cities: 'Delano, McFarland, Earlimart', href: '/locations/delano' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

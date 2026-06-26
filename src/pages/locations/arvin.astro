@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Arvin', href: '/locations/arvin' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Arvin',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/arvin',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.2092,
+    longitude: -118.8284,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Arvin' },
+    { '@type': 'City', name: 'Lamont' },
+    { '@type': 'City', name: 'Bear Mountain' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Arvin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Arvin typically cost between $13,000-$26,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,200. Arvin homes generally need 5-10 kW systems. With the extreme summer heat driving high AC costs, solar pays for itself quickly. We offer $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Arvin good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Arvin is one of the best locations for solar in all of California. Sitting at the base of the Tehachapi Mountains with 280+ sunny days per year, Arvin receives exceptional solar radiation. The city is also one of the hottest in the state, meaning high AC usage and high PG&E bills — which solar dramatically reduces.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Arvin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels in Arvin are built to last 25-30+ years. Modern panels are engineered to withstand extreme heat, and manufacturers warranty them for 25 years. Even in Arvin\'s intense summer climate, panels maintain 85-90% of their original output after two and a half decades.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Arvin CA | Local Solar Company | Solar Center"
+  description="Arvin's trusted solar installer. 280+ sunny days at the base of the Tehachapi Mountains. Cut your PG&E bill up to 85%. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Arvin, CA"
+    subtitle="Harness Arvin's intense sunshine. 280+ sunny days at the foot of the Tehachapi Mountains."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Arvin's Solar Energy Specialists</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Nestled at the base of the Tehachapi Mountains in southeast Kern County, Arvin is a growing city with deep agricultural roots and some of the most intense sunshine in California. That sunshine is exactly why solar makes so much sense here — Solar Center by Dura-Foam helps Arvin homeowners transform their biggest energy challenge into their greatest advantage.</p>
+              <p>Arvin consistently ranks among the hottest cities in the state. Summer temperatures regularly soar past 110 degrees, and air conditioning runs nearly around the clock from June through September. PG&E bills during peak summer can exceed $200 for even modest-sized homes. Solar panels let you fight back against those costs, often slashing your bill by 85% or more.</p>
+              <p>Our team at Solar Center understands the unique demands of solar installation in Arvin's climate. We select panels rated for extreme heat performance and design systems that account for the area's exceptional solar exposure. From city permitting to PG&E interconnection, we handle everything — backed by 40+ years of Kern County experience through our parent company Dura-Foam.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Arvin Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">280+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$200+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">85%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Arvin Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Arvin', 'Bear Mountain', 'Lamont', 'Weedpatch', 'Di Giorgio', 'Comanche Point'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Arvin Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Arvin?', a: 'Solar installations in Arvin typically cost $13,000-$26,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,200. With extreme summer heat driving high AC costs, solar pays for itself quickly. We offer $0-down financing.' },
+                { q: 'Is Arvin good for solar panels?', a: 'Arvin is one of the best locations for solar in California. With 280+ sunny days per year at the base of the Tehachapi Mountains, the area receives exceptional sunlight. High summer temperatures mean high PG&E bills — and big solar savings.' },
+                { q: 'How long do solar panels last in Arvin?', a: 'Solar panels last 25-30+ years even in Arvin\'s extreme heat. Modern panels are engineered for hot climates and carry 25-year manufacturer warranties. Panels typically maintain 85-90% output after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Arvin Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Lamont', cities: 'Lamont, Weedpatch, Edison', href: '/locations/lamont' },
+          { name: 'Tehachapi', cities: 'Tehachapi, Bear Valley Springs', href: '/locations/tehachapi' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

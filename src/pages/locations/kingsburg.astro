@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Kingsburg', href: '/locations/kingsburg' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Kingsburg',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/kingsburg',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.5138,
+    longitude: -119.5540,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Kingsburg' },
+    { '@type': 'City', name: 'Selma' },
+    { '@type': 'City', name: 'Reedley' },
+    { '@type': 'City', name: 'Parlier' },
+    { '@type': 'City', name: 'Fowler' },
+    { '@type': 'City', name: 'Sanger' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Kingsburg?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The average residential solar installation in Kingsburg costs between $14,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$19,600. System size depends on your energy usage — most Kingsburg homes need 5-10 kW systems. We offer $0-down financing options to make solar affordable for every budget.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Kingsburg a good city for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Kingsburg is an excellent city for solar energy. Located in the sunny Central Valley with approximately 280 sunny days per year, Kingsburg homeowners see strong returns on their solar investment. High summer temperatures drive significant air conditioning costs on PG&E, and solar panels can offset 80% or more of those bills while increasing your home value.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a solar installation take in Kingsburg?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A typical residential solar installation in Kingsburg takes 1-3 days of on-roof work. The full process from signing to PG&E permission to operate usually takes 6-10 weeks, which includes system design, permitting with the City of Kingsburg, installation, inspection, and utility interconnection. Solar Center handles every step for you.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Kingsburg CA | Local Solar Company | Solar Center"
+  description="Kingsburg's trusted solar installer. 280+ sunny days, big savings on PG&E bills. Free consultation, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Kingsburg, CA"
+    subtitle="The Swedish Village goes solar. 280 sunny days and real savings on PG&E for Kingsburg homeowners."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Kingsburg's Trusted Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Kingsburg — known as the "Swedish Village" — is a charming Central Valley community where hometown pride meets modern energy savings. Solar Center by Dura-Foam helps Kingsburg homeowners harness 280 sunny days per year to slash PG&E bills while preserving the character of their homes and the historic downtown district.</p>
+              <p>With warm summers and high electricity rates from PG&E, Kingsburg residents face some of the steepest energy costs in the Valley. A custom-designed solar system can cut your annual electricity bill by 80% or more, turning your rooftop into a money-saving power plant that pays for itself in just a few years.</p>
+              <p>Backed by Dura-Foam Roofing & Solar Center's 40+ years of Central Valley experience, we understand Fresno County permitting, PG&E interconnection requirements, and the specific roofing styles common in Kingsburg's residential neighborhoods. From the tree-lined streets near downtown to the newer developments on the outskirts, we design systems that fit every home.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Kingsburg Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">280</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Kingsburg Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Kingsburg', 'North Kingsburg', 'South Kingsburg', 'Swedish Village District', 'Sierra Vista', 'Roosevelt School Area', 'Selma', 'Reedley', 'Parlier', 'Fowler', 'Sanger', 'Del Rey'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Kingsburg Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Kingsburg?', a: 'The average residential solar installation in Kingsburg costs between $14,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$19,600. We offer $0-down financing options to make solar affordable for every budget.' },
+                { q: 'Is Kingsburg a good city for solar panels?', a: 'Kingsburg is an excellent city for solar energy. With approximately 280 sunny days per year and high summer electricity rates from PG&E, homeowners see strong returns on their solar investment. Solar can offset 80% or more of your electricity bills.' },
+                { q: 'How long does a solar installation take in Kingsburg?', a: 'On-roof installation typically takes 1-3 days. The full process from signing to PG&E permission to operate usually takes 6-10 weeks, including system design, permitting with the City of Kingsburg, installation, inspection, and utility interconnection.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Kingsburg Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Wasco', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Coalinga', cities: 'Coalinga, Huron, Avenal, Lemoore', href: '/locations/coalinga' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

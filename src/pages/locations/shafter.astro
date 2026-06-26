@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Shafter', href: '/locations/shafter' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Shafter',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/shafter',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.5005,
+    longitude: -119.2718,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Shafter' },
+    { '@type': 'City', name: 'North Bakersfield' },
+    { '@type': 'City', name: 'Wasco' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Shafter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Shafter typically cost between $13,000-$27,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,900. Shafter homes generally require 5-10 kW systems. With new developments like Gossamer Grove bringing larger homes to the area, solar is an excellent long-term investment. We offer $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Shafter good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Shafter is excellent for solar energy. Located in the flat farmlands northwest of Bakersfield, the area enjoys 270+ sunny days per year with minimal shading. PG&E serves the area, and with rising rates and hot summers, Shafter homeowners see strong returns on solar investments — often recouping their costs within 5-7 years.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Shafter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern solar panels installed in Shafter are designed to last 25-30+ years. Manufacturers provide 25-year performance warranties. In the sunny Central Valley climate, panels typically maintain 85-90% of their original output even after 25 years of continuous operation.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Shafter CA | Local Solar Company | Solar Center"
+  description="Shafter's trusted solar installer. 270+ sunny days in northwest Kern County. Growing community, big solar savings. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Shafter, CA"
+    subtitle="Solar energy for Shafter's growing community. 270+ sunny days, flat terrain, maximum production."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Shafter's Growing Solar Community</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Shafter is one of Kern County's fastest-growing cities, and new developments like Gossamer Grove are bringing families from across California to this welcoming agricultural community northwest of Bakersfield. With that growth comes an opportunity: build your new life in Shafter with solar energy from day one.</p>
+              <p>The flat, open terrain around Shafter is ideal for solar panels. With 270+ sunny days per year, minimal tree cover, and wide-open skies over the surrounding farmland, solar systems in Shafter produce at peak efficiency. Meanwhile, PG&E rates keep climbing — making the decision to go solar easier every year.</p>
+              <p>Solar Center by Dura-Foam has deep roots in Kern County agriculture and community. We understand Shafter's building codes, work efficiently with the city's permitting process, and design systems that complement both the historic homes along Lerdo Highway and the modern construction in newer subdivisions. Our Bakersfield office is just a short drive south on Highway 43.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Shafter Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$185+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Shafter Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Shafter', 'North Shafter', 'Thomas Lane', 'Gossamer Grove', 'Bakersfield Estates', 'Wasco', 'Famoso'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Shafter Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Shafter?', a: 'Solar installations in Shafter typically cost $13,000-$27,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,900. Newer Gossamer Grove homes may need larger systems. We offer $0-down financing.' },
+                { q: 'Is Shafter good for solar panels?', a: 'Shafter is excellent for solar. With 270+ sunny days, flat terrain, and wide-open skies, solar systems here produce at peak efficiency. Rising PG&E rates make the decision to go solar easier every year.' },
+                { q: 'How long do solar panels last in Shafter?', a: 'Modern solar panels last 25-30+ years with 25-year manufacturer warranties. In the sunny Central Valley climate, panels typically maintain 85-90% of their original output even after 25 years of continuous operation.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Shafter Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Wasco', cities: 'Wasco, Lost Hills, Buttonwillow', href: '/locations/wasco' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Delano', cities: 'Delano, McFarland, Earlimart', href: '/locations/delano' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Reedley', href: '/locations/reedley' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Reedley',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/reedley',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.5963,
+    longitude: -119.4503,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Reedley' },
+    { '@type': 'City', name: 'Sanger' },
+    { '@type': 'City', name: 'Dinuba' },
+    { '@type': 'City', name: 'Orange Cove' },
+    { '@type': 'City', name: 'Parlier' },
+    { '@type': 'City', name: 'Selma' },
+    { '@type': 'City', name: 'Kingsburg' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much can Reedley homeowners save with solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Reedley homeowners typically save 70-85% on their monthly electricity bills after switching to solar. With approximately 280 sunny days per year and high PG&E rates, most families save $1,500-$2,500 annually. The 30% federal tax credit further reduces your total investment, making solar one of the best home upgrades in the Kings River area.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Reedley a good location for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Reedley is an excellent location for solar energy. With roughly 280 sunny days per year and a warm Central Valley climate, solar panels in Reedley produce strong energy output year-round. The combination of high sun exposure and rising PG&E electricity rates means Reedley homeowners see some of the fastest payback periods in California.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Solar Center serve Reedley and nearby communities?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Solar Center by Dura-Foam proudly serves Reedley and surrounding communities including Sanger, Dinuba, Orange Cove, Parlier, Selma, and Kingsburg. Our team is headquartered in Bakersfield and serves homeowners throughout the Central Valley with custom-designed solar installations and $0-down financing options.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Reedley CA | Local Solar Company | Solar Center"
+  description="Reedley's trusted solar installer serving the World's Fruit Basket. 280+ sunny days, major savings on PG&E bills. Free consultation, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Reedley, CA"
+    subtitle="Powering the World's Fruit Basket with clean solar energy. 280+ sunny days. Maximum savings on PG&E bills."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Reedley's Solar Energy Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Known as "The World's Fruit Basket," Reedley sits along the scenic Kings River in the heart of Fresno County's agricultural belt. Solar Center by Dura-Foam helps Reedley homeowners harness the same abundant sunshine that makes this region one of California's most productive farming areas — turning it into clean, affordable electricity for your home.</p>
+              <p>With approximately 280 sunny days per year, Reedley is an ideal location for residential solar. Rising PG&E rates mean that families across this close-knit community are paying more every summer to keep their homes cool. Solar panels eliminate that burden, locking in low energy costs for decades while increasing your home's value.</p>
+              <p>As a division of Dura-Foam Roofing & Solar Center, we bring 40+ years of experience to every installation. We understand Fresno County permitting requirements, PG&E interconnection processes, and the specific roof and climate considerations that matter in the Kings River corridor. From the arts district downtown to rural properties along the river, we design systems tailored to Reedley living.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Reedley Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">280+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">85%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Reedley Neighborhoods & Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Reedley', 'Kings River Area', 'North Reedley', 'South Reedley', 'Reedley Heights', 'Manning Avenue Corridor', 'Sanger', 'Dinuba', 'Orange Cove', 'Parlier', 'Selma', 'Kingsburg'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Reedley Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much can Reedley homeowners save with solar?', a: 'Reedley homeowners typically save 70-85% on their monthly electricity bills after switching to solar. With about 280 sunny days per year and high PG&E rates, most families save $1,500-$2,500 annually. We offer $0-down financing options.' },
+                { q: 'Is Reedley a good location for solar panels?', a: 'Reedley is an excellent location for solar energy. With roughly 280 sunny days per year and a warm Central Valley climate, solar panels produce strong energy output year-round. High sun exposure and rising PG&E rates mean fast payback periods for homeowners.' },
+                { q: 'Does Solar Center serve Reedley and nearby communities?', a: 'Yes, Solar Center by Dura-Foam proudly serves Reedley and surrounding communities including Sanger, Dinuba, Orange Cove, Parlier, Selma, and Kingsburg. We offer custom-designed solar installations and $0-down financing options.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Reedley Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Kerman', cities: 'Kerman, Fresno, San Joaquin, Firebaugh', href: '/locations/kerman' },
+          { name: 'Stockton', cities: 'Stockton, Modesto, Merced', href: '/locations/stockton' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

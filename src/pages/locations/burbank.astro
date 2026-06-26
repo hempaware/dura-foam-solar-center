@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Burbank', href: '/locations/burbank' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Burbank',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/burbank',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.1808,
+    longitude: -118.3090,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Burbank' },
+    { '@type': 'City', name: 'North Hollywood' },
+    { '@type': 'City', name: 'Sun Valley' },
+    { '@type': 'City', name: 'Toluca Lake' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Burbank?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '$15,000-$30,000 before 30% credit. BWP\'s solar programs may provide additional incentives for Burbank residents.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Burbank Water and Power support solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, BWP offers net metering and solar rebate programs. As a municipal utility, they provide competitive rates and straightforward interconnection for solar customers.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is solar popular in the entertainment industry?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. Many Burbank studios and production companies have gone solar. Homeowners in the Media Capital benefit from the same clean energy savings while reducing their carbon footprint.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Burbank CA | Expert Solar Installers | Solar Center"
+  description="Burbank solar installation. BWP solar programs, entertainment capital going green. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Burbank, CA"
+    subtitle="Burbank Water & Power solar programs. The Media Capital's trusted solar installer. Maximum savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Burbank Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Burbank is the Media Capital of the World — home to Disney, Warner Bros., and NBC Universal — and it's rapidly becoming a leader in clean energy too. With 286 sunny days per year and a forward-thinking municipal utility, Burbank homeowners are perfectly positioned to benefit from solar energy. Solar Center by Dura-Foam brings decades of California solar expertise to every Burbank neighborhood, from the beautiful hillside homes near Verdugo Mountains to the vibrant streets of Magnolia Park.</p>
+              <p>Burbank is served by BWP (Burbank Water and Power), a municipal utility that offers its own net metering and solar rebate programs. Unlike investor-owned utilities, BWP provides competitive rates and straightforward interconnection for solar customers, making the transition to solar energy seamless for Burbank residents. The entertainment industry's growing commitment to sustainability has inspired homeowners across the city to follow suit.</p>
+              <p>From the charming bungalows of Magnolia Park to the spacious homes in Rancho Equestrian and the hillside properties near Wildwood Canyon, Burbank's diverse housing stock offers excellent solar potential. Our installation team understands the unique roofing considerations across Burbank's neighborhoods and designs systems that maximize production while complementing your home's architecture.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Burbank Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">286</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$170+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Burbank Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Burbank', 'Magnolia Park', 'Media District', 'Rancho Equestrian', 'Hillside', 'Airport District', 'North Hollywood', 'Sun Valley', 'Toluca Lake', 'Riverside Rancho', 'Chandler Bikeway area', 'Verdugo Viejo', 'Wildwood Canyon', 'Castaway', 'Bel Aire'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Burbank Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Burbank?', a: '$15,000-$30,000 before 30% credit. BWP\'s solar programs may provide additional incentives for Burbank residents.' },
+                { q: 'Does Burbank Water and Power support solar?', a: 'Yes, BWP offers net metering and solar rebate programs. As a municipal utility, they provide competitive rates and straightforward interconnection for solar customers.' },
+                { q: 'Is solar popular in the entertainment industry?', a: 'Absolutely. Many Burbank studios and production companies have gone solar. Homeowners in the Media Capital benefit from the same clean energy savings while reducing their carbon footprint.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Burbank Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Glendale', cities: 'Glendale, La Crescenta, Montrose', href: '/locations/glendale' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

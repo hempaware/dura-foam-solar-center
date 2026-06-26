@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Tehachapi', href: '/locations/tehachapi' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Tehachapi',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/tehachapi',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.1322,
+    longitude: -118.4490,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Tehachapi' },
+    { '@type': 'City', name: 'Bear Valley Springs' },
+    { '@type': 'City', name: 'Stallion Springs' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Tehachapi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Tehachapi typically cost between $14,000-$29,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$20,300. Tehachapi homes vary widely — from compact mountain cabins to large Bear Valley Springs estates. We design systems to match your specific needs and offer $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Tehachapi good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tehachapi is very good for solar energy. At 4,000 feet elevation, the mountain air is cleaner and cooler, which actually helps solar panels operate more efficiently than in the hotter valley below. The area enjoys 260+ sunny days per year. Tehachapi is served by Southern California Edison (SCE), and solar helps offset their rates significantly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Tehachapi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels in Tehachapi last 25-30+ years with 25-year manufacturer warranties. The cooler mountain temperatures actually benefit panel longevity compared to extreme valley heat. Panels typically maintain 85-90% of original output after 25 years. The area\'s wind farm heritage shows that renewable energy technology is built to endure in mountain conditions.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Tehachapi CA | Local Solar Company | Solar Center"
+  description="Tehachapi's trusted solar installer. Mountain living meets solar savings — 260+ sunny days at 4,000 ft. Clean air, cooler panels, better efficiency. Free consultation. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Tehachapi, CA"
+    subtitle="Mountain solar at 4,000 feet. Cooler panels, cleaner air, outstanding efficiency."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Tehachapi's Mountain Solar Specialists</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Perched at 4,000 feet in the Tehachapi Mountains, this growing community is no stranger to renewable energy. The iconic Tehachapi Wind Farm has been generating clean power from mountain winds for decades. Now, Tehachapi homeowners are adding solar to the mix — and Solar Center by Dura-Foam is the local team making it happen.</p>
+              <p>Tehachapi's elevation gives it a unique advantage for solar energy. The cooler mountain air means solar panels run more efficiently than they do in the sweltering valley below — heat reduces panel output, so Tehachapi's moderate temperatures actually boost production. Combined with 260+ sunny days per year and the clean mountain atmosphere, solar panels here deliver outstanding performance.</p>
+              <p>Whether your home is in downtown Tehachapi, the sprawling estates of Bear Valley Springs, the equestrian properties of Stallion Springs, or the wooded lots of Alpine Forest, our team designs solar systems tailored to mountain living. We understand SCE interconnection requirements, the unique permitting process for mountain properties, and how to optimize panel placement on varied terrain.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Tehachapi Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">260+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$170+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Tehachapi Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Tehachapi', 'Bear Valley Springs', 'Stallion Springs', 'Golden Hills', 'Alpine Forest', 'Brite Valley', 'Keene', 'Caliente'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Tehachapi Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Tehachapi?', a: 'Solar installations in Tehachapi typically cost $14,000-$29,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$20,300. Homes range from compact cabins to large estates. We offer $0-down financing.' },
+                { q: 'Is Tehachapi good for solar panels?', a: 'Tehachapi is excellent for solar. At 4,000 feet, cooler mountain air helps panels run more efficiently than in the hot valley below. The area enjoys 260+ sunny days per year. SCE rates make solar a strong financial decision.' },
+                { q: 'How long do solar panels last in Tehachapi?', a: 'Solar panels last 25-30+ years with 25-year manufacturer warranties. Tehachapi\'s cooler temperatures actually benefit panel longevity. Panels maintain 85-90% output after 25 years — the area\'s wind farm heritage proves renewable tech endures in mountain conditions.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Tehachapi Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Taft', cities: 'Taft, Maricopa, Fellows', href: '/locations/taft' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Arvin', cities: 'Arvin, Lamont, Bear Mountain', href: '/locations/arvin' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

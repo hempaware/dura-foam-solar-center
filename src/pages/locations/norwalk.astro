@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Norwalk', href: '/locations/norwalk' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Norwalk',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/norwalk',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.9022,
+    longitude: -118.0817,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Norwalk' },
+    { '@type': 'City', name: 'Cerritos' },
+    { '@type': 'City', name: 'Artesia' },
+    { '@type': 'City', name: 'La Mirada' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Norwalk?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '$15,000-$30,000 before 30% credit. Norwalk\'s classic suburban homes with large roof areas are perfect for solar installation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Norwalk a good location for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. With 286 sunny days per year and SCE\'s rising electricity rates, Norwalk homeowners see excellent returns. The flat terrain and suburban layout provide optimal sun exposure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does SCE net metering work for Norwalk residents?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under SCE\'s current net metering program, excess solar energy sent to the grid earns credits on your bill. This means your solar panels save you money even when you\'re not home using electricity.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Norwalk CA | Expert Solar Installers | Solar Center"
+  description="Norwalk solar installation. Southeast LA County solar experts. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Norwalk, CA"
+    subtitle="Southeast LA County's solar experts. 286 sunny days. Save big on SCE electricity bills."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Norwalk Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Norwalk is a centrally located Southeast LA County hub where classic suburban homes meet growing energy consciousness. With 286 sunny days per year and SCE's rising electricity rates, Norwalk homeowners are discovering that solar energy is one of the smartest investments they can make. Solar Center by Dura-Foam brings decades of California solar expertise to this family-oriented community and its surrounding neighborhoods.</p>
+              <p>As an SCE (Southern California Edison) service area, Norwalk residents face steadily increasing electricity rates. Solar energy offers a powerful hedge against these rising costs. The city's classic suburban homes feature ideal roof profiles for solar installation — large, unobstructed surfaces with excellent southern exposure. Adjacent to affluent Cerritos, Norwalk homeowners are seeing strong property value increases from solar installations.</p>
+              <p>Norwalk's flat terrain and suburban layout provide optimal sun exposure across the city's neighborhoods. From the established homes near Hermosillo Park to the residential streets of Paddison Square, Norwalk's housing stock is perfectly suited for solar. As a Metrolink-connected community with easy access to the greater LA area, Norwalk residents enjoy both urban connectivity and the suburban roof space that makes solar so effective.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Norwalk Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">286</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$170+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Norwalk Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['South Norwalk', 'North Norwalk', 'Hermosillo Park', 'Paddison Square', 'Cerritos', 'Artesia', 'La Mirada', 'Santa Fe Springs', 'Dairy Valley', 'Southeast', 'Hargitt', 'Ramona Park', 'Civic Center', 'Little Lake', 'Foster Road'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Norwalk Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Norwalk?', a: '$15,000-$30,000 before 30% credit. Norwalk\'s classic suburban homes with large roof areas are perfect for solar installation.' },
+                { q: 'Is Norwalk a good location for solar panels?', a: 'Yes. With 286 sunny days per year and SCE\'s rising electricity rates, Norwalk homeowners see excellent returns. The flat terrain and suburban layout provide optimal sun exposure.' },
+                { q: 'How does SCE net metering work for Norwalk residents?', a: 'Under SCE\'s current net metering program, excess solar energy sent to the grid earns credits on your bill. This means your solar panels save you money even when you\'re not home using electricity.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Norwalk Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Downey', cities: 'Downey, Bellflower, Paramount', href: '/locations/downey' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

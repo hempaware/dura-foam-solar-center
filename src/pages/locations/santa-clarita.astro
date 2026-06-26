@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Santa Clarita', href: '/locations/santa-clarita' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Santa Clarita',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/santa-clarita',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.3917,
+    longitude: -118.5426,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Santa Clarita' },
+    { '@type': 'City', name: 'Valencia' },
+    { '@type': 'City', name: 'Saugus' },
+    { '@type': 'City', name: 'Canyon Country' },
+    { '@type': 'City', name: 'Newhall' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Santa Clarita?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The average residential solar installation in Santa Clarita costs between $16,000-$34,000 before the 30% federal tax credit. After the credit, most homeowners pay $11,200-$23,800. Santa Clarita homes tend to need larger systems (7-12 kW) due to hot summers and high AC usage. We offer $0-down financing options.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What direction should solar panels face in Santa Clarita?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'South-facing panels produce the most total energy in Santa Clarita. However, with NEM 3.0 and time-of-use rates, west-facing panels can be more valuable because they generate more electricity during expensive late-afternoon peak hours when AC usage is highest. Many Santa Clarita homes benefit from a split south/west orientation. Our design team optimizes panel placement based on your specific roof and energy usage patterns.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How high are SCE electricity rates in Santa Clarita?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SCE rates in Santa Clarita are among the highest in California, with tiered rates exceeding $0.40/kWh for higher usage levels. During summer months, when Santa Clarita temperatures regularly exceed 100°F, many homeowners see electric bills of $300-$500+. Solar locks in a lower energy cost for 25+ years, protecting you from ongoing rate increases that have averaged 6-8% annually.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Santa Clarita CA | Top-Rated Solar Company | Solar Center"
+  description="Santa Clarita solar installation. 290+ sunny days, save on SCE bills. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Santa Clarita, CA"
+    subtitle="290+ sunny days and scorching summers make Santa Clarita ideal for solar. Cut your SCE bill by up to 80%."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Santa Clarita's Solar Energy Leader</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Santa Clarita is one of the fastest-growing cities in Los Angeles County — and one of the best for solar energy. With 290+ sunny days per year and summer temperatures that regularly push past 100°F, Santa Clarita homeowners face some of the highest electricity bills in Southern California. Solar transforms that punishing sunshine into real savings.</p>
+              <p>The Santa Clarita Valley's newer housing stock is a major advantage for solar installation. Communities like Stevenson Ranch, Bridgeport, and Tesoro del Valle feature homes built with modern roofing materials and favorable orientations. Many homes in Valencia and Saugus have large, unshaded south- or west-facing roof planes that are perfect for solar panel placement.</p>
+              <p>As an SCE service territory, Santa Clarita homeowners pay some of California's steepest electricity rates. Under tiered pricing, high-usage households can exceed $0.40 per kWh. Solar Center by Dura-Foam designs systems that offset the most expensive tiers first, maximizing your savings from day one. We handle all SCE interconnection paperwork and permitting with the City of Santa Clarita.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Santa Clarita Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">290+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$190+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Santa Clarita Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Valencia', 'Saugus', 'Canyon Country', 'Newhall', 'Stevenson Ranch', 'Castaic', 'Val Verde', 'Agua Dulce', 'Acton', 'Sand Canyon', 'Placerita Canyon', 'Westridge', 'Bridgeport', 'River Village', 'Tesoro del Valle'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Santa Clarita Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Santa Clarita?', a: 'The average residential solar installation in Santa Clarita costs between $16,000-$34,000 before the 30% federal tax credit. After the credit, most homeowners pay $11,200-$23,800. We offer $0-down financing options for every budget.' },
+                { q: 'What direction should solar panels face in Santa Clarita?', a: 'South-facing panels produce the most total energy, but west-facing panels can be more valuable under time-of-use rates because they generate power during expensive late-afternoon peak hours. Many Santa Clarita homes benefit from a south/west split orientation.' },
+                { q: 'How high are SCE electricity rates in Santa Clarita?', a: 'SCE rates in Santa Clarita exceed $0.40/kWh for higher usage tiers. Summer bills of $300-$500+ are common when temperatures exceed 100°F. Solar locks in a lower energy cost for 25+ years, protecting against annual rate increases of 6-8%.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Santa Clarita Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Los Angeles', cities: 'Los Angeles, Hollywood, Silver Lake', href: '/locations/los-angeles' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

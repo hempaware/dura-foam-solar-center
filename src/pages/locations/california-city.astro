@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'California City', href: '/locations/california-city' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — California City',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/california-city',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.1258,
+    longitude: -117.9859,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'California City' },
+    { '@type': 'City', name: 'Mojave' },
+    { '@type': 'City', name: 'North Edwards' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in California City?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in California City typically cost between $13,000-$27,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,900. With extremely affordable housing and high desert sunshine, California City offers one of the best solar ROI opportunities in the state. We provide $0-down financing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is California City good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'California City is exceptional for solar energy. Located in the high Mojave Desert with 290+ sunny days per year, the area receives some of the most intense solar radiation in the country. The wide-open desert landscape means virtually zero shading issues. SCE serves the area, and extreme summer heat drives high AC costs that solar can dramatically reduce.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in California City?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels in California City last 25-30+ years. Modern panels are specifically engineered for extreme desert conditions — high heat, UV exposure, and dust. Manufacturers provide 25-year warranties, and panels typically maintain 85-90% of original output after 25 years. We select desert-rated panels for California City installations.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation California City CA | Local Solar Company | Solar Center"
+  description="California City's trusted solar installer. 290+ sunny desert days, extreme savings on SCE bills. Desert-rated panels, $0 down financing. Free consultation. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in California City, CA"
+    subtitle="Desert sunshine, desert savings. 290+ sunny days in the high Mojave — perfect for solar."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">California City's Desert Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>California City is the third-largest city in the state by land area, and every acre of it is bathed in intense Mojave Desert sunshine. Located northeast of Tehachapi near Edwards Air Force Base and the Mojave Air and Space Port, this high desert community is a natural fit for solar energy — and Solar Center by Dura-Foam is the team bringing it home.</p>
+              <p>With 290+ sunny days per year and some of the highest solar irradiance in the entire United States, California City is a solar powerhouse waiting to happen. But that same desert sun drives extreme summer temperatures and punishing SCE electricity bills. Homeowners who rely on air conditioning from May through October can see bills exceed $210 per month. Solar panels turn that desert heat liability into a financial asset.</p>
+              <p>Our team selects panels specifically rated for desert conditions — engineered to handle extreme UV, high temperatures, and dust. We design systems for California City's large lots and open terrain, maximizing production. From SCE interconnection to city permitting, we manage every step of your solar journey from our Kern County office.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why California City Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">290+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$210+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">85%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">California City Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['California City', 'Mojave', 'North Edwards', 'Desert Hills', 'Cal City Boulevard', 'Randsburg', 'Boron'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">California City Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in California City?', a: 'Solar installations typically cost $13,000-$27,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,100-$18,900. Affordable housing and extreme sunshine make Cal City one of the best solar ROI opportunities in the state.' },
+                { q: 'Is California City good for solar panels?', a: 'California City is exceptional for solar. With 290+ sunny days per year in the high Mojave Desert, the area receives some of the most intense solar radiation in the country. Wide-open terrain means zero shading issues. SCE rates make solar essential.' },
+                { q: 'How long do solar panels last in California City?', a: 'Solar panels last 25-30+ years even in desert conditions. Modern panels are engineered for extreme heat, UV, and dust. We select desert-rated panels that maintain 85-90% output after 25 years with full manufacturer warranties.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your California City Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Ridgecrest', cities: 'Ridgecrest, Inyokern, China Lake', href: '/locations/ridgecrest' },
+          { name: 'Tehachapi', cities: 'Tehachapi, Bear Valley Springs', href: '/locations/tehachapi' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

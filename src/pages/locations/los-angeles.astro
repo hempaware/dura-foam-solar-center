@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Los Angeles', href: '/locations/los-angeles' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Los Angeles',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/los-angeles',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.0522,
+    longitude: -118.2437,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Los Angeles' },
+    { '@type': 'City', name: 'Hollywood' },
+    { '@type': 'City', name: 'Silver Lake' },
+    { '@type': 'City', name: 'Echo Park' },
+    { '@type': 'City', name: 'Downtown LA' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Los Angeles?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A typical residential solar installation in Los Angeles costs between $16,000-$32,000 before the 30% federal tax credit. After the credit, most LA homeowners pay $11,200-$22,400. System size depends on your energy usage — most Los Angeles homes need 6-10 kW systems due to moderate AC use. We offer $0-down financing options to make solar affordable for every neighborhood.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What LADWP solar programs are available?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LADWP offers several solar incentives for Los Angeles residents. The utility provides net metering credits for excess solar energy fed back to the grid. LADWP customers also benefit from the Feed-in Tariff program and various rebate programs for residential solar installations. As a municipal utility, LADWP sets its own solar policies separate from the CPUC, which can be advantageous for homeowners.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does NEM 3.0 affect solar in Los Angeles?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'NEM 3.0 (Net Billing Tariff) primarily affects customers of investor-owned utilities like SCE and PG&E. LADWP customers in the City of Los Angeles operate under different net metering rules set by the municipal utility, which currently remain more favorable. However, if your LA-area home is in an SCE territory, NEM 3.0 makes it more important than ever to right-size your system and consider battery storage.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Los Angeles CA | Expert Solar Installers | Solar Center"
+  description="Los Angeles solar installation by Solar Center by Dura-Foam. LADWP solar programs, 284 sunny days. Free quote, $0 down. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Los Angeles, CA"
+    subtitle="Power your home with 284 days of LA sunshine. Expert solar installation across every neighborhood."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Los Angeles Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Los Angeles is a city built for solar energy. With 284 sunny days per year and a growing commitment to clean energy, LA homeowners are making the switch to solar at record rates. Solar Center by Dura-Foam brings decades of California solar expertise to every neighborhood in the city — from the hillside homes of Silver Lake to the bungalows of Highland Park.</p>
+              <p>Most of Los Angeles is served by LADWP, the nation's largest municipal utility. Unlike investor-owned utilities governed by the CPUC, LADWP sets its own net metering and solar incentive programs. This means LA residents often benefit from more favorable solar policies, making the economics of going solar even stronger in the City of Angels.</p>
+              <p>Urban solar in LA comes with unique considerations — from flat rooftops on mid-century homes to navigating HOA requirements in planned communities. Our installation team understands the diverse roofing styles across LA's neighborhoods and designs systems that maximize production while complementing your home's architecture.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Los Angeles Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">284</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Los Angeles Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Hollywood', 'Silver Lake', 'Echo Park', 'Downtown LA', 'Venice', 'Los Feliz', 'Highland Park', 'Eagle Rock', 'Westlake', 'Koreatown', 'Mid-City', 'Atwater Village', 'Glassell Park', 'Boyle Heights', 'El Sereno'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Los Angeles Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Los Angeles?', a: 'A typical residential solar installation in Los Angeles costs between $16,000-$32,000 before the 30% federal tax credit. After the credit, most LA homeowners pay $11,200-$22,400. We offer $0-down financing options for every budget.' },
+                { q: 'What LADWP solar programs are available?', a: 'LADWP offers net metering credits, the Feed-in Tariff program, and various rebate programs for residential solar. As a municipal utility, LADWP sets its own solar policies which are often more favorable than investor-owned utility programs.' },
+                { q: 'How does NEM 3.0 affect solar in Los Angeles?', a: 'NEM 3.0 primarily affects SCE and PG&E customers. LADWP customers in the City of Los Angeles operate under separate, often more favorable net metering rules. If your home is in SCE territory, we\'ll help you right-size your system and evaluate battery storage options.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Los Angeles Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Long Beach', cities: 'Long Beach, Signal Hill, Lakewood', href: '/locations/long-beach' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

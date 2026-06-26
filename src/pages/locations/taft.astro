@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Taft', href: '/locations/taft' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Taft',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/taft',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.1425,
+    longitude: -119.4563,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Taft' },
+    { '@type': 'City', name: 'Maricopa' },
+    { '@type': 'City', name: 'Fellows' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Taft?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in Taft typically cost between $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. With some of the most affordable housing in Kern County, solar offers an excellent return on investment in Taft. We provide $0-down financing options.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Taft good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Taft is outstanding for solar energy. Located in western Kern County with 275+ sunny days per year, the area receives intense, consistent sunlight. As an energy town historically powered by oil, Taft is uniquely positioned to embrace the next chapter in energy — solar. SCE serves the area, and solar significantly reduces monthly electricity costs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Taft?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern solar panels installed in Taft last 25-30+ years with manufacturer warranties covering 25 years. The panels are built for hot, dry climates like western Kern County and typically maintain 85-90% of their original output even after decades of service.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Taft CA | Local Solar Company | Solar Center"
+  description="Taft's trusted solar installer. From oil country to solar country — 275+ sunny days, affordable homes, big savings on SCE bills. Free consultation. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Taft, CA"
+    subtitle="From oil country to solar country. 275+ sunny days powering Taft's energy future."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Taft's Energy Future Starts Here</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Taft knows energy. Built alongside the legendary Midway-Sunset oil field — one of the largest in the United States — this western Kern County community has powered California for over a century. Now, Solar Center by Dura-Foam is helping Taft homeowners write the next chapter in energy by switching to solar power.</p>
+              <p>With 275+ sunny days per year and the dry, clear skies of the western San Joaquin Valley, Taft is perfectly positioned for solar energy. The flat terrain around the city means panels get unobstructed sun exposure from dawn to dusk. SCE electricity rates continue to rise, and solar lets you lock in predictable, lower energy costs for decades.</p>
+              <p>Taft's affordable housing makes the economics of solar especially attractive. When your home costs less, the percentage return on a solar investment goes through the roof. Combine that with the 30% federal tax credit and our $0-down financing, and many Taft homeowners find their monthly solar payment is less than their old SCE bill — immediate savings from day one.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Taft Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">275+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$185+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Taft Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Taft', 'Maricopa', 'Fellows', 'Ford City', 'South Taft', 'Taft Heights', 'Derby Acres', 'McKittrick'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Taft Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Taft?', a: 'Solar installations in Taft typically cost $12,000-$25,000 before the 30% federal tax credit. After the credit, most homeowners pay $8,400-$17,500. Affordable housing makes solar ROI especially strong here. We offer $0-down financing.' },
+                { q: 'Is Taft good for solar panels?', a: 'Taft is outstanding for solar. With 275+ sunny days per year, flat terrain, and clear western Kern County skies, solar systems perform exceptionally. As an energy town transitioning to renewables, Taft is a natural fit for solar.' },
+                { q: 'How long do solar panels last in Taft?', a: 'Modern solar panels last 25-30+ years with 25-year manufacturer warranties. Built for hot, dry climates like Taft\'s, panels maintain 85-90% of their original output even after decades of service.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Taft Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Tehachapi', cities: 'Tehachapi, Bear Valley Springs', href: '/locations/tehachapi' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Shafter', cities: 'Shafter, Wasco, Buttonwillow', href: '/locations/shafter' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Glendale', href: '/locations/glendale' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Glendale',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/glendale',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.1425,
+    longitude: -118.2551,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Glendale' },
+    { '@type': 'City', name: 'La Crescenta' },
+    { '@type': 'City', name: 'Montrose' },
+    { '@type': 'City', name: 'La Cañada Flintridge' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Glendale?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A typical residential solar installation in Glendale costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most Glendale homeowners pay $10,500-$21,000. Glendale Water & Power, as a municipal utility, may offer additional incentives and rebate programs that further reduce your out-of-pocket costs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Glendale Water & Power support solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Glendale Water & Power (GWP) has net metering and solar incentive programs for residents. As a municipal utility, GWP sets its own solar policies separate from investor-owned utilities, and they offer competitive rates for solar customers. GWP actively supports residential solar adoption with programs designed to make going solar more affordable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can solar panels be installed on hillside homes in Glendale?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, we specialize in hillside installations throughout Glendale and the surrounding Verdugo Mountains area. Hillside homes often have excellent south-facing exposure that is ideal for solar energy production. Our experienced installation team designs custom racking systems to handle the unique roof angles and orientations found on hillside properties.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Glendale CA | Expert Solar Installers | Solar Center"
+  description="Glendale solar installation. GWP solar incentives, expert hillside installations. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Glendale, CA"
+    subtitle="Glendale Water & Power solar programs. Expert hillside installations. Maximum savings for Glendale homeowners."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Glendale Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Glendale is one of the best cities in Southern California for solar energy. With 286 sunny days per year and a forward-thinking municipal utility, Glendale homeowners are uniquely positioned to save with solar. Solar Center by Dura-Foam brings decades of California solar expertise to every neighborhood — from the hillside homes of Verdugo Woodlands to the vibrant streets near the Americana at Brand.</p>
+              <p>Glendale is served by Glendale Water & Power (GWP), a municipally owned utility that sets its own net metering and solar incentive programs. Unlike investor-owned utilities governed by the CPUC, GWP offers competitive rates and solar-friendly policies that make the economics of going solar even stronger for Glendale residents. This municipal advantage means more predictable savings and a faster return on your solar investment.</p>
+              <p>The city's diverse mix of historic craftsman bungalows, mid-century modern homes, and newer hillside construction creates unique solar opportunities. Our installation team understands Glendale's varied roofing styles and terrain, from flat-roofed homes in Downtown Glendale to steep hillside properties along the Verdugo Mountains. We design systems that maximize production while respecting the architectural character of each neighborhood and its diverse community.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Glendale Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">286</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$170+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">75%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Glendale Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Glendale', 'Adams Hill', 'Verdugo Woodlands', 'Montrose', 'La Crescenta', 'Sparr Heights', 'Rossmoyne', 'College Hills', 'Brockmont', 'Emerald Isle', 'Glenoaks Canyon', 'Chevy Chase', 'Pelanconi', 'Kenneth Village', 'Casa Verdugo'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Glendale Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Glendale?', a: 'A typical residential solar installation in Glendale costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most Glendale homeowners pay $10,500-$21,000. GWP may offer additional incentives that further reduce your costs.' },
+                { q: 'Does Glendale Water & Power support solar?', a: 'Yes, Glendale Water & Power (GWP) has net metering and solar incentive programs for residents. As a municipal utility, they offer competitive rates for solar customers and actively support residential solar adoption.' },
+                { q: 'Can solar panels be installed on hillside homes in Glendale?', a: 'Yes, we specialize in hillside installations. Verdugo Mountains homes often have excellent south-facing exposure ideal for solar. Our team designs custom racking systems to handle the unique roof angles found on hillside properties.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Glendale Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Pasadena', cities: 'Pasadena, Altadena, South Pasadena', href: '/locations/pasadena' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

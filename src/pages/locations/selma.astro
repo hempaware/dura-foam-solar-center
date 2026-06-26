@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/selma' },
+  { label: 'Selma', href: '/locations/selma' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Selma',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/selma',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.5708,
+    longitude: -119.6121,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Selma' },
+    { '@type': 'City', name: 'Kingsburg' },
+    { '@type': 'City', name: 'Fowler' },
+    { '@type': 'City', name: 'Fresno' },
+    { '@type': 'City', name: 'Parlier' },
+    { '@type': 'City', name: 'Reedley' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Selma, CA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The average residential solar installation in Selma costs between $14,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$19,600. System size depends on your energy usage — most Selma homes need 5-10 kW systems due to high summer cooling demands. We offer $0-down financing options to make solar accessible to every homeowner.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is Selma a great city for solar energy?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Selma enjoys approximately 280 sunny days per year, ranking it among the sunniest cities in California. Located in the heart of the San Joaquin Valley along Highway 99, Selma\'s hot summers mean high air conditioning usage and expensive PG&E bills. Solar panels convert that abundant sunshine into free electricity, making Selma an ideal city for solar investment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Solar Center serve the Selma area?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Solar Center by Dura-Foam proudly serves Selma and surrounding communities including Kingsburg, Fowler, Parlier, and Reedley. While our office is in Bakersfield, we have experienced installation crews throughout the Central Valley. We handle all Fresno County permitting and PG&E interconnection for Selma homeowners.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Selma CA | Local Solar Company | Solar Center"
+  description="Selma CA solar installation — Raisin Capital of the World. 280+ sunny days, save big on PG&E bills. Free consultation, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Selma, CA"
+    subtitle="The Raisin Capital of the World — now harvesting sunshine. 280+ sunny days. Cut your PG&E bills with solar."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Selma's Trusted Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Selma has long been known as the Raisin Capital of the World — a city built on agriculture and sunshine. Now, Solar Center by Dura-Foam is helping Selma homeowners put that sunshine to work in a new way. Our custom-designed solar systems slash PG&E bills while increasing your home's value along the Highway 99 corridor.</p>
+              <p>With approximately 280 sunny days per year, Selma is one of the sunniest cities in the San Joaquin Valley. That intense Central Valley sun drives summer electricity bills sky-high as air conditioners work overtime. Solar panels turn Selma's greatest natural resource into free electricity, saving homeowners thousands of dollars every year.</p>
+              <p>Solar Center serves Selma and the surrounding communities of Kingsburg, Fowler, Parlier, and Reedley. We manage the entire process from system design through Fresno County permitting, professional installation, and PG&E interconnection — so you can focus on what matters while we handle the details.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Selma Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">280+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$170+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Selma Neighborhoods & Areas We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown Selma', 'North Selma', 'South Selma', 'West Selma', 'Lincoln Village', 'Kingsburg', 'Fowler', 'Parlier', 'Reedley', 'Del Rey', 'Sanger', 'Fresno', 'Dinuba', 'Traver', 'Monmouth'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Selma Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Selma, CA?', a: 'The average residential solar installation in Selma costs between $14,000-$28,000 before the 30% federal tax credit. After the credit, most homeowners pay $9,800-$19,600. We offer $0-down financing to make solar accessible to every homeowner.' },
+                { q: 'Why is Selma a great city for solar energy?', a: 'Selma enjoys approximately 280 sunny days per year, ranking it among the sunniest cities in California. Hot summers mean high AC usage and expensive PG&E bills — solar panels convert that abundant sunshine into free electricity.' },
+                { q: 'Does Solar Center serve the Selma area?', a: 'Yes, Solar Center by Dura-Foam proudly serves Selma and surrounding communities including Kingsburg, Fowler, Parlier, and Reedley. We handle all Fresno County permitting and PG&E interconnection for Selma homeowners.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Selma Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Wasco', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Sanger', cities: 'Sanger, Reedley, Squaw Valley', href: '/locations/sanger' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

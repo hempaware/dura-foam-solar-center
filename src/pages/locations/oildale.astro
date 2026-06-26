@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/oildale' },
+  { label: 'Oildale', href: '/locations/oildale' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Oildale',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/oildale',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.4197,
+    longitude: -119.0195,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Oildale' },
+    { '@type': 'City', name: 'North Bakersfield' },
+    { '@type': 'City', name: 'Bakersfield' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I get solar panels installed in Oildale?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. Oildale is one of the closest communities to our Bakersfield headquarters on Charity Ave, just across the Kern River. We regularly install solar systems throughout Oildale and North Bakersfield. As an unincorporated community in Kern County, permitting is handled through the county, which we manage for you as part of every installation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much can Oildale homeowners save with solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most Oildale homeowners save 70-80% on their monthly electricity bills after going solar. With PG&E rates climbing every year and summer bills regularly exceeding $190, a properly sized solar system typically pays for itself within 5-7 years. The 30% federal tax credit makes the upfront investment even more manageable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Solar Center offer financing for Oildale residents?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We offer $0-down financing options that allow Oildale homeowners to start saving on electricity from day one. Monthly loan payments are typically less than your current PG&E bill, so you save money immediately while building equity in a home improvement that increases property value.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Oildale CA | Local Solar Installer | Solar Center"
+  description="Oildale's nearby solar installer — just across the Kern River from our Bakersfield HQ. 270+ sunny days, big savings on PG&E. Free quotes, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Oildale, CA"
+    subtitle="Minutes from our Bakersfield headquarters. Trusted solar for Oildale homeowners."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Oildale's Nearby Solar Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Oildale sits just north of the Kern River from downtown Bakersfield — and just minutes from our office on Charity Ave. As the closest community to Solar Center headquarters, Oildale homeowners get fast service, easy site visits, and a team that knows the neighborhood inside and out.</p>
+              <p>Named for the oil fields that shaped its history, Oildale is a hardworking community where every dollar counts. Rising PG&E rates hit working families hardest, and with summer temperatures regularly topping 100 degrees, air conditioning isn't optional. Solar energy lets you lock in predictable energy costs and stop dreading your summer electric bill.</p>
+              <p>Because Oildale is an unincorporated part of Kern County, solar permitting goes through the county rather than a city office. We handle every step — from the Kern County building permit to PG&E interconnection — so you don't have to navigate the paperwork. With 40+ years of local experience through our parent company Dura-Foam, we know the process cold.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Oildale Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$190+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Oildale Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['North Oildale', 'South Oildale', 'Standard', 'Rosedale', 'North Bakersfield', 'Riverview', 'Pioneer Village'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Oildale Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'Can I get solar panels installed in Oildale?', a: 'Absolutely. Oildale is one of the closest communities to our Bakersfield headquarters. As an unincorporated Kern County community, permitting is handled through the county, which we manage for you as part of every installation.' },
+                { q: 'How much can Oildale homeowners save with solar?', a: 'Most Oildale homeowners save 70-80% on their monthly electricity bills after going solar. With PG&E rates climbing and summer bills regularly exceeding $190, a properly sized solar system typically pays for itself within 5-7 years.' },
+                { q: 'Does Solar Center offer financing for Oildale residents?', a: 'Yes. We offer $0-down financing options that allow you to start saving from day one. Monthly loan payments are typically less than your current PG&E bill, so you save money immediately while increasing your property value.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Oildale Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Rosedale', cities: 'Rosedale, Riverlakes, Haggin Oaks', href: '/locations/rosedale' },
+          { name: 'Shafter', cities: 'Shafter, Wasco, Buttonwillow', href: '/locations/shafter' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

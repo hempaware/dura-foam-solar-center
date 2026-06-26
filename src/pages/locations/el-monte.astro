@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'El Monte', href: '/locations/el-monte' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — El Monte',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/el-monte',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.0686,
+    longitude: -118.0276,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'El Monte' },
+    { '@type': 'City', name: 'South El Monte' },
+    { '@type': 'City', name: 'Baldwin Park' },
+    { '@type': 'City', name: 'West Covina' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in El Monte?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A typical residential solar installation in El Monte costs between $15,000-$30,000 before the 30% federal tax credit. After the credit, most homeowners pay $10,500-$21,000. El Monte\'s inland location means higher energy usage, so solar savings are substantial. We offer $0-down financing options.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How hot does El Monte get in summer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The San Gabriel Valley regularly exceeds 100°F in summer, driving high AC costs. Solar panels can offset 80% or more of these elevated electricity bills. With SCE time-of-use rates charging premium prices during peak afternoon hours, solar production aligns perfectly with when you need it most.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What solar incentives are available in El Monte?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El Monte residents can take advantage of the federal 30% tax credit, SCE net metering programs, and California\'s Self-Generation Incentive Program for battery storage. SCE time-of-use rates make solar especially valuable, as panels produce the most energy during the highest-cost peak hours.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation El Monte CA | Expert Solar Installers | Solar Center"
+  description="El Monte solar installation. San Gabriel Valley solar experts. Save on SCE bills. Free quote, $0 down financing. Solar Center by Dura-Foam. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in El Monte, CA"
+    subtitle="San Gabriel Valley solar experts. Beat the inland heat. Save big on SCE electricity bills."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">El Monte Solar Installation Experts</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>El Monte sits at the heart of the San Gabriel Valley, where hot inland summers drive some of the highest electricity bills in Southern California. With 287 sunny days per year and summer temperatures regularly exceeding 100°F, El Monte homeowners face soaring AC costs — making solar energy one of the smartest investments in the region. Solar Center by Dura-Foam brings decades of California solar expertise to El Monte and the surrounding San Gabriel Valley communities.</p>
+              <p>El Monte is served by Southern California Edison (SCE), whose time-of-use rates charge premium prices during peak afternoon hours — exactly when solar panels produce the most energy. This alignment makes solar especially valuable for SCE customers. Combined with the federal 30% tax credit and California's Self-Generation Incentive Program for battery storage, El Monte homeowners can dramatically reduce their energy costs.</p>
+              <p>The San Gabriel Valley's diverse community and mix of residential styles — from ranch homes and mid-century bungalows to newer construction — all benefit from solar installation. Our team understands the specific roofing conditions and sun exposure patterns of this inland valley, designing systems optimized for maximum production. Conveniently located near the 10 and 60 freeways, El Monte is a growing hub of solar adoption across the SGV.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why El Monte Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">287</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$180+</p>
+                <p class="text-sm text-slate">Average monthly electric bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">80%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">El Monte Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Downtown El Monte', 'South El Monte', 'North El Monte', 'Baldwin Park', 'West Covina', 'Arcadia', 'Rosemead', 'Temple City', 'Mountain View', 'Gidley', 'Ramona', 'Cherrylee', 'Norwood', 'Peck Road', 'Lambert Road'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">El Monte Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in El Monte?', a: 'A typical residential solar installation in El Monte costs between $15,000-$30,000 before the 30% federal tax credit. El Monte\'s inland location means higher energy usage, so solar savings are substantial. We offer $0-down financing options for every budget.' },
+                { q: 'How hot does El Monte get in summer?', a: 'The San Gabriel Valley regularly exceeds 100°F in summer, driving high AC costs. Solar panels can offset 80% or more of these elevated electricity bills. SCE time-of-use rates make solar production especially valuable during peak afternoon hours.' },
+                { q: 'What solar incentives are available in El Monte?', a: 'Federal 30% tax credit, SCE net metering programs, and California\'s Self-Generation Incentive Program for battery storage. SCE time-of-use rates make solar especially valuable, as panels produce the most energy during the highest-cost peak hours.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your El Monte Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners across California." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Oildale, Shafter, Delano', href: '/locations/bakersfield' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Sacramento', cities: 'Sacramento, Elk Grove, Roseville', href: '/locations/sacramento' },
+          { name: 'Pasadena', cities: 'Pasadena, Altadena, South Pasadena', href: '/locations/pasadena' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Rosedale', href: '/locations/rosedale' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Rosedale',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/rosedale',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '6730 Charity Ave, Suite 5',
+    addressLocality: 'Bakersfield',
+    addressRegion: 'CA',
+    postalCode: '93308',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.3836,
+    longitude: -119.1453,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Rosedale' },
+    { '@type': 'City', name: 'Northwest Bakersfield' },
+    { '@type': 'City', name: 'Bakersfield' },
+  ],
+  priceRange: '$$',
+  image: 'https://solarcenterca.com/logos/logo-primary.svg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does solar cost in Rosedale?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar installations in the Rosedale area typically cost between $16,000-$32,000 before the 30% federal tax credit. After the credit, most homeowners pay $11,200-$22,400. Rosedale homes tend to be larger with higher energy usage, so systems often range from 7-14 kW. We offer $0-down financing options.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Rosedale good for solar panels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Rosedale is ideal for solar energy. With 270+ sunny days per year and newer construction featuring modern roofing, many Rosedale homes are perfectly suited for solar panel installation. The area\'s larger homes mean bigger electricity bills from PG&E — and bigger savings when you switch to solar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do solar panels last in Rosedale?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Solar panels installed in Rosedale are designed to last 25-30+ years. Most manufacturers warranty their panels for 25 years of performance. The sunny Central Valley climate helps panels maintain 85-90% of their original output even after 25 years of use.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Solar Installation Rosedale CA | Local Solar Company | Solar Center"
+  description="Rosedale's premier solar installer. Newer homes, bigger savings. 270+ sunny days, reduce your PG&E bill up to 85%. Free consultation, $0 down financing. Call (661) 596-2477."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Solar Installation in Rosedale, CA"
+    subtitle="Premium solar for northwest Bakersfield's growing community. Newer homes, bigger savings."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Rosedale's Premier Solar Installers</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Rosedale and northwest Bakersfield have become some of the most sought-after neighborhoods in Kern County. With beautiful newer homes, growing families, and master-planned communities like Riverlakes and Seven Oaks, this area represents the best of Central Valley living — and the perfect opportunity for solar energy.</p>
+              <p>Larger homes mean larger electricity bills. When summer temperatures push past 100 degrees, Rosedale homeowners can see PG&E bills climb well past $220 per month just from air conditioning. Solar panels let you take control of those costs, often reducing your electricity bill by 85% or more while adding value to your home.</p>
+              <p>Solar Center by Dura-Foam has been serving the Rosedale area since the community began its growth boom. We understand the architectural styles, HOA requirements, and roofing materials common in northwest Bakersfield developments. Our design team ensures every solar system complements your home's appearance while maximizing energy production.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Why Rosedale Homeowners Go Solar</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">270+</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$220+</p>
+                <p class="text-sm text-slate">Average monthly summer bill</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">30%</p>
+                <p class="text-sm text-slate">Federal tax credit</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">85%</p>
+                <p class="text-sm text-slate">Typical bill reduction</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Rosedale Neighborhoods We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Rosedale', 'Northwest Bakersfield', 'Riverlakes', 'Haggin Oaks', 'Stockdale Estates', 'Seven Oaks', 'Allen Road'].map((area) => (
+                <span class="text-sm text-ink">{area}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Rosedale Solar FAQ</h3>
+            <div class="space-y-4">
+              {[
+                { q: 'How much does solar cost in Rosedale?', a: 'Solar installations in Rosedale typically cost $16,000-$32,000 before the 30% federal tax credit. After the credit, most homeowners pay $11,200-$22,400. Rosedale homes tend to be larger, so systems often range from 7-14 kW. We offer $0-down financing.' },
+                { q: 'Is Rosedale good for solar panels?', a: 'Rosedale is ideal for solar. With 270+ sunny days per year and newer construction with modern roofing, many homes are perfectly suited for panels. Larger homes mean bigger PG&E bills — and bigger savings with solar.' },
+                { q: 'How long do solar panels last in Rosedale?', a: 'Solar panels last 25-30+ years with manufacturer warranties covering 25 years of performance. In the sunny Central Valley climate, panels typically maintain 85-90% of their original output even after 25 years.' },
+              ].map((faq) => (
+                <details class="group rounded-xl border border-gray-200 bg-white">
+                  <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+                    {faq.q}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Rosedale Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Visit Our Office</h3>
+              <address class="not-italic text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>6730 Charity Ave, Suite 5</p>
+                <p>Bakersfield, CA 93308</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Other Service Areas" subtitle="We serve homeowners throughout the Central Valley." />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Bakersfield', cities: 'Bakersfield, Downtown, Stockdale', href: '/locations/bakersfield' },
+          { name: 'Oildale', cities: 'Oildale, North Bakersfield', href: '/locations/oildale' },
+          { name: 'Fresno', cities: 'Fresno, Clovis, Visalia, Tulare', href: '/locations/fresno' },
+          { name: 'Shafter', cities: 'Shafter, Wasco, Buttonwillow', href: '/locations/shafter' },
+        ].map((area) => (
+          <a href={area.href} class="rounded-xl bg-white p-6 border border-gray-200 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+            <h3 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors">{area.name}</h3>
+            <p class="text-sm text-slate mt-1">{area.cities}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
