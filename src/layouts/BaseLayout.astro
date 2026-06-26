@@ -63,6 +63,15 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
 
+    <!-- Google Analytics (GA4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BXBN7ZRS5D"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BXBN7ZRS5D');
+    </script>
+
     <title>{title}</title>
   </head>
   <body class="flex min-h-screen flex-col bg-white text-ink antialiased font-body">

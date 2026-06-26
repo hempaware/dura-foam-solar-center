@@ -4,5 +4,5 @@ run = "npm run start"
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "npx serve dist -l 5000 -s"]
+run = ["sh", "-c", "npx serve dist -l 5000"]
 build = ["sh", "-c", "npm run build"]
