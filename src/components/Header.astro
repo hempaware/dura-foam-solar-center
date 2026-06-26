@@ -60,7 +60,20 @@ const serviceAreas = {
   ],
 };
 
+const resourceLinks = [
+  { href: '/how-solar-panels-work', label: 'How Solar Panels Work' },
+  { href: '/process', label: 'Our Solar Process' },
+  { href: '/solar-incentives-california', label: 'Solar Incentives & Tax Credits' },
+  { href: '/net-metering-california', label: 'Net Metering (NEM 3.0)' },
+  { href: '/solar-battery-guide', label: 'Solar Battery Guide' },
+  { href: '/roof-solar-compatibility', label: 'Roof & Solar Compatibility' },
+  { href: '/why-own-vs-ppa', label: 'Own vs PPA' },
+  { href: '/financing', label: 'Financing Guide' },
+  { href: '/warranty', label: 'Our Warranty' },
+];
+
 const isLocationPage = currentPath.startsWith('/locations');
+const isResourcePage = resourceLinks.some(r => currentPath === r.href);
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm" id="site-header">
@@ -83,6 +96,41 @@ const isLocationPage = currentPath.startsWith('/locations');
             {link.label}
           </a>
         ))}
+
+        <!-- Resources Dropdown -->
+        <div class="relative" id="resources-dropdown">
+          <button
+            type="button"
+            class:list={[
+              'flex items-center gap-1 text-sm font-medium transition-colors hover:text-solar-navy no-underline bg-transparent border-none cursor-pointer',
+              isResourcePage ? 'text-solar-navy font-semibold' : 'text-slate',
+            ]}
+            aria-expanded="false"
+            aria-haspopup="true"
+            id="resources-trigger"
+          >
+            Resources
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="resources-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <div
+            id="resources-menu"
+            class="invisible opacity-0 absolute top-full right-0 mt-2 w-[320px] rounded-xl bg-white border border-gray-200 shadow-xl p-4 transition-all duration-200 -translate-y-2"
+            role="menu"
+          >
+            <div class="space-y-1">
+              {resourceLinks.map((link) => (
+                <a
+                  href={link.href}
+                  class:list={['block rounded-lg px-3 py-2 text-sm no-underline transition-colors hover:bg-warm-sand hover:text-solar-navy', currentPath === link.href ? 'text-solar-navy font-semibold bg-warm-sand' : 'text-slate']}
+                  role="menuitem"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <!-- Service Areas Dropdown -->
         <div class="relative" id="service-areas-dropdown">
@@ -204,6 +252,35 @@ const isLocationPage = currentPath.startsWith('/locations');
           {link.label}
         </a>
       ))}
+
+      <!-- Mobile Resources Accordion -->
+      <div class="rounded-lg">
+        <button
+          type="button"
+          class:list={[
+            'flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-medium transition-colors bg-transparent border-none cursor-pointer text-left',
+            isResourcePage ? 'bg-warm-sand text-solar-navy font-semibold' : 'text-ink hover:bg-gray-50',
+          ]}
+          id="mobile-resources-toggle"
+          aria-expanded="false"
+        >
+          Resources
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="mobile-resources-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="mobile-resources-panel" class="hidden pl-4 pb-2">
+          {resourceLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'block rounded-lg px-4 py-2 text-sm no-underline transition-colors',
+                currentPath === link.href ? 'text-solar-navy font-semibold bg-warm-sand' : 'text-slate hover:bg-gray-50 hover:text-solar-navy',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
 
       <!-- Mobile Service Areas Accordion -->
       <div class="rounded-lg">
@@ -329,6 +406,62 @@ const isLocationPage = currentPath.startsWith('/locations');
         isOpen ? hide() : show();
       }
       if (e.key === 'Escape') hide();
+    });
+  }
+
+  // Desktop resources dropdown
+  const resDropdown = document.getElementById('resources-dropdown');
+  const resTrigger = document.getElementById('resources-trigger');
+  const resMenu = document.getElementById('resources-menu');
+  const resChevron = document.getElementById('resources-chevron');
+
+  if (resDropdown && resTrigger && resMenu && resChevron) {
+    let resHideTimeout: ReturnType<typeof setTimeout>;
+
+    const resShow = () => {
+      clearTimeout(resHideTimeout);
+      resMenu.classList.remove('invisible', 'opacity-0', '-translate-y-2');
+      resMenu.classList.add('visible', 'opacity-100', 'translate-y-0');
+      resChevron.classList.add('rotate-180');
+      resTrigger.setAttribute('aria-expanded', 'true');
+    };
+
+    const resHide = () => {
+      resHideTimeout = setTimeout(() => {
+        resMenu.classList.add('invisible', 'opacity-0', '-translate-y-2');
+        resMenu.classList.remove('visible', 'opacity-100', 'translate-y-0');
+        resChevron.classList.remove('rotate-180');
+        resTrigger.setAttribute('aria-expanded', 'false');
+      }, 150);
+    };
+
+    resDropdown.addEventListener('mouseenter', resShow);
+    resDropdown.addEventListener('mouseleave', resHide);
+    resTrigger.addEventListener('click', () => {
+      const isOpen = resTrigger.getAttribute('aria-expanded') === 'true';
+      isOpen ? resHide() : resShow();
+    });
+    resTrigger.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = resTrigger.getAttribute('aria-expanded') === 'true';
+        isOpen ? resHide() : resShow();
+      }
+      if (e.key === 'Escape') resHide();
+    });
+  }
+
+  // Mobile resources accordion
+  const mobileResToggle = document.getElementById('mobile-resources-toggle');
+  const mobileResPanel = document.getElementById('mobile-resources-panel');
+  const mobileResChevron = document.getElementById('mobile-resources-chevron');
+
+  if (mobileResToggle && mobileResPanel && mobileResChevron) {
+    mobileResToggle.addEventListener('click', () => {
+      const isOpen = !mobileResPanel.classList.contains('hidden');
+      mobileResPanel.classList.toggle('hidden');
+      mobileResChevron.classList.toggle('rotate-180');
+      mobileResToggle.setAttribute('aria-expanded', String(!isOpen));
     });
   }
 

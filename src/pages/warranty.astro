@@ -1,0 +1,444 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Our Warranty', href: '/warranty' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Solar Panel Warranty Coverage',
+  provider: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    foundingDate: '1981',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Dura-Foam Roofing & Solar Center',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, Suite 5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+      addressCountry: 'US',
+    },
+  },
+  description: 'Comprehensive 25-year solar warranty covering panels, inverters, workmanship, and roof penetrations. Backed by Dura-Foam Roofing & Solar Center since 1981.',
+  areaServed: {
+    '@type': 'State',
+    name: 'California',
+  },
+  termsOfService: 'https://solarcenterca.com/warranty',
+};
+---
+
+<BaseLayout
+  title="Our Warranty | 25-Year Solar Panel Warranty | Solar Center by Dura-Foam"
+  description="Solar Center by Dura-Foam provides a comprehensive 25-year warranty covering panels, inverters, workmanship, and roof penetrations. Backed by 40+ years of California expertise."
+  schema={schema}
+>
+  <PageHero title="Our Warranty" subtitle="Comprehensive protection for your investment — backed by 40+ years of California expertise." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Warranty Overview -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Peace of Mind</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Your Solar Investment, Fully Protected</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>When you invest in solar with Solar Center by Dura-Foam, you're not just buying panels — you're getting decades of protection. Our comprehensive warranty program covers every aspect of your solar installation, from the panels on your roof to the wiring behind your walls.</p>
+            <p>As a division of Dura-Foam Roofing & Solar Center, we've been protecting California homes since 1981. We understand that a solar installation is a significant investment, and we stand behind every system we install with one of the strongest warranty packages in the industry.</p>
+            <p>Unlike fly-by-night solar companies that may not be around in five years, Dura-Foam's 40+ year track record means you can count on us to honor our warranty commitments for the full duration of your coverage.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-warm-sand p-8 lg:p-12">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6 text-center">Warranty at a Glance</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-solar-amber font-bold font-headline text-lg">25</span>
+              </div>
+              <div>
+                <p class="font-bold text-solar-navy font-headline">Panel Warranty</p>
+                <p class="text-sm text-slate">Performance and product coverage</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-solar-amber font-bold font-headline text-lg">25</span>
+              </div>
+              <div>
+                <p class="font-bold text-solar-navy font-headline">Inverter Warranty</p>
+                <p class="text-sm text-slate">12–25 years depending on model</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-solar-amber font-bold font-headline text-lg">25</span>
+              </div>
+              <div>
+                <p class="font-bold text-solar-navy font-headline">Workmanship Warranty</p>
+                <p class="text-sm text-slate">Installation quality guaranteed</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-solar-navy font-headline">Roof Penetration Warranty</p>
+                <p class="text-sm text-slate">Leak-free mounting guaranteed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Warranty Breakdown -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Warranty Coverage Details" subtitle="Every component of your solar system is protected by a specific warranty designed to give you total peace of mind." />
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Panel Warranty -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Solar Panel Warranty — 25 Years</h3>
+          <p class="text-slate text-sm mb-4">Our panels come with a dual warranty from the manufacturer covering both product defects and energy output performance.</p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Product warranty:</strong> 25-year coverage against manufacturing defects, material failures, and premature degradation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Performance guarantee:</strong> Panels warranted to produce at least 84.8% of rated output at year 25</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Degradation rate:</strong> No more than 0.55% annual degradation after the first year</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Replacement:</strong> Defective panels replaced at no cost including shipping</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Inverter Warranty -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Inverter Warranty — 12 to 25 Years</h3>
+          <p class="text-slate text-sm mb-4">Inverters convert DC power from your panels into AC power for your home. Coverage length varies by inverter type and brand.</p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Microinverters:</strong> 25-year warranty (Enphase IQ series)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>String inverters:</strong> 12-year standard warranty with optional extension to 20–25 years</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Power optimizers:</strong> 25-year warranty when paired with compatible inverters</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Covers:</strong> Component failure, firmware issues, and performance below rated specs</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Workmanship Warranty -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Workmanship Warranty — 25 Years</h3>
+          <p class="text-slate text-sm mb-4">This is our warranty — the one we stand behind personally. It covers the quality of our installation work for a full 25 years.</p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Electrical connections:</strong> All wiring, conduit, junction boxes, and panel connections</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Racking and mounting:</strong> All hardware, rails, brackets, and fasteners</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>System design:</strong> Production performance based on our original design specifications</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Labor:</strong> Any repair labor needed due to installation-related issues at no charge</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Roof Penetration Warranty -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Roof Penetration Warranty</h3>
+          <p class="text-slate text-sm mb-4">As a division of Dura-Foam Roofing, we bring roofing expertise that most solar companies simply don't have. We guarantee that every roof penetration is watertight.</p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Leak-free guarantee:</strong> All mounting points sealed with professional-grade flashing and sealant</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Roofing expertise:</strong> Installations performed by crews trained in both roofing and solar</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Full repair coverage:</strong> If a leak occurs at any mounting point, we repair the roof and any resulting interior damage</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Code-compliant:</strong> Every penetration meets or exceeds California building codes</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Covered vs Not Covered -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="What's Covered — and What's Not" subtitle="Transparency is part of our commitment to you. Here's a clear breakdown." />
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Covered -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border-2 border-energy-green/20">
+          <h3 class="text-xl font-bold text-energy-green font-headline mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            What's Covered
+          </h3>
+          <ul class="space-y-3 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Manufacturing defects in panels or inverters</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Panel output falling below warranted performance levels</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Inverter malfunction or failure during warranty period</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Faulty wiring, loose connections, or electrical issues from installation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Roof leaks at solar mounting penetration points</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Racking, mounting hardware, and bracket failures</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Labor costs for warranty-related repairs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Replacement parts and shipping for defective components</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Not Covered -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border-2 border-red-200/50">
+          <h3 class="text-xl font-bold text-red-600 font-headline mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            What's Not Covered
+          </h3>
+          <ul class="space-y-3 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Damage caused by severe weather events (hurricanes, tornadoes, hail beyond design specs) — typically covered by homeowner's insurance</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Physical damage from falling objects, vandalism, or accidents</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Damage from unauthorized modifications or third-party work on the system</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Normal cosmetic wear (minor discoloration, surface scratches that don't affect performance)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Power outages or grid issues outside your solar system</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Production drops caused by new shading (tree growth, new construction)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Pest damage (birds, squirrels, rodents) — we offer optional critter guards to help prevent this</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to File a Claim -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="How to File a Warranty Claim" subtitle="If something goes wrong, we make it easy to get it fixed. Here's the process." />
+
+      <div class="grid gap-8 md:grid-cols-4">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-solar-amber/10 flex items-center justify-center mx-auto mb-4">
+            <span class="text-solar-amber font-bold font-headline text-2xl">1</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Contact Us</h3>
+          <p class="text-sm text-slate">Call us at <a href="tel:+16615962477" class="text-solar-amber font-semibold hover:underline">(661) 596-2477</a> or submit a claim through our contact form. Describe the issue and when you first noticed it.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-solar-amber/10 flex items-center justify-center mx-auto mb-4">
+            <span class="text-solar-amber font-bold font-headline text-2xl">2</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Diagnosis</h3>
+          <p class="text-sm text-slate">Our team will review your system's monitoring data remotely and, if needed, schedule an on-site inspection to identify the issue.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-solar-amber/10 flex items-center justify-center mx-auto mb-4">
+            <span class="text-solar-amber font-bold font-headline text-2xl">3</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Resolution</h3>
+          <p class="text-sm text-slate">We coordinate directly with manufacturers for equipment claims. For workmanship issues, we schedule the repair at your convenience.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-solar-amber/10 flex items-center justify-center mx-auto mb-4">
+            <span class="text-solar-amber font-bold font-headline text-2xl">4</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Follow-Up</h3>
+          <p class="text-sm text-slate">After the repair, we verify your system is performing at full capacity and document the work for your records.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 rounded-xl bg-white p-6 md:p-8 shadow-sm border border-gray-100 max-w-3xl mx-auto">
+        <p class="text-slate text-sm leading-relaxed">
+          <strong class="text-solar-navy">Typical response time:</strong> Most warranty claims are acknowledged within 1–2 business days. Remote diagnostics can often identify the issue within 24 hours. On-site repairs are typically scheduled within 5–10 business days, depending on parts availability and weather conditions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Why Our Warranty Matters</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Backed by a Company That's Been Here Since 1981</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>A warranty is only as good as the company behind it. In the solar industry, companies come and go — and when they close, their warranties go with them. That's why choosing an installer with a proven track record matters more than anything.</p>
+            <p>Dura-Foam Roofing & Solar Center has been serving California homeowners for over four decades. We're not a startup chasing venture capital, and we're not a national chain with a call center in another state. We're a local, family-oriented business with deep roots in the Central Valley.</p>
+            <p>When we say we'll be here to honor your warranty in 25 years, we mean it. Our history proves it.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-xl bg-warm-sand p-6 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-solar-amber/20 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-solar-navy font-headline">40+ Years in Business</p>
+              <p class="text-sm text-slate">Dura-Foam has been a trusted California contractor since 1981 — one of the longest-operating roofing and solar companies in the Central Valley.</p>
+            </div>
+          </div>
+          <div class="rounded-xl bg-warm-sand p-6 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-solar-amber/20 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-solar-navy font-headline">A+ BBB Rating</p>
+              <p class="text-sm text-slate">Consistently rated A+ by the Better Business Bureau, reflecting our commitment to quality and customer satisfaction.</p>
+            </div>
+          </div>
+          <div class="rounded-xl bg-warm-sand p-6 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-solar-amber/20 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-solar-navy font-headline">Local, Licensed & Insured</p>
+              <p class="text-sm text-slate">Fully licensed (CSLB), bonded, and insured in California. Our team lives and works in the communities we serve.</p>
+            </div>
+          </div>
+          <div class="rounded-xl bg-warm-sand p-6 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-solar-amber/20 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-solar-navy font-headline">Ownership, Not Leases</p>
+              <p class="text-sm text-slate">You own your system outright. No hidden fees, no escalating lease payments. Full warranty protection comes standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with QuoteForm -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div class="text-white">
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Get Protected</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-headline leading-tight mb-6">Ready for Solar With Warranty-Backed Confidence?</h2>
+          <p class="text-white/80 text-lg mb-6">Every Solar Center installation comes with our comprehensive warranty package — no add-ons, no upsells. It's included because we believe in the quality of our work.</p>
+          <ul class="space-y-3 text-white/80">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>25-year panel, workmanship, and roof penetration warranties</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Backed by a company in business since 1981</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free, no-obligation consultation</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-white/60 text-sm">Or call us directly: <a href="tel:+16615962477" class="text-solar-amber font-semibold hover:underline">(661) 596-2477</a></p>
+        </div>
+        <div>
+          <QuoteForm heading="Get Your Free Solar Quote" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

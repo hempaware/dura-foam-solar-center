@@ -298,6 +298,276 @@ const faqs = faqSchema.mainEntity;
     </div>
   </section>
 
+  <!-- Local Team -->
+  <section class="py-20 lg:py-24 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block rounded-full border border-slate/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate mb-4 font-label">Your Local Solar Experts</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-4">A Legacy of Trust Since 1981</h2>
+          <p class="text-slate leading-relaxed mb-6">Solar Center by Dura-Foam isn't a startup or a fly-by-night operation. We're a division of Dura-Foam Roofing and Solar Center — a company that has been protecting and powering California homes for over four decades.</p>
+          <p class="text-slate leading-relaxed mb-8">When you choose us, you're choosing a team that lives in your community, understands your energy needs, and will be here for decades to come.</p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl bg-white p-5 text-center shadow-sm border border-gray-100">
+              <span class="block text-3xl font-extrabold text-solar-amber font-headline">40+</span>
+              <span class="block text-sm text-slate mt-1">Years of Service</span>
+            </div>
+            <div class="rounded-xl bg-white p-5 text-center shadow-sm border border-gray-100">
+              <span class="block text-3xl font-extrabold text-solar-amber font-headline">500+</span>
+              <span class="block text-sm text-slate mt-1">Systems Installed</span>
+            </div>
+            <div class="rounded-xl bg-white p-5 text-center shadow-sm border border-gray-100">
+              <span class="block text-3xl font-extrabold text-solar-amber font-headline">25yr</span>
+              <span class="block text-sm text-slate mt-1">Warranty Coverage</span>
+            </div>
+            <div class="rounded-xl bg-white p-5 text-center shadow-sm border border-gray-100">
+              <span class="block text-3xl font-extrabold text-solar-amber font-headline">A+</span>
+              <span class="block text-sm text-slate mt-1">BBB Rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6">
+          <div class="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-solar-navy/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="#00345C"/><path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l5.59-5.59L17 8.5l-7 7z" fill="#fff"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-solar-navy font-headline">Licensed & Insured</h3>
+                <p class="text-sm text-slate">CSLB Licensed Contractor</p>
+              </div>
+            </div>
+            <p class="text-slate text-sm leading-relaxed">Fully licensed, bonded, and insured for both roofing and solar installation in the state of California.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-energy-green/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#6BA630"/><path d="M8 12l3 3 5-6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-solar-navy font-headline">NABCEP Certified</h3>
+                <p class="text-sm text-slate">Industry Gold Standard</p>
+              </div>
+            </div>
+            <p class="text-slate text-sm leading-relaxed">Our installers hold NABCEP certification — the highest standard in the North American solar industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Detailed Process -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Your Solar Journey, Step by Step"
+        subtitle="From your first call to flipping the switch, here's exactly what to expect."
+      />
+      <div class="relative max-w-3xl mx-auto">
+        <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+        <div class="space-y-10">
+          {[
+            { num: '1', title: 'Free Consultation', desc: 'We assess your energy usage, review your roof, and discuss your goals. You get a custom proposal with projected savings — no pressure, no obligation.' },
+            { num: '2', title: 'Custom System Design', desc: "Our engineers design a system tailored to your roof layout, energy needs, and budget. We handle all the technical details so you don't have to." },
+            { num: '3', title: 'Permitting & Paperwork', desc: 'We take care of all permits, HOA approvals, utility interconnection agreements, and incentive applications. You just sign where we tell you.' },
+            { num: '4', title: 'Professional Installation', desc: 'Our certified crew installs your system — typically in just 1-2 days. We treat your home with respect and leave the site spotless.' },
+            { num: '5', title: 'Inspection & Activation', desc: 'After a final city inspection and utility approval, your system goes live. Watch your meter spin backward and your savings start from day one.' },
+          ].map((step) => (
+            <div class="relative pl-16 md:pl-20">
+              <div class="absolute left-0 md:left-2 flex h-12 w-12 items-center justify-center rounded-full bg-solar-amber text-midnight font-extrabold font-headline text-lg z-10">
+                {step.num}
+              </div>
+              <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">{step.title}</h3>
+              <p class="text-slate leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Solar Designer -->
+  <section id="solar-designer" class="py-20 lg:py-24 bg-gradient-to-br from-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center rounded-full border border-white/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white/80 mb-4 font-label">Interactive Tool</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-4">Design Your Solar System</h2>
+        <p class="text-white/70 max-w-2xl mx-auto">Click the grid below to add or remove solar panels. Watch your estimated output update in real time.</p>
+      </div>
+      <div class="grid gap-8 lg:grid-cols-2 items-start">
+        <div>
+          <div id="solar-grid" class="grid grid-cols-6 gap-1.5 sm:gap-2 aspect-[3/2] max-w-lg mx-auto lg:mx-0">
+            {Array.from({ length: 24 }).map((_, i) => (
+              <button
+                data-panel={i}
+                class="solar-panel rounded-lg border-2 border-white/20 bg-white/5 transition-all duration-200 hover:border-solar-amber/50 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-solar-amber"
+                aria-label={`Solar panel ${i + 1}`}
+                aria-pressed="false"
+              ></button>
+            ))}
+          </div>
+          <p class="text-center text-white/50 text-sm mt-4 lg:text-left">Click panels to toggle them on/off</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white/10 border border-white/10 p-5 text-center backdrop-blur-sm">
+            <span class="block text-sm text-white/60 font-label uppercase tracking-wider mb-1">Panels</span>
+            <span id="panel-count" class="block text-4xl font-extrabold text-solar-amber font-headline">0</span>
+          </div>
+          <div class="rounded-xl bg-white/10 border border-white/10 p-5 text-center backdrop-blur-sm">
+            <span class="block text-sm text-white/60 font-label uppercase tracking-wider mb-1">System Size</span>
+            <span id="system-size" class="block text-4xl font-extrabold text-white font-headline">0</span>
+            <span class="text-sm text-white/50">kW</span>
+          </div>
+          <div class="rounded-xl bg-white/10 border border-white/10 p-5 text-center backdrop-blur-sm">
+            <span class="block text-sm text-white/60 font-label uppercase tracking-wider mb-1">Daily Output</span>
+            <span id="daily-output" class="block text-4xl font-extrabold text-white font-headline">0</span>
+            <span class="text-sm text-white/50">kWh</span>
+          </div>
+          <div class="rounded-xl bg-white/10 border border-white/10 p-5 text-center backdrop-blur-sm">
+            <span class="block text-sm text-white/60 font-label uppercase tracking-wider mb-1">Monthly Output</span>
+            <span id="monthly-output" class="block text-4xl font-extrabold text-white font-headline">0</span>
+            <span class="text-sm text-white/50">kWh</span>
+          </div>
+          <div class="col-span-2">
+            <a href="#quote" class="flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label w-full">
+              Get a Custom Design for Your Roof
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Savings Calculator -->
+  <section id="savings-calculator" class="py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="See How Much You Could Save"
+        subtitle="Adjust the sliders to estimate your potential solar savings over 25 years."
+      />
+      <div class="grid gap-8 lg:grid-cols-5 items-start">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <label class="block text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">
+              Monthly Electric Bill: <span id="bill-value" class="text-solar-amber">$200</span>
+            </label>
+            <input
+              type="range"
+              id="bill-slider"
+              min="100"
+              max="800"
+              step="25"
+              value="200"
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-solar-amber"
+            />
+            <div class="flex justify-between text-xs text-slate mt-1">
+              <span>$100</span>
+              <span>$800</span>
+            </div>
+          </div>
+          <div>
+            <span class="block text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Battery Backup</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: 'No Battery', value: '0' },
+                { label: '1 Battery', value: '1' },
+                { label: '2 Batteries', value: '2' },
+              ].map((opt, i) => (
+                <label class={`calc-option flex items-center justify-center rounded-xl border-2 px-4 py-3 text-sm font-semibold cursor-pointer transition ${i === 0 ? 'border-solar-amber bg-solar-amber/10 text-solar-navy' : 'border-gray-200 text-slate hover:border-solar-amber/50'}`}>
+                  <input type="radio" name="battery" value={opt.value} checked={i === 0} class="sr-only" />
+                  {opt.label}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span class="block text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Financing Term</span>
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { label: '15 Years', value: '15' },
+                { label: '20 Years', value: '20' },
+                { label: '25 Years', value: '25' },
+              ].map((opt, i) => (
+                <label class={`calc-option flex items-center justify-center rounded-xl border-2 px-4 py-3 text-sm font-semibold cursor-pointer transition ${i === 1 ? 'border-solar-amber bg-solar-amber/10 text-solar-navy' : 'border-gray-200 text-slate hover:border-solar-amber/50'}`}>
+                  <input type="radio" name="term" value={opt.value} checked={i === 1} class="sr-only" />
+                  {opt.label}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span class="block text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Roof Condition</span>
+            <div class="grid grid-cols-3 gap-3">
+              {[
+                { label: 'Excellent', value: 'excellent' },
+                { label: 'Good', value: 'good' },
+                { label: 'Needs Work', value: 'needs-work' },
+              ].map((opt, i) => (
+                <label class={`calc-option flex items-center justify-center rounded-xl border-2 px-4 py-3 text-sm font-semibold cursor-pointer transition ${i === 0 ? 'border-solar-amber bg-solar-amber/10 text-solar-navy' : 'border-gray-200 text-slate hover:border-solar-amber/50'}`}>
+                  <input type="radio" name="roof" value={opt.value} checked={i === 0} class="sr-only" />
+                  {opt.label}
+                </label>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="rounded-2xl bg-gradient-to-br from-midnight to-solar-navy p-8 text-center sticky top-24">
+            <h3 class="text-lg font-bold text-white/80 font-headline mb-6">Your Estimated Savings</h3>
+            <div class="space-y-6">
+              <div>
+                <span class="block text-sm text-white/50 font-label uppercase tracking-wider mb-1">Monthly Savings</span>
+                <span id="monthly-savings" class="block text-5xl font-extrabold text-solar-amber font-headline">$68</span>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div>
+                <span class="block text-sm text-white/50 font-label uppercase tracking-wider mb-1">25-Year Savings</span>
+                <span id="total-savings" class="block text-5xl font-extrabold text-energy-green font-headline">$38,400</span>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div>
+                <span class="block text-sm text-white/50 font-label uppercase tracking-wider mb-1">Est. System Cost</span>
+                <span id="system-cost" class="block text-2xl font-bold text-white font-headline">$18,900</span>
+                <span class="text-xs text-white/40">After 30% federal tax credit</span>
+              </div>
+            </div>
+            <a href="#quote" class="mt-8 flex items-center justify-center rounded-lg bg-solar-amber px-6 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+              Get Your Exact Savings
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Environmental Impact -->
+  <section class="py-20 lg:py-24 bg-gradient-to-br from-energy-green/10 to-clean-sky/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Your Positive Impact on the Planet"
+        subtitle="When you switch to solar, the environmental benefits add up fast. Here's what a typical home solar system offsets every year."
+      />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { value: '7.5', suffix: ' tons', label: 'CO₂ Offset Annually', icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z' },
+          { value: '185', suffix: '+', label: 'Trees Equivalent', icon: 'M12 22V8M5 12l7-8 7 8M7 20h10' },
+          { value: '18,750', suffix: '', label: 'Miles Not Driven', icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z' },
+          { value: '52K', suffix: ' gal', label: 'Water Saved', icon: 'M12 21c-4.97 0-9-2.686-9-6v-.002C3 10.032 7.03 5 12 2c4.97 3 9 8.032 9 12.998V15c0 3.314-4.03 6-9 6z' },
+        ].map((stat) => (
+          <div class="rounded-2xl bg-white p-8 text-center shadow-sm border border-gray-100 environmental-stat" data-value={stat.value} data-suffix={stat.suffix || ''}>
+            <div class="flex justify-center mb-4">
+              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-energy-green/10">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6BA630" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d={stat.icon}/></svg>
+              </div>
+            </div>
+            <span class="block text-4xl font-extrabold text-solar-navy font-headline stat-number">0</span>
+            <span class="block text-sm text-slate mt-2">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Service Areas -->
   <section class="py-20 lg:py-24 bg-warm-sand">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -368,6 +638,7 @@ const faqs = faqSchema.mainEntity;
 </BaseLayout>
 
 <script>
+  // FAQ accordion
   const faqSection = document.getElementById('faq');
   if (faqSection) {
     const detailsElements = faqSection.querySelectorAll('details');
@@ -381,4 +652,136 @@ const faqs = faqSchema.mainEntity;
       });
     });
   }
+
+  // Solar Designer Grid
+  const panels = document.querySelectorAll('.solar-panel');
+  const panelCountEl = document.getElementById('panel-count');
+  const systemSizeEl = document.getElementById('system-size');
+  const dailyOutputEl = document.getElementById('daily-output');
+  const monthlyOutputEl = document.getElementById('monthly-output');
+
+  function updateSolarMetrics() {
+    const active = document.querySelectorAll('.solar-panel.active').length;
+    const kw = (active * 0.44).toFixed(1);
+    const daily = (active * 0.44 * 5.5).toFixed(1);
+    const monthly = Math.round(active * 0.44 * 5.5 * 30);
+    if (panelCountEl) panelCountEl.textContent = active;
+    if (systemSizeEl) systemSizeEl.textContent = kw;
+    if (dailyOutputEl) dailyOutputEl.textContent = daily;
+    if (monthlyOutputEl) monthlyOutputEl.textContent = monthly;
+  }
+
+  panels.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      btn.classList.toggle('bg-solar-amber');
+      btn.classList.toggle('border-solar-amber');
+      btn.classList.toggle('bg-white/5');
+      btn.classList.toggle('border-white/20');
+      btn.setAttribute('aria-pressed', btn.classList.contains('active'));
+      updateSolarMetrics();
+    });
+  });
+
+  // Savings Calculator
+  const billSlider = document.getElementById('bill-slider');
+  const billValueEl = document.getElementById('bill-value');
+  const monthlySavingsEl = document.getElementById('monthly-savings');
+  const totalSavingsEl = document.getElementById('total-savings');
+  const systemCostEl = document.getElementById('system-cost');
+
+  function calculateSavings() {
+    const bill = parseInt(billSlider?.value || '200');
+    const battery = parseInt(document.querySelector('input[name="battery"]:checked')?.value || '0');
+    const term = parseInt(document.querySelector('input[name="term"]:checked')?.value || '20');
+    const roof = document.querySelector('input[name="roof"]:checked')?.value || 'excellent';
+
+    const roofFactor = roof === 'excellent' ? 1.0 : roof === 'good' ? 0.92 : 0.82;
+    const systemKw = (bill / 30) * roofFactor;
+    const costPerWatt = 2.70;
+    const grossCost = systemKw * 1000 * costPerWatt;
+    const batteryCost = battery * 12000;
+    const totalGross = grossCost + batteryCost;
+    const afterCredit = totalGross * 0.70;
+    const monthlyPayment = afterCredit / (term * 12);
+    const monthlySave = Math.max(0, bill - monthlyPayment);
+    const rateEscalation = 1.04;
+    let totalSave = 0;
+    for (let yr = 0; yr < 25; yr++) {
+      totalSave += monthlySave * 12 * Math.pow(rateEscalation, yr);
+    }
+
+    if (billValueEl) billValueEl.textContent = '$' + bill;
+    if (monthlySavingsEl) monthlySavingsEl.textContent = '$' + Math.round(monthlySave);
+    if (totalSavingsEl) totalSavingsEl.textContent = '$' + Math.round(totalSave).toLocaleString();
+    if (systemCostEl) systemCostEl.textContent = '$' + Math.round(afterCredit).toLocaleString();
+  }
+
+  billSlider?.addEventListener('input', calculateSavings);
+
+  document.querySelectorAll('.calc-option input[type="radio"]').forEach((radio) => {
+    radio.addEventListener('change', (e) => {
+      const group = e.target.closest('.grid');
+      group?.querySelectorAll('.calc-option').forEach((label) => {
+        label.classList.remove('border-solar-amber', 'bg-solar-amber/10', 'text-solar-navy');
+        label.classList.add('border-gray-200', 'text-slate');
+      });
+      const selected = e.target.closest('.calc-option');
+      selected?.classList.add('border-solar-amber', 'bg-solar-amber/10', 'text-solar-navy');
+      selected?.classList.remove('border-gray-200', 'text-slate');
+      calculateSavings();
+    });
+  });
+
+  calculateSavings();
+
+  // Environmental Impact Counter Animation
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target.querySelector('.stat-number');
+        const raw = entry.target.dataset.value || '0';
+        const suffix = entry.target.dataset.suffix || '';
+        const hasComma = raw.includes(',');
+        const hasK = raw.includes('K');
+        const target = parseFloat(raw.replace(/[,K]/g, ''));
+        const isDecimal = raw.includes('.');
+        const multiplier = hasK ? 1 : 1;
+        const duration = 2000;
+        const steps = 60;
+        let step = 0;
+
+        const timer = setInterval(() => {
+          step++;
+          const progress = step / steps;
+          const eased = 1 - Math.pow(1 - progress, 3);
+          let current = target * eased;
+
+          let display;
+          if (hasK) {
+            display = Math.round(current) + 'K';
+          } else if (isDecimal) {
+            display = current.toFixed(1);
+          } else if (hasComma) {
+            display = Math.round(current).toLocaleString();
+          } else {
+            display = Math.round(current).toString();
+          }
+
+          if (el) el.textContent = display + suffix;
+
+          if (step >= steps) {
+            clearInterval(timer);
+            if (el) el.textContent = raw + suffix;
+          }
+        }, duration / steps);
+
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.environmental-stat').forEach((stat) => {
+    statObserver.observe(stat);
+  });
 </script>

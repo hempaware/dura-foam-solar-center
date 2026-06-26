@@ -1,0 +1,589 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Solar Financing Guide', href: '/financing' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Solar Financing Guide — How to Pay for Solar Panels in California',
+  description: 'Learn about solar financing options including the 30% federal tax credit, $0-down loans, PACE financing, California incentives, and cash purchase benefits.',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenter.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+  },
+  datePublished: '2025-01-15',
+  dateModified: '2026-06-25',
+};
+---
+
+<BaseLayout
+  title="Solar Financing Guide | Tax Credits, Loans & Incentives | Solar Center by Dura-Foam"
+  description="Explore solar financing options: 30% federal tax credit, $0-down loans, PACE financing, California SGIP incentives, and cash purchase benefits. Solar Center by Dura-Foam, Bakersfield CA."
+  schema={schema}
+>
+  <PageHero
+    title="Solar Financing Guide"
+    subtitle="Multiple ways to go solar with little or no money out of pocket. Find the option that fits your budget."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Federal Investment Tax Credit -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="The 30% Federal Investment Tax Credit (ITC)"
+        subtitle="The single biggest incentive for homeowners going solar — and it's available right now."
+        badge="Federal Incentive"
+      />
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">What Is the Solar ITC?</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            The federal Investment Tax Credit (ITC) lets you deduct <strong class="text-solar-navy">30% of the total cost</strong> of your solar energy system from your federal income taxes. This isn't a deduction — it's a dollar-for-dollar credit that directly reduces what you owe the IRS.
+          </p>
+          <p class="text-slate leading-relaxed mb-4">
+            For a typical $25,000 residential solar installation, the ITC saves you <strong class="text-solar-navy">$7,500 in federal taxes</strong>. That immediately brings your net cost down to $17,500 — before any additional state or local incentives.
+          </p>
+          <p class="text-slate leading-relaxed">
+            The 30% rate was extended through the Inflation Reduction Act and is available through <strong class="text-solar-navy">2032</strong>. After that, it steps down to 26% in 2033 and 22% in 2034. There is no cap on the credit amount for residential systems.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-warm-sand p-8">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">How to Claim the ITC</h3>
+          <ol class="space-y-4">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-solar-amber flex items-center justify-center text-sm font-bold text-midnight font-label">1</span>
+              <div>
+                <p class="font-semibold text-solar-navy font-headline">Install Your System</p>
+                <p class="text-sm text-slate">Your solar system must be installed and operational during the tax year you claim the credit.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-solar-amber flex items-center justify-center text-sm font-bold text-midnight font-label">2</span>
+              <div>
+                <p class="font-semibold text-solar-navy font-headline">Own the System</p>
+                <p class="text-sm text-slate">You must own the system outright — either through cash purchase or a solar loan. Leases and PPAs do not qualify.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-solar-amber flex items-center justify-center text-sm font-bold text-midnight font-label">3</span>
+              <div>
+                <p class="font-semibold text-solar-navy font-headline">File IRS Form 5695</p>
+                <p class="text-sm text-slate">Complete IRS Form 5695 (Residential Energy Credits) with your federal tax return. We provide all the documentation you need.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-solar-amber flex items-center justify-center text-sm font-bold text-midnight font-label">4</span>
+              <div>
+                <p class="font-semibold text-solar-navy font-headline">Receive Your Credit</p>
+                <p class="text-sm text-slate">The credit reduces your tax liability. If you can't use the full credit in one year, the remaining amount rolls forward to future tax years.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ITC Example Table -->
+      <div class="mt-12 rounded-2xl border border-gray-200 bg-white overflow-hidden">
+        <div class="bg-solar-navy px-6 py-4">
+          <h3 class="text-lg font-bold text-white font-headline">ITC Savings by System Size</h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-gray-200 bg-gray-50">
+                <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">System Size</th>
+                <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">Avg. Cost</th>
+                <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">30% ITC</th>
+                <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">Net Cost</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-6 py-3 text-sm text-slate">6 kW</td>
+                <td class="px-6 py-3 text-sm text-slate">$15,000</td>
+                <td class="px-6 py-3 text-sm font-semibold text-energy-green">-$4,500</td>
+                <td class="px-6 py-3 text-sm font-bold text-solar-navy">$10,500</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 text-sm text-slate">8 kW</td>
+                <td class="px-6 py-3 text-sm text-slate">$20,000</td>
+                <td class="px-6 py-3 text-sm font-semibold text-energy-green">-$6,000</td>
+                <td class="px-6 py-3 text-sm font-bold text-solar-navy">$14,000</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3 text-sm text-slate">10 kW</td>
+                <td class="px-6 py-3 text-sm text-slate">$25,000</td>
+                <td class="px-6 py-3 text-sm font-semibold text-energy-green">-$7,500</td>
+                <td class="px-6 py-3 text-sm font-bold text-solar-navy">$17,500</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 text-sm text-slate">12 kW</td>
+                <td class="px-6 py-3 text-sm text-slate">$30,000</td>
+                <td class="px-6 py-3 text-sm font-semibold text-energy-green">-$9,000</td>
+                <td class="px-6 py-3 text-sm font-bold text-solar-navy">$21,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- California State Incentives -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="California State Incentives & SGIP"
+        subtitle="California offers additional programs that stack on top of the federal tax credit."
+        badge="State Incentives"
+      />
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-navy/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-navy"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Self-Generation Incentive Program (SGIP)</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            California's SGIP provides rebates for installing battery energy storage systems. If you're in a high fire-risk area or meet income qualifications, you may qualify for rebates covering <strong class="text-solar-navy">up to 100% of your battery cost</strong>.
+          </p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Rebates for battery storage paired with solar
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Higher rebates for equity and resiliency categories
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Available statewide through participating utilities
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-navy/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-navy"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Net Energy Metering (NEM)</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            California's NEM program credits you for excess solar energy your system sends back to the grid. While the state has transitioned to NEM 3.0 with lower export rates, pairing solar with battery storage maximizes your savings by letting you use your own energy during peak rate hours.
+          </p>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Credits for excess energy exported to the grid
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Battery storage helps maximize self-consumption
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Prop 13 exemption — no property tax increase for solar
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-navy/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-navy"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Property Tax Exemption</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            Under California's Proposition 13, your solar energy system is <strong class="text-solar-navy">100% exempt from property tax reassessment</strong>. This means your home value increases by $15,000–$25,000 without any additional property taxes — a benefit unique to California homeowners.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-navy/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-navy"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 10.33 9.33 11 8.5 11h-5C2.67 11 2 10.33 2 9.5S2.67 8 3.5 8h5c.83 0 1.5.67 1.5 1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Utility-Specific Programs</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            Depending on your utility provider (PG&E, SCE, or a local municipal utility), additional time-of-use rate plans and demand response programs may be available. Our team analyzes your specific utility situation to maximize every available benefit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- $0-Down Solar Loans -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="$0-Down Solar Loan Options"
+        subtitle="Start saving on day one with no upfront cost. Your monthly loan payment is typically less than your current electric bill."
+        badge="Most Popular"
+      />
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="rounded-2xl border border-gray-200 bg-white p-8">
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">How Solar Loans Work</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">
+            A solar loan lets you finance the full cost of your system with no money down. You own the system from day one, which means you qualify for the 30% federal tax credit — a benefit you lose with leases or PPAs.
+          </p>
+          <p class="text-slate text-sm leading-relaxed">
+            Most homeowners use their tax credit refund to pay down the loan principal after year one, significantly reducing monthly payments for the remainder of the term.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-8">
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Loan Terms Available</h3>
+          <ul class="space-y-3 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">10-year terms:</strong> Higher monthly payments, lower total interest. Best for fast payoff.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">15-year terms:</strong> Balanced monthly payments. Most popular option.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">20-25 year terms:</strong> Lowest monthly payments. Savings often exceed payment from month one.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">No prepayment penalties</strong> — pay off your loan early any time.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border-2 border-solar-amber bg-solar-amber/5 p-8">
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Why Loans Beat Leases</h3>
+          <ul class="space-y-3 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">You keep the 30% tax credit</strong> — worth $4,500–$9,000+</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">Home value increases</strong> — owned solar adds $15,000–$25,000</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">Fixed payments</strong> — unlike leases that escalate 1–3% per year</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-solar-navy">No complications when selling</strong> — pay off the loan or transfer it</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACE / HERO Financing -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="PACE / HERO Financing"
+        subtitle="Property-assessed financing that attaches to your home, not your credit score."
+        badge="Alternative Financing"
+      />
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">How PACE Works</h3>
+          <p class="text-slate leading-relaxed mb-4">
+            Property Assessed Clean Energy (PACE) financing lets you fund energy improvements through a voluntary assessment on your property tax bill. Instead of a traditional loan, the repayment is tied to your property — making it accessible even if you don't qualify for conventional financing.
+          </p>
+          <p class="text-slate leading-relaxed mb-4">
+            PACE programs like HERO (Home Energy Renovation Opportunity) are available in Kern County and throughout California. Approval is based on your property's equity and your ability to pay, rather than your credit score alone.
+          </p>
+          <h4 class="text-lg font-bold text-solar-navy font-headline mb-3 mt-6">Key Benefits</h4>
+          <ul class="space-y-2 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              No money down — 100% financing available
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Repayment through property tax bill (up to 20–25 years)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Transfers to the next owner if you sell your home
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Interest may be tax-deductible (consult your tax advisor)
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Is PACE Right for You?</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">PACE financing is a strong option when:</p>
+          <ul class="space-y-3 text-sm text-slate mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-solar-amber font-bold">+</span>
+              You have sufficient home equity but limited credit
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-solar-amber font-bold">+</span>
+              You want the longest repayment terms available
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-solar-amber font-bold">+</span>
+              You're combining solar with other home upgrades (roofing, insulation, HVAC)
+            </li>
+          </ul>
+          <p class="text-slate text-sm leading-relaxed mb-4">Consider other options when:</p>
+          <ul class="space-y-3 text-sm text-slate">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 font-bold">-</span>
+              You plan to sell your home soon (PACE can complicate the sale)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 font-bold">-</span>
+              You want the lowest possible interest rate (solar loans are usually lower)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 font-bold">-</span>
+              You need to refinance your mortgage in the near future
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cash Purchase Benefits -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Cash Purchase Benefits"
+        subtitle="If you have the capital available, paying cash delivers the highest long-term return on investment."
+        badge="Best ROI"
+      />
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="rounded-2xl bg-white border border-gray-200 p-8 text-center">
+          <div class="text-4xl font-bold text-solar-amber font-headline mb-2">$0</div>
+          <p class="text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Interest Paid</p>
+          <p class="text-sm text-slate leading-relaxed">No interest charges means every dollar of savings goes straight to your bottom line. Over 25 years, this often saves $5,000–$15,000 compared to financing.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-gray-200 p-8 text-center">
+          <div class="text-4xl font-bold text-solar-amber font-headline mb-2">300%+</div>
+          <p class="text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Typical ROI</p>
+          <p class="text-sm text-slate leading-relaxed">Cash buyers typically see a 300–500% return on investment over the life of the system, factoring in energy savings, tax credits, and increased home value.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-gray-200 p-8 text-center">
+          <div class="text-4xl font-bold text-solar-amber font-headline mb-2">5–7 yrs</div>
+          <p class="text-sm font-bold text-solar-navy font-label uppercase tracking-wider mb-3">Payback Period</p>
+          <p class="text-sm text-slate leading-relaxed">Most cash buyers break even in 5–7 years, then enjoy 18–20+ years of free electricity from a system warranted for 25 years.</p>
+        </div>
+      </div>
+      <div class="mt-12 rounded-2xl border border-gray-200 bg-white p-8">
+        <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Cash Purchase Savings Example: 10 kW System</h3>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <p class="text-sm text-slate mb-1">System Cost</p>
+            <p class="text-xl font-bold text-solar-navy font-headline">$25,000</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate mb-1">After 30% ITC</p>
+            <p class="text-xl font-bold text-energy-green font-headline">$17,500</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate mb-1">25-Year Savings</p>
+            <p class="text-xl font-bold text-solar-navy font-headline">$55,000+</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate mb-1">Net Profit</p>
+            <p class="text-xl font-bold text-solar-amber font-headline">$37,500+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Comparison Table -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Compare Your Financing Options"
+        subtitle="Every option lets you own your system and keep the tax credit. Here's how they stack up."
+        badge="Side-by-Side"
+      />
+      <div class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-gray-200 bg-solar-navy">
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">Feature</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">Cash Purchase</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">Solar Loan</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">PACE/HERO</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Upfront Cost</td>
+                <td class="px-6 py-4 text-sm text-slate">Full system cost</td>
+                <td class="px-6 py-4 text-sm text-slate">$0 down</td>
+                <td class="px-6 py-4 text-sm text-slate">$0 down</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">30% Federal Tax Credit</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">Yes</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">Yes</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">Yes</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Monthly Payments</td>
+                <td class="px-6 py-4 text-sm text-slate">None</td>
+                <td class="px-6 py-4 text-sm text-slate">Fixed monthly</td>
+                <td class="px-6 py-4 text-sm text-slate">Via property tax</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Interest Rate</td>
+                <td class="px-6 py-4 text-sm text-slate">None</td>
+                <td class="px-6 py-4 text-sm text-slate">3.99%–8.99%</td>
+                <td class="px-6 py-4 text-sm text-slate">6.00%–9.00%</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Term Length</td>
+                <td class="px-6 py-4 text-sm text-slate">N/A</td>
+                <td class="px-6 py-4 text-sm text-slate">10–25 years</td>
+                <td class="px-6 py-4 text-sm text-slate">10–25 years</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Credit Requirements</td>
+                <td class="px-6 py-4 text-sm text-slate">None</td>
+                <td class="px-6 py-4 text-sm text-slate">Good credit (650+)</td>
+                <td class="px-6 py-4 text-sm text-slate">Home equity based</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Home Value Increase</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">$15K–$25K</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">$15K–$25K</td>
+                <td class="px-6 py-4 text-sm text-energy-green font-semibold">$15K–$25K</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Overall ROI</td>
+                <td class="px-6 py-4 text-sm font-bold text-solar-amber">Highest</td>
+                <td class="px-6 py-4 text-sm font-bold text-solar-amber">High</td>
+                <td class="px-6 py-4 text-sm font-bold text-solar-amber">Moderate</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Best For</td>
+                <td class="px-6 py-4 text-sm text-slate">Maximum savings</td>
+                <td class="px-6 py-4 text-sm text-slate">Most homeowners</td>
+                <td class="px-6 py-4 text-sm text-slate">Limited credit options</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Payment Examples -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Monthly Payment Examples"
+        subtitle="See what solar could cost per month with a $0-down loan — and how it compares to your current electric bill."
+        badge="Real Numbers"
+      />
+      <div class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-gray-200 bg-solar-navy">
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">System Size</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">Net Cost (After ITC)</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">15-Year Loan</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">20-Year Loan</th>
+                <th class="px-6 py-4 text-sm font-bold text-white font-label">Avg. Electric Bill Replaced</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">6 kW</td>
+                <td class="px-6 py-4 text-sm text-slate">$10,500</td>
+                <td class="px-6 py-4 text-sm text-slate">~$85/mo</td>
+                <td class="px-6 py-4 text-sm text-slate">~$70/mo</td>
+                <td class="px-6 py-4 text-sm font-semibold text-energy-green">$120–$180/mo</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">8 kW</td>
+                <td class="px-6 py-4 text-sm text-slate">$14,000</td>
+                <td class="px-6 py-4 text-sm text-slate">~$115/mo</td>
+                <td class="px-6 py-4 text-sm text-slate">~$95/mo</td>
+                <td class="px-6 py-4 text-sm font-semibold text-energy-green">$160–$240/mo</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">10 kW</td>
+                <td class="px-6 py-4 text-sm text-slate">$17,500</td>
+                <td class="px-6 py-4 text-sm text-slate">~$140/mo</td>
+                <td class="px-6 py-4 text-sm text-slate">~$115/mo</td>
+                <td class="px-6 py-4 text-sm font-semibold text-energy-green">$200–$300/mo</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-solar-navy">12 kW</td>
+                <td class="px-6 py-4 text-sm text-slate">$21,000</td>
+                <td class="px-6 py-4 text-sm text-slate">~$170/mo</td>
+                <td class="px-6 py-4 text-sm text-slate">~$140/mo</td>
+                <td class="px-6 py-4 text-sm font-semibold text-energy-green">$250–$400/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
+          <p class="text-xs text-slate">
+            * Estimated monthly payments based on a 5.99% APR solar loan after applying the 30% federal tax credit. Actual rates and payments vary based on creditworthiness, lender, and market conditions. Electric bill estimates based on Central Valley residential averages. Contact us for a personalized quote.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with QuoteForm -->
+  <section class="py-16 lg:py-20 bg-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="inline-block rounded-full border border-white/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white mb-4 font-label">Free Consultation</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-headline leading-tight mb-6">Find the Best Financing Option for Your Home</h2>
+          <p class="text-lg text-white/80 leading-relaxed mb-6">
+            Every home is different. Our solar advisors analyze your energy usage, roof, utility rates, and financial goals to recommend the financing option that saves you the most money.
+          </p>
+          <ul class="space-y-3 text-white/90 mb-8">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Personalized savings estimate based on your actual utility bill
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Side-by-side comparison of financing options for your specific situation
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              Help claiming all available federal, state, and local incentives
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              No pressure, no obligation — just honest guidance
+            </li>
+          </ul>
+          <a href="tel:+16615962477" class="inline-flex items-center gap-2 text-solar-amber font-bold text-lg hover:text-white transition font-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (661) 596-2477
+          </a>
+        </div>
+        <QuoteForm heading="Get Your Free Solar Financing Quote" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

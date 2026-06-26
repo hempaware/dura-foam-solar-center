@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Net Metering in California', href: '/net-metering-california' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Net Metering in California: NEM 3.0 Explained',
+  description: 'Understand California\'s NEM 3.0 net billing policy, how it affects solar savings, and why battery storage matters more than ever.',
+  datePublished: '2025-01-15',
+  dateModified: '2025-01-15',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://solarcenterca.com/logo.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/net-metering-california',
+  },
+};
+---
+
+<BaseLayout
+  title="Net Metering in California: NEM 3.0 Explained | Solar Center by Dura-Foam"
+  description="Understand California's NEM 3.0 net billing policy, how it affects solar savings, and why battery storage matters more than ever. Expert guidance from Solar Center."
+  schema={schema}
+>
+  <PageHero title="Net Metering in California" subtitle="How NEM 3.0 changed solar economics -- and what it means for your savings." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- What Is Net Metering -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">The Basics</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">What Is Net Metering?</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Net metering is the billing arrangement between solar homeowners and their utility company. When your solar panels produce more electricity than your home uses during the day, the excess energy flows back to the electrical grid. In return, you receive credits on your utility bill that offset the cost of electricity you draw from the grid at night or on cloudy days.</p>
+          <p>Think of it as a two-way relationship with the grid. Your electric meter tracks energy flowing in both directions. When you send power out, you earn credits. When you pull power in, you spend them. At the end of each billing cycle, you only pay for the difference -- your "net" energy use.</p>
+          <p>In California, this arrangement has been governed by a series of policies known as NEM (Net Energy Metering). Each version has changed how credits are calculated, directly affecting the financial return on a solar investment. Understanding these changes is essential for anyone considering solar today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEM History Timeline -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Policy Timeline</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">The Evolution of Net Metering in California</h2>
+        <p class="mx-auto max-w-2xl text-slate leading-relaxed">California has gone through three distinct net metering policies. Each revision reduced the value of exported solar energy, shifting the economics of residential solar.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- NEM 1.0 -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">NEM 1.0</h3>
+          <p class="text-sm text-solar-amber font-label font-semibold mb-2">1996 - 2016</p>
+          <p class="text-slate leading-relaxed text-sm">The original and most generous policy. Solar exports were credited at the full retail electricity rate -- typically 25-35 cents per kWh. Every kilowatt-hour you sent to the grid offset one kilowatt-hour you purchased later, dollar for dollar. This made the payback period short and the return on investment substantial.</p>
+        </div>
+        <!-- NEM 2.0 -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">NEM 2.0</h3>
+          <p class="text-sm text-solar-amber font-label font-semibold mb-2">2016 - April 2023</p>
+          <p class="text-slate leading-relaxed text-sm">Credits were still close to retail rate, but non-bypassable charges of 2-3 cents per kWh were added to every unit of electricity consumed from the grid. Solar customers were also moved to time-of-use (TOU) rate plans, meaning electricity costs varied by time of day. The economics were still strong, but slightly less favorable than NEM 1.0.</p>
+        </div>
+        <!-- NEM 3.0 -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 ring-2 ring-solar-amber">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">NEM 3.0 (Net Billing)</h3>
+          <p class="text-sm text-solar-amber font-label font-semibold mb-2">April 2023 - Present</p>
+          <p class="text-slate leading-relaxed text-sm">A fundamental shift in how solar exports are valued. Instead of retail-rate credits, exports are compensated at the "avoided cost" rate -- what it would cost the utility to generate that power themselves. This drops export values to roughly 5-8 cents per kWh on average, compared to retail rates of 30+ cents. This policy makes self-consumption and battery storage far more important.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How NEM 3.0 Works -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">The Details</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How NEM 3.0 Actually Works</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Under NEM 3.0, officially called the Net Billing Tariff, the value of your exported solar energy is no longer tied to the retail electricity rate. Instead, each kilowatt-hour you send to the grid is credited at an "avoided cost" rate that varies by the hour and by the month.</p>
+            <p>During midday hours when the grid is flooded with solar energy, export rates can drop to as low as 3-4 cents per kWh. During late afternoon and evening peak hours, when grid demand is high and solar production drops, rates are higher -- but your panels typically are not producing much at that time.</p>
+            <p>The practical result: the average export credit under NEM 3.0 lands between 5 and 8 cents per kWh, compared to the 30+ cents per kWh you pay to buy electricity from the grid. That gap is why system design strategy has become so critical.</p>
+          </div>
+        </div>
+        <div>
+          <!-- NEM 2.0 vs NEM 3.0 Comparison Table -->
+          <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">NEM 2.0 vs. NEM 3.0 at a Glance</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-gray-200">
+                    <th class="py-3 pr-4 text-left font-semibold text-solar-navy font-label">Factor</th>
+                    <th class="py-3 px-4 text-left font-semibold text-solar-navy font-label">NEM 2.0</th>
+                    <th class="py-3 pl-4 text-left font-semibold text-solar-navy font-label">NEM 3.0</th>
+                  </tr>
+                </thead>
+                <tbody class="text-slate">
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 pr-4 font-medium">Export Credit Rate</td>
+                    <td class="py-3 px-4">~25-35 cents/kWh</td>
+                    <td class="py-3 pl-4">~5-8 cents/kWh</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 pr-4 font-medium">Credit Type</td>
+                    <td class="py-3 px-4">Near retail rate</td>
+                    <td class="py-3 pl-4">Avoided cost rate</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 pr-4 font-medium">Rate Structure</td>
+                    <td class="py-3 px-4">Time-of-use</td>
+                    <td class="py-3 pl-4">Hourly varying</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 pr-4 font-medium">Battery Importance</td>
+                    <td class="py-3 px-4">Optional</td>
+                    <td class="py-3 pl-4">Strongly recommended</td>
+                  </tr>
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 pr-4 font-medium">Typical Payback</td>
+                    <td class="py-3 px-4">5-7 years</td>
+                    <td class="py-3 pl-4">6-9 years</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-4 font-medium">Self-Consumption</td>
+                    <td class="py-3 px-4">Less critical</td>
+                    <td class="py-3 pl-4">Essential</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Batteries Matter -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Battery Storage</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Why Batteries Matter More Than Ever Under NEM 3.0</h2>
+        <p class="text-slate leading-relaxed">Under NEM 3.0, the math is simple: every kilowatt-hour you use yourself is worth 30+ cents, but every kilowatt-hour you export is worth only 5-8 cents. Battery storage bridges that gap.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Store Daytime Production</h3>
+          <p class="text-slate leading-relaxed text-sm">Instead of sending excess midday solar to the grid for pennies, batteries capture that energy for use later. You keep the full retail value of every stored kilowatt-hour rather than accepting the reduced export rate.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Power Through Peak Hours</h3>
+          <p class="text-slate leading-relaxed text-sm">Electricity rates are highest between 4 PM and 9 PM, precisely when solar production drops. Batteries let you use your stored solar energy during these expensive peak hours, avoiding the highest grid rates entirely.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Energy Independence</h3>
+          <p class="text-slate leading-relaxed text-sm">Batteries provide backup power during grid outages -- a growing concern in California. Beyond the financial benefits, battery storage gives you resilience against Public Safety Power Shutoffs and grid instability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Means for New Customers -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">For Homeowners</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">What NEM 3.0 Means for New Solar Customers</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>The most important thing to understand: going solar is still a smart financial decision in California. Electricity rates from utilities like PG&E and SCE continue to climb -- residential rates have increased roughly 40-50% over the past five years alone. Even under NEM 3.0, solar dramatically reduces your exposure to these rising costs.</p>
+          <p>What has changed is the strategy. Under NEM 1.0 and 2.0, the approach was straightforward: install the biggest system possible, export everything, and let credits pile up. Under NEM 3.0, the focus shifts to maximizing self-consumption -- using as much of your solar production directly as possible, rather than sending it to the grid.</p>
+          <p>The payback period has extended modestly, from the 5-7 year range under NEM 2.0 to roughly 6-9 years under NEM 3.0. But the 25+ year lifespan of a solar system means you still enjoy well over a decade of pure savings after the system pays for itself. And with electricity rates rising every year, the long-term return keeps improving.</p>
+          <p>The 30% federal Investment Tax Credit remains available through 2032, keeping upfront costs manageable. Combined with California's generally excellent solar irradiance -- especially here in the Central Valley -- the economics remain strong for homeowners who plan ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Solar Center Designs for NEM 3.0 -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Our Approach</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How Solar Center Designs Systems for NEM 3.0</h2>
+        <p class="mx-auto max-w-2xl text-slate leading-relaxed">At Solar Center by Dura-Foam, we've adapted our system design approach to maximize your savings under NEM 3.0. Every system we install is engineered for the current policy landscape.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Battery Pairing</h3>
+          <p class="text-slate leading-relaxed text-sm">We pair every new solar installation with a battery storage recommendation tailored to your energy profile. Batteries capture excess production for evening use, turning low-value exports into high-value self-consumption. This single strategy recovers much of the value lost under NEM 3.0.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Load Shifting Strategies</h3>
+          <p class="text-slate leading-relaxed text-sm">We help you shift high-energy activities -- running the dishwasher, charging your EV, doing laundry -- to midday hours when your panels are producing at peak capacity. Using your solar energy directly is always more valuable than exporting it under NEM 3.0.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Right-Sized Systems</h3>
+          <p class="text-slate leading-relaxed text-sm">Under NEM 3.0, oversizing your system creates diminishing returns because excess production earns far less at export rates. We analyze your actual energy consumption patterns and design a system matched to your usage, maximizing the percentage of solar energy you consume directly.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Expert Guidance</h3>
+          <p class="text-slate leading-relaxed text-sm">As a division of Dura-Foam, we've been installing solar in California long enough to have navigated every NEM transition. We explain the policy clearly, model your savings accurately, and build a system designed for how NEM 3.0 actually works -- not how the old rules worked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Common Questions</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">NEM 3.0 FAQ</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">Does NEM 3.0 apply to existing solar customers?<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">No. If you installed solar under NEM 1.0 or NEM 2.0, you are grandfathered into your original rate structure for 20 years from the date your system was interconnected. NEM 3.0 only applies to new solar applications submitted to the utility after April 14, 2023. This is why many homeowners rushed to submit applications before the deadline.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">Is solar still worth it under NEM 3.0?<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Absolutely. California electricity rates are among the highest in the nation and continue to rise each year. Even with lower export credits, solar paired with battery storage significantly reduces your monthly energy costs. The payback period is slightly longer than under NEM 2.0, but you still recoup your investment within 6-9 years and then enjoy 15+ years of near-free electricity. Waiting only means paying more for grid power in the meantime.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">Do I need a battery with NEM 3.0?<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">While a battery is not strictly required, it is strongly recommended under NEM 3.0. Without a battery, your excess solar energy is exported at 5-8 cents per kWh. With a battery, you store that energy and use it during peak hours when grid electricity costs 30+ cents per kWh. The difference in savings makes the battery pay for itself and significantly improves your total return on investment. Most solar professionals now consider battery storage essential rather than optional.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">Could NEM 3.0 change again in the future?<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">The California Public Utilities Commission reviews net metering policies periodically, and further changes are possible. However, customers who install under NEM 3.0 will be grandfathered into the current rate structure for their agreement term. Historically, each policy revision has reduced export credits, which suggests that waiting for a better policy is unlikely. Installing sooner locks in current rates and starts your savings immediately.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Navigate NEM 3.0 With Confidence</h2>
+      <p class="text-white/80 text-lg mb-8">Our team designs every system to maximize your savings under current California net billing rules. Get a free, no-pressure consultation and see exactly what solar can do for your home.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QuoteForm Section -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</BaseLayout>

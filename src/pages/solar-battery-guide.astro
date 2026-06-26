@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Solar Battery Guide', href: '/solar-battery-guide' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Home Solar Battery Guide: Storage, Sizing & Savings',
+  description: 'Everything you need to know about home solar batteries: how they work, sizing, backup power, NEM 3.0 benefits, costs, and whether battery storage is right for you.',
+  datePublished: '2025-01-15',
+  dateModified: '2025-06-01',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/solar-battery-guide',
+  },
+};
+---
+
+<BaseLayout
+  title="Home Solar Battery Guide: Storage, Sizing & Savings | Solar Center by Dura-Foam"
+  description="Everything you need to know about home solar batteries: how they work, sizing for your needs, backup power, NEM 3.0 benefits, costs, and whether battery storage is right for you."
+  schema={schema}
+>
+  <PageHero title="Home Solar Battery Guide" subtitle="How battery storage works, what it costs, and whether it is the right fit for your home." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Why Consider Battery Storage -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">The Case for Batteries</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Why Consider Battery Storage?</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Solar panels generate electricity during the day, but your home uses power around the clock. Without a battery, excess daytime production goes back to the grid, and you buy electricity at retail rates in the evening. A battery changes that equation entirely.</p>
+          <p>Battery storage has become increasingly important since California adopted NEM 3.0 in April 2023. Under the new policy, the value of exported solar energy dropped significantly, making self-consumption the key to maximizing your return on investment. A battery lets you store your solar energy and use it when rates are highest -- typically between 4 PM and 9 PM.</p>
+          <p>Beyond financial savings, batteries provide backup power during grid outages. In California, where Public Safety Power Shutoffs (PSPS) have become a regular occurrence during fire season, that peace of mind is increasingly valuable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Batteries Work -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">The Basics</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How Solar Batteries Work</h2>
+      <p class="text-slate leading-relaxed mb-10 max-w-3xl">The concept is simple: charge during the day, use at night. Here is the daily cycle of a solar-plus-battery system.</p>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-solar-amber flex items-center justify-center mb-4">
+            <span class="text-white font-bold font-headline text-sm">AM</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Morning</h3>
+          <p class="text-slate text-sm leading-relaxed">Solar panels begin generating power at sunrise. Your home uses what it needs, and excess energy starts charging the battery.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-solar-amber flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Midday</h3>
+          <p class="text-slate text-sm leading-relaxed">Peak solar production. The battery reaches full charge. Any additional excess can flow to the grid for net billing credits.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-solar-navy flex items-center justify-center mb-4">
+            <span class="text-white font-bold font-headline text-sm">PM</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Evening Peak</h3>
+          <p class="text-slate text-sm leading-relaxed">Solar production drops as the sun sets, but electricity rates peak (4-9 PM). The battery kicks in, powering your home with stored solar energy instead of expensive grid power.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-midnight flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Overnight</h3>
+          <p class="text-slate text-sm leading-relaxed">The battery continues to power your home until it depletes. Off-peak grid rates are lower, so any grid power you do use is at the cheapest time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Battery Types -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Technology</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Battery Types and Chemistry</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-energy-green/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Lithium-Ion (Recommended)</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">The dominant technology for home solar batteries. Two main chemistries are used:</p>
+          <ul class="space-y-2 text-slate text-sm">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>LFP (Lithium Iron Phosphate):</strong> Longer lifespan (5,000+ cycles), more stable, no cobalt. Increasingly the standard for home storage.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>NMC (Nickel Manganese Cobalt):</strong> Higher energy density, slightly more compact. Well-established technology with strong track record.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-slate/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate" aria-hidden="true"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Lead-Acid (Legacy)</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">An older technology still used in some off-grid applications. Generally not recommended for new home installations due to significant drawbacks:</p>
+          <ul class="space-y-2 text-slate text-sm">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate flex-shrink-0 mt-0.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Shorter lifespan (500-1,500 cycles)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate flex-shrink-0 mt-0.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Requires more maintenance</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate flex-shrink-0 mt-0.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Lower depth of discharge (50% vs 90%+)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizing Your Battery -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Right-Sizing</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Sizing Your Battery: How Many kWh Do You Need?</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Battery sizing depends on your goals. There is a significant difference between covering your evening peak usage and providing whole-home backup during an extended outage.</p>
+            <p>The average California home uses 25 to 30 kWh per day. However, most of that usage happens during specific periods. Your evening and overnight usage, when solar panels are not producing, typically accounts for 10 to 15 kWh.</p>
+            <p>A single 10 to 13 kWh battery is usually enough to cover your peak evening hours (4-9 PM) and significantly reduce grid purchases. For whole-home backup that lasts through an extended outage, you would need 20 kWh or more, often requiring two battery units.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Battery Sizing Guide</h3>
+          <div class="space-y-5">
+            <div class="border-b border-gray-100 pb-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-solar-navy">Essential Backup</span>
+                <span class="font-bold text-solar-amber font-headline">5-8 kWh</span>
+              </div>
+              <p class="text-slate text-sm">Lights, refrigerator, Wi-Fi, phone charging, a few outlets. Keeps essentials running for 8-12 hours.</p>
+            </div>
+            <div class="border-b border-gray-100 pb-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-solar-navy">Peak Shaving</span>
+                <span class="font-bold text-solar-amber font-headline">10-13 kWh</span>
+              </div>
+              <p class="text-slate text-sm">Covers evening peak hours. Best for maximizing NEM 3.0 savings. Most popular choice for grid-tied homes.</p>
+            </div>
+            <div class="border-b border-gray-100 pb-4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-solar-navy">Whole-Home Backup</span>
+                <span class="font-bold text-solar-amber font-headline">20-30 kWh</span>
+              </div>
+              <p class="text-slate text-sm">Powers everything including HVAC during outages. Usually requires two battery units. Ideal for areas with frequent PSPS events.</p>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-solar-navy">Off-Grid / Extended</span>
+                <span class="font-bold text-solar-amber font-headline">30+ kWh</span>
+              </div>
+              <p class="text-slate text-sm">Multi-day autonomy for rural or off-grid homes. Three or more battery units paired with a large solar array.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Backup Power -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Resilience</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Backup Power During Outages</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Standard grid-tied solar systems shut down during power outages for safety -- this is a requirement to protect utility workers on the lines. A battery with an automatic transfer switch solves this problem. When the grid goes down, the system detects the outage, disconnects from the grid, and seamlessly switches to battery power within milliseconds.</p>
+          <p>During the outage, your solar panels continue charging the battery during daylight hours, creating a self-sustaining cycle that can keep your home powered for days. Most battery systems let you prioritize which circuits get backup power, so you can focus on the essentials like refrigeration, lighting, medical equipment, and internet connectivity.</p>
+          <p>For California homeowners in wildfire-prone areas where PSPS shutoffs can last 24 to 48 hours or longer, this capability is not just convenient -- it is essential. A properly sized solar-plus-battery system ensures your family stays comfortable and connected regardless of grid conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Batteries + NEM 3.0 -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Maximize Savings</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Batteries and NEM 3.0: Maximizing Self-Consumption</h2>
+      <div class="grid gap-8 md:grid-cols-3 mb-8">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <p class="text-3xl font-extrabold text-solar-navy font-headline">5-8c</p>
+          <p class="text-sm text-slate mt-1">NEM 3.0 export value per kWh (average)</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <p class="text-3xl font-extrabold text-solar-navy font-headline">35-55c</p>
+          <p class="text-sm text-slate mt-1">Peak evening rate per kWh you avoid</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-energy-green/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <p class="text-3xl font-extrabold text-energy-green font-headline">6-7x</p>
+          <p class="text-sm text-slate mt-1">Value multiplier by storing vs. exporting</p>
+        </div>
+      </div>
+      <div class="max-w-3xl">
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Under NEM 3.0, exporting excess solar to the grid earns you roughly 5 to 8 cents per kWh on average. But the electricity you buy during peak evening hours costs 35 to 55 cents per kWh depending on your utility and rate plan. That is a massive gap.</p>
+          <p>A battery bridges this gap. Instead of exporting your midday excess at low rates, you store it and use it during the expensive peak window. Every kWh you store and self-consume is worth 6 to 7 times more than exporting it. Over a year, this difference can amount to $1,000 or more in additional savings compared to a solar-only system.</p>
+          <p>This is why we recommend battery storage for virtually every new solar installation under NEM 3.0. The economics have shifted decisively in favor of self-consumption, and a battery is the tool that makes it possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost and ROI -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Investment</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Cost Ranges and ROI Timeline</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>A home battery storage system typically costs between $10,000 and $15,000 installed, depending on the capacity, brand, and installation complexity. This cost is eligible for the 30% federal Investment Tax Credit, bringing the net cost down to $7,000 to $10,500.</p>
+            <p>If you qualify for California's SGIP rebate, the cost can drop further. Customers in high-fire-threat districts or those who are medically vulnerable may receive enhanced rebates that cover a significant portion of the remaining balance.</p>
+            <p>The payback timeline for a battery depends on your rate plan, usage patterns, and whether you experience outages. In most cases, the financial return from peak-hour savings under NEM 3.0 gives batteries a payback period of 7 to 12 years. When you factor in backup power value and rising utility rates, the investment becomes increasingly attractive over the system's 10 to 15 year warranty period.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-xl border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Battery Cost Example</h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Battery System (13 kWh)</span>
+              <span class="font-bold text-solar-navy">$12,000</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Federal ITC (30%)</span>
+              <span class="font-bold text-energy-green">-$3,600</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Net Battery Cost</span>
+              <span class="font-bold text-solar-navy">$8,400</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Annual Peak-Shaving Savings</span>
+              <span class="font-bold text-solar-navy">$800 - $1,200</span>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-slate font-semibold">Estimated Payback</span>
+              <span class="text-2xl font-extrabold text-solar-amber font-headline">7-10 Years</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate mt-6">Estimates based on average TOU rate differentials in PG&E and SCE territories. SGIP rebates, if available, would further reduce cost and payback period.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Is a Battery Right for You? -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Is a Battery Right for You?" subtitle="Use this framework to evaluate whether battery storage makes sense for your situation." />
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-energy-green font-headline mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            A Battery Is a Great Fit If...
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You are on a TOU rate plan</p>
+                <p class="text-slate text-sm">Peak-hour rates of 35 to 55 cents per kWh make self-consumption extremely valuable.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You experience power outages</p>
+                <p class="text-slate text-sm">PSPS events, storm outages, or unreliable grid service make backup power worth the investment.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You are installing new solar under NEM 3.0</p>
+                <p class="text-slate text-sm">The economics of NEM 3.0 strongly favor solar-plus-battery systems over solar-only.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You have high evening energy usage</p>
+                <p class="text-slate text-sm">Families home in the evenings running AC, cooking, and using appliances benefit the most from stored solar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Consider Carefully If...
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">Your budget is very tight</p>
+                <p class="text-slate text-sm">If the battery cost pushes your total investment beyond comfort, solar-only still saves significant money.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You are on a grandfathered NEM 1.0 or 2.0 plan</p>
+                <p class="text-slate text-sm">If you already have solar under NEM 2.0 with favorable export rates, the battery ROI may be longer.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You rarely experience outages</p>
+                <p class="text-slate text-sm">If backup power is not a priority and your grid is reliable, the pure financial case takes longer to pay off.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <p class="font-semibold text-solar-navy text-sm">You plan to move soon</p>
+                <p class="text-slate text-sm">Batteries increase home value, but if you are selling within 2-3 years, you may not recoup the investment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Ready to Add Battery Storage to Your Solar System?</h2>
+      <p class="text-white/80 text-lg mb-8">Get a custom battery recommendation based on your home's energy needs, rate plan, and backup priorities.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+          Get Your Free Quote
+        </a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">
+          Call (661) 596-2477
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</BaseLayout>

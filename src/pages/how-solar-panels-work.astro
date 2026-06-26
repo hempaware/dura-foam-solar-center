@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'How Solar Panels Work', href: '/how-solar-panels-work' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'How Do Solar Panels Work? Solar Energy Explained',
+  description: 'Learn how solar panels convert sunlight into electricity, what components make up a solar system, and how much energy a typical home system produces in Bakersfield, CA.',
+  datePublished: '2025-01-15',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/how-solar-panels-work',
+  },
+};
+---
+
+<BaseLayout
+  title="How Do Solar Panels Work? | Solar Energy Explained | Solar Center by Dura-Foam"
+  description="Learn how solar panels convert sunlight into electricity, what components make up a solar system, and how much energy a typical home system produces in Bakersfield, CA."
+  schema={schema}
+>
+  <PageHero title="How Do Solar Panels Work?" subtitle="The science behind solar energy -- simplified for homeowners." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- The Science Simplified -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">The Science Simplified</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Turning Sunlight Into Electricity</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Solar panels work through a process called the <strong>photovoltaic effect</strong>, a phenomenon first discovered in 1839 and refined over the past century into the reliable technology powering millions of homes today.</p>
+          <p>Each solar panel is made up of dozens of individual solar cells, typically constructed from silicon -- one of the most abundant elements on Earth. These silicon cells are engineered with two layers: one with a positive charge and one with a negative charge, creating an electric field across the cell.</p>
+          <p>When sunlight strikes a solar panel, photons (particles of light) are absorbed by the silicon cells. This energy knocks electrons loose from their atoms within the silicon. The electric field across the cell pushes these freed electrons in a specific direction, creating a flow of electrical current. This is direct current (DC) electricity.</p>
+          <p>A single solar cell produces only a small amount of power, which is why cells are wired together into panels, and panels are grouped into arrays. A typical residential panel contains 60 to 72 cells and produces between 350 and 450 watts of power under ideal conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DC to AC Conversion -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">From Panel to Plug</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">DC to AC: The Role of the Inverter</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>The DC electricity produced by your solar panels cannot directly power your home. Your appliances, lights, and electronics all run on alternating current (AC) electricity. This is where the inverter comes in.</p>
+          <p>The inverter is the bridge between your solar panels and your electrical system. It converts the DC output from your panels into AC power that matches the voltage and frequency of your home's electrical grid. Modern inverters also optimize energy production, monitor system performance, and manage the connection between your solar system and the utility grid.</p>
+          <p>There are two main types of inverters used in residential systems. String inverters connect all panels in a series and convert the combined DC output at a single point. Microinverters attach to each individual panel and convert DC to AC right at the source, which can improve performance when panels experience different levels of shade or orientation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components of a Solar System -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">System Components</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">What Makes Up a Home Solar System?</h2>
+        <p class="text-slate leading-relaxed max-w-2xl mx-auto">A residential solar installation consists of several key components working together to capture sunlight and deliver usable electricity to your home.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Solar Panels -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-solar-amber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              <circle cx="12" cy="12" r="4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Solar Panels</h3>
+          <p class="text-slate leading-relaxed">The photovoltaic modules that capture sunlight and convert it into DC electricity. Modern panels are rated between 350 and 450 watts each and are designed to withstand decades of weather exposure.</p>
+        </div>
+        <!-- Inverter -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-solar-amber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Inverter</h3>
+          <p class="text-slate leading-relaxed">Converts the DC electricity from your panels into AC power your home can use. The inverter also monitors system performance and manages grid connectivity in real time.</p>
+        </div>
+        <!-- Racking/Mounting -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-solar-amber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Racking and Mounting</h3>
+          <p class="text-slate leading-relaxed">The structural framework that secures panels to your roof or ground surface. Proper racking ensures optimal angle for sunlight exposure and protects your roof's integrity throughout the system's lifespan.</p>
+        </div>
+        <!-- Electrical Meter -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-solar-amber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Electrical Meter</h3>
+          <p class="text-slate leading-relaxed">A bi-directional meter tracks both the energy your system produces and the electricity you draw from the grid. This is essential for net metering, which credits you for excess power sent back to the utility.</p>
+        </div>
+        <!-- Optional Battery -->
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-solar-amber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
+              <line x1="23" y1="13" x2="23" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Optional Battery Storage</h3>
+          <p class="text-slate leading-relaxed">Battery systems store excess solar energy for use after sunset or during outages. While not required for a grid-tied system, batteries provide energy independence and backup power when you need it most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid-Tied vs Off-Grid vs Hybrid -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">System Types</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Grid-Tied vs. Off-Grid vs. Hybrid</h2>
+        <p class="text-slate leading-relaxed max-w-2xl mx-auto">Not all solar installations are the same. The right system type depends on your energy goals, budget, and location.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Grid-Tied</h3>
+          <p class="text-slate leading-relaxed">The most common and cost-effective option. Your system connects to the utility grid, allowing you to draw power when your panels are not producing and send excess energy back for credits through net metering. No batteries are required, keeping upfront costs lower.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Off-Grid</h3>
+          <p class="text-slate leading-relaxed">A fully independent system with no utility connection. Off-grid installations require battery storage to provide power at night and during cloudy periods. These systems are typically used in remote locations where connecting to the grid is impractical or prohibitively expensive.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Hybrid</h3>
+          <p class="text-slate leading-relaxed">Combines the best of both worlds. A hybrid system connects to the grid and includes battery storage, giving you backup power during outages while still benefiting from net metering. This is the fastest-growing category as battery prices continue to decline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Energy Production -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Energy Output</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How Much Energy Does a Solar System Produce?</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>The amount of energy a solar system generates depends on several factors: system size, panel efficiency, roof orientation, shading, and the amount of sunlight your location receives.</p>
+          <p>Bakersfield and the Central Valley are among the best locations in the country for solar energy. The region receives approximately <strong>5.5 to 6 peak sun hours per day</strong> on average throughout the year, which ranks well above the national average.</p>
+          <p>For a typical <strong>8 kW residential system</strong> in Bakersfield, you can expect annual production of approximately <strong>13,000 kWh per year</strong>. That is enough to cover most or all of the electricity needs for an average California home, which uses around 7,000 to 10,000 kWh annually.</p>
+          <p>Peak production occurs during the long summer days when the sun is highest in the sky, and your system will generate less energy during the shorter winter months. Net metering allows you to bank summer surplus credits to offset winter shortfalls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Night and Cloudy Days -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Common Questions</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">What Happens at Night and on Cloudy Days?</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Solar panels require sunlight to generate electricity, so they do not produce power at night. On cloudy days, panels still generate energy but at reduced capacity -- typically 10 to 25 percent of their rated output depending on cloud cover.</p>
+          <p>For grid-tied systems, this is not a problem. When your panels are not producing enough to meet your needs, your home automatically draws electricity from the utility grid. The transition is seamless and requires no action on your part.</p>
+          <p>If you have battery storage, your system will draw from stored energy before pulling from the grid. This further reduces your reliance on utility power and provides backup during outages.</p>
+          <p>Bakersfield's climate is particularly favorable for solar, with over 270 sunny days per year. Cloudy day production losses are minimal compared to regions with less consistent sunlight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifespan and Degradation -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Long-Term Value</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How Long Do Solar Panels Last?</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Modern solar panels are built to last. Most manufacturers warrant their panels for <strong>25 to 30 years</strong>, but panels routinely continue producing electricity well beyond that timeframe.</p>
+          <p>Over time, solar panels experience a small amount of degradation -- a gradual decline in energy output. The industry standard degradation rate is <strong>0.3 to 0.5 percent per year</strong>. This means that after 25 years of service, your panels will still be producing <strong>85 percent or more</strong> of their original rated output.</p>
+          <p>Inverters typically have a shorter lifespan of 10 to 15 years for string inverters and up to 25 years for microinverters. Budget for one inverter replacement over the life of your system if you choose a string inverter.</p>
+          <p>With no moving parts and minimal maintenance requirements, solar panels are one of the most durable energy investments you can make. An occasional cleaning and annual inspection are all that is needed to keep your system performing at its best.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Ready to Harness the Power of the Sun?</h2>
+      <p class="text-white/80 text-lg mb-8">Get a free consultation and custom system design for your home.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QuoteForm -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</BaseLayout>

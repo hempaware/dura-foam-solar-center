@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Our Process', href: '/process' },
+];
+
+const steps = [
+  {
+    number: 1,
+    title: 'Free Consultation & Site Assessment',
+    timeline: '1-2 Days',
+    description: 'Every solar journey starts with a conversation. We visit your home, evaluate your roof, review your energy bills, and discuss your goals. No pressure, no obligation — just honest answers about whether solar makes sense for you.',
+    details: [
+      'In-person or virtual roof and property evaluation',
+      'Review of your past 12 months of utility bills',
+      'Shade analysis using satellite imagery and on-site measurements',
+      'Discussion of your energy goals, budget, and timeline',
+      'Preliminary savings estimate before you commit to anything',
+    ],
+    expect: 'After the consultation, you will receive a clear summary of your home\'s solar potential, an estimated system size, and a ballpark cost with projected savings. There is no obligation to move forward.',
+  },
+  {
+    number: 2,
+    title: 'Custom System Design',
+    timeline: '3-5 Days',
+    description: 'Our engineering team designs a solar system tailored to your roof, energy usage, and budget. We use professional design software to model panel placement, wiring, and expected output down to the kilowatt-hour.',
+    details: [
+      'Precision panel layout optimized for your roof\'s angle and orientation',
+      'Equipment selection — high-efficiency panels and inverters matched to your needs',
+      'Electrical engineering review for safe, code-compliant wiring',
+      'Detailed production modeling with month-by-month energy projections',
+      'Final proposal with exact pricing, financing options, and ROI timeline',
+    ],
+    expect: 'You will receive a detailed proposal package including a 3D rendering of your system, equipment specifications, a 25-year savings projection, and financing options. We walk through every detail before you sign anything.',
+  },
+  {
+    number: 3,
+    title: 'Permitting & Approvals',
+    timeline: '2-4 Weeks',
+    description: 'This is where most of the waiting happens — and where we handle everything for you. We prepare all permit applications, submit engineering plans to your city or county, and coordinate with your utility company for interconnection approval.',
+    details: [
+      'Preparation and submission of building permit applications',
+      'Structural engineering review and stamped drawings',
+      'Utility interconnection application with PG&E, SCE, or your local provider',
+      'HOA coordination and approval (if applicable)',
+      'All fees, paperwork, and follow-ups handled by our team',
+    ],
+    expect: 'You do not need to visit any offices or fill out any forms. We keep you updated on permit status and will notify you as soon as everything is approved and we can schedule your installation date.',
+  },
+  {
+    number: 4,
+    title: 'Professional Installation',
+    timeline: '1-3 Days',
+    description: 'Installation day is the exciting part. Our licensed, in-house crew arrives on schedule, installs your system with care, and leaves your property clean. As a division of Dura-Foam Roofing, we treat your roof with the respect it deserves.',
+    details: [
+      'Racking and mounting hardware secured to your roof structure',
+      'Solar panel placement and wiring according to engineered plans',
+      'Inverter and monitoring equipment installation',
+      'Electrical connections to your main service panel',
+      'Full site cleanup — we leave your property spotless',
+    ],
+    expect: 'Most residential installations are completed in one to two days. Our crew respects your property, uses drop cloths, and cleans up every day. You are welcome to watch, ask questions, or go about your normal routine.',
+  },
+  {
+    number: 5,
+    title: 'Inspection, Activation & Monitoring',
+    timeline: '1-2 Weeks',
+    description: 'After installation, your city inspector verifies the work, your utility grants Permission to Operate (PTO), and we flip the switch. From that moment on, your panels are generating clean energy and reducing your electric bill.',
+    details: [
+      'City or county building inspection to verify code compliance',
+      'Utility meter upgrade and final interconnection approval',
+      'System commissioning and performance verification',
+      'Monitoring app setup so you can track production in real time',
+      'Walkthrough of your system, warranty information, and ongoing support',
+    ],
+    expect: 'Once your utility grants Permission to Operate, your system goes live. You will see energy production in your monitoring app within minutes. We remain available for any questions long after activation.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'How long does the entire process take from start to finish?',
+    a: 'The typical timeline is 6 to 10 weeks from your initial consultation to system activation. The actual installation takes only 1 to 3 days — most of the timeline is permitting and utility approval, which we handle entirely for you.',
+  },
+  {
+    q: 'Do I need to be home during the installation?',
+    a: 'You do not need to be home for the full installation, but we recommend being available at the start and end of each day so our crew can check in and address any questions. We will coordinate a schedule that works for you.',
+  },
+  {
+    q: 'What if my roof needs repairs before solar can be installed?',
+    a: 'As a division of Dura-Foam Roofing, we are uniquely equipped to handle both roof repairs and solar installation. If your roof needs work, we can bundle both projects together — often saving you money compared to hiring two separate companies.',
+  },
+  {
+    q: 'Will the installation damage my roof or void my roof warranty?',
+    a: 'No. Our installation methods are designed to protect your roof\'s integrity. Every roof penetration is properly sealed and flashed using roofing-grade materials. We warranty our workmanship, and as roofing experts, your roof is in the best possible hands.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Residential Solar Installation Process',
+  provider: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+    telephone: '+16615962477',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, Suite 5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+      addressCountry: 'US',
+    },
+  },
+  serviceType: 'Solar Panel Installation',
+  areaServed: {
+    '@type': 'State',
+    name: 'California',
+  },
+  description: 'Solar Center by Dura-Foam guides homeowners through a 5-step solar installation process: consultation, custom design, permitting, professional installation, and inspection with activation.',
+  url: 'https://solarcenterca.com/process',
+};
+---
+
+<BaseLayout
+  title="Our Solar Installation Process | 5 Simple Steps | Solar Center by Dura-Foam"
+  description="Learn how Solar Center by Dura-Foam installs solar panels in 5 simple steps — from free consultation to system activation. We handle permits, design, and installation so you don't have to."
+  schema={schema}
+>
+  <PageHero title="Our Solar Process" subtitle="Five straightforward steps from consultation to clean energy. We handle the hard parts." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Intro Section -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">How It Works</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Going Solar Shouldn't Be Complicated</h2>
+        <p class="text-slate text-lg leading-relaxed">Most homeowners are surprised by how simple the process actually is. We manage every detail — from engineering your system to pulling permits to scheduling inspections. Your job is to enjoy the savings.</p>
+      </div>
+
+      <!-- Timeline Overview -->
+      <div class="mt-16 grid gap-4 md:grid-cols-5">
+        {steps.map((step) => (
+          <div class="text-center group">
+            <div class="relative mx-auto mb-4">
+              <div class="w-14 h-14 rounded-full bg-solar-navy text-white flex items-center justify-center text-xl font-bold font-headline mx-auto">
+                {step.number}
+              </div>
+              {step.number < 5 && (
+                <div class="hidden md:block absolute top-7 left-full w-full h-0.5 bg-solar-amber/30" />
+              )}
+            </div>
+            <h3 class="text-sm font-bold text-solar-navy font-headline">{step.title.split('&')[0].trim()}</h3>
+            <p class="text-xs text-slate mt-1 font-label">{step.timeline}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Steps -->
+  {steps.map((step) => (
+    <section class:list={['py-16 lg:py-20', step.number % 2 === 0 ? 'bg-gray-50' : '']}>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-12 items-start">
+          <!-- Step Number & Timeline -->
+          <div class="lg:col-span-2">
+            <div class="sticky top-24">
+              <div class="w-20 h-20 rounded-2xl bg-solar-navy text-white flex items-center justify-center text-3xl font-bold font-headline">
+                {step.number}
+              </div>
+              <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-solar-amber/10 px-3 py-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span class="text-xs font-semibold text-solar-navy font-label">{step.timeline}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step Content -->
+          <div class="lg:col-span-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline leading-tight mb-4">{step.title}</h2>
+            <p class="text-slate text-lg leading-relaxed mb-8">{step.description}</p>
+
+            <h3 class="text-sm font-semibold text-solar-amber uppercase tracking-wider mb-4 font-label">What's Included</h3>
+            <ul class="space-y-3">
+              {step.details.map((detail) => (
+                <li class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-slate text-sm leading-relaxed">{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- What to Expect Card -->
+          <div class="lg:col-span-4">
+            <div class="rounded-2xl bg-warm-sand p-6 lg:p-8">
+              <h3 class="text-sm font-semibold text-solar-navy uppercase tracking-wider mb-3 font-label">What to Expect</h3>
+              <p class="text-slate text-sm leading-relaxed">{step.expect}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Total Timeline Summary -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-4">Your Total Timeline</h2>
+        <p class="text-white/80 text-lg max-w-2xl mx-auto">From your first phone call to flipping the switch, most homeowners are generating solar energy within 6 to 10 weeks.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
+        <div class="rounded-2xl bg-white/10 backdrop-blur-sm p-8 text-center border border-white/10">
+          <p class="text-4xl font-extrabold text-solar-amber font-headline">1-2</p>
+          <p class="text-white text-sm mt-2">Days for Consultation & Design</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 backdrop-blur-sm p-8 text-center border border-white/10">
+          <p class="text-4xl font-extrabold text-solar-amber font-headline">2-4</p>
+          <p class="text-white text-sm mt-2">Weeks for Permitting</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 backdrop-blur-sm p-8 text-center border border-white/10">
+          <p class="text-4xl font-extrabold text-solar-amber font-headline">1-3</p>
+          <p class="text-white text-sm mt-2">Days for Installation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Common Questions About Our Process" subtitle="Everything you need to know before getting started." />
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+              {faq.q}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with QuoteForm -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Get Started Today</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Ready to Start Your Solar Journey?</h2>
+          <p class="text-slate text-lg leading-relaxed mb-8">The first step is a free, no-pressure consultation. We will evaluate your home, review your energy bills, and give you an honest assessment of whether solar is the right fit. No obligation, no sales games — just straightforward answers.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-slate">Free consultation with no obligation</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-slate">Custom system design for your home</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-slate">We handle all permits and approvals</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-slate">Licensed, in-house installation crew</span>
+            </div>
+          </div>
+          <div class="mt-8">
+            <a href="tel:+16615962477" class="inline-flex items-center gap-2 text-solar-navy font-bold font-label hover:text-solar-amber transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call (661) 596-2477
+            </a>
+          </div>
+        </div>
+        <div>
+          <QuoteForm heading="Request Your Free Consultation" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

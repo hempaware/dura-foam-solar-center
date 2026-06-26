@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Solar Incentives in California', href: '/solar-incentives-california' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Solar Incentives & Tax Credits in California 2025',
+  description: 'A comprehensive guide to California solar incentives including the 30% federal tax credit, SGIP battery rebates, property tax exemptions, and NEM credits.',
+  datePublished: '2025-01-15',
+  dateModified: '2025-06-01',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://solarcenterca.com/images/logo.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/solar-incentives-california',
+  },
+};
+---
+
+<BaseLayout
+  title="Solar Incentives & Tax Credits in California 2025 | Solar Center by Dura-Foam"
+  description="Discover California solar incentives including the 30% federal tax credit, SGIP battery rebates, property tax exemptions, and NEM credits. See how much you can save in Bakersfield."
+  schema={schema}
+>
+  <PageHero title="Solar Incentives & Tax Credits in California" subtitle="Federal tax credits, state rebates, and local programs that put thousands back in your pocket." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Federal ITC Section -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Federal Tax Credit</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">The 30% Federal Investment Tax Credit (ITC)</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>The federal Investment Tax Credit is the single largest incentive available for residential solar. Thanks to the Inflation Reduction Act signed in August 2022, homeowners who install solar panels can claim 30% of the total system cost as a dollar-for-dollar credit on their federal income taxes.</p>
+          <p>Unlike a deduction, a tax credit reduces the actual amount of tax you owe. If your solar installation costs $25,000, you receive a $7,500 credit. If your tax liability that year is lower than the credit amount, the remaining balance rolls forward to the next tax year.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <p class="text-3xl font-bold text-solar-navy font-headline">30%</p>
+          <p class="text-slate text-sm mt-1">Through 2032</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <p class="text-3xl font-bold text-solar-navy font-headline">26%</p>
+          <p class="text-slate text-sm mt-1">In 2033</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <p class="text-3xl font-bold text-solar-navy font-headline">22%</p>
+          <p class="text-slate text-sm mt-1">In 2034</p>
+        </div>
+      </div>
+
+      <div class="mt-8 max-w-3xl">
+        <p class="text-slate leading-relaxed">The ITC covers more than just panels. Solar battery storage systems, inverters, wiring, mounting hardware, and even a portion of your installation labor qualify. There is no cap on the credit amount for residential systems, meaning larger installations receive proportionally larger credits.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- California-Specific Incentives -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">State & Local Programs</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">California-Specific Solar Incentives</h2>
+      <p class="text-slate leading-relaxed max-w-3xl mb-10">Beyond the federal tax credit, California offers several programs designed to make solar and battery storage more accessible. These vary by utility provider and household income.</p>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-energy-green/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><polyline points="16 7 16 2 8 2 8 7"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">SGIP Battery Rebates</h3>
+          <p class="text-slate text-sm leading-relaxed">The Self-Generation Incentive Program provides rebates for battery storage systems. Homeowners in PG&E, SCE, or SoCalGas territory can receive incentives that cover a significant portion of battery costs. Rebate amounts vary by utility and budget availability, typically ranging from $150 to $1,000+ per kWh of storage capacity.</p>
+        </div>
+
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-clean-sky/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-clean-sky" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">DAC-SASH Program</h3>
+          <p class="text-slate text-sm leading-relaxed">The Disadvantaged Communities - Single-Family Solar Homes program provides fully subsidized solar installations for income-qualifying homeowners in designated communities. Many neighborhoods in Kern County and the Central Valley qualify. Our team can check your eligibility during your free consultation.</p>
+        </div>
+
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Local Utility Rebates</h3>
+          <p class="text-slate text-sm leading-relaxed">Utilities like PG&E, Southern California Edison (SCE), and SDG&E periodically offer additional rebates and incentive programs. These vary by region and budget cycle. In the Central Valley, PG&E customers may access time-of-use rate plans that maximize the value of solar generation during peak hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Tax Exemption -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Property Tax Benefit</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Solar Won't Raise Your Property Taxes</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>California's Active Solar Energy System Exclusion means that adding solar panels to your home does not increase your property's assessed value for tax purposes. While solar typically adds $15,000 to $25,000 in home value according to national studies, you pay zero additional property tax on that increase.</p>
+            <p>This exclusion applies to both new construction and retrofit installations. It covers solar electric (photovoltaic) systems, solar thermal systems, and qualifying battery storage paired with solar. The exclusion is automatic -- you do not need to file a separate application with your county assessor.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-warm-sand p-8 lg:p-10">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">What This Means For You</h3>
+          <ul class="space-y-3 text-slate text-sm leading-relaxed">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Home value increases by an average of 4.1% with solar</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>No increase in annual property tax bill</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Exclusion applies automatically -- no paperwork required</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Covers solar panels, inverters, and paired battery storage</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEM Credits -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Net Energy Metering</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">NEM Credits for Excess Energy</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>When your solar panels generate more electricity than your home uses, that surplus energy flows back to the grid and earns you bill credits from your utility. This net energy metering policy allows most California solar homeowners to offset a significant portion -- sometimes all -- of their electric bill.</p>
+          <p>California's current NEM 3.0 framework (Net Billing Tariff) values exported energy based on the time of day and grid conditions. Pairing solar with battery storage lets you store daytime generation and use it during expensive peak evening hours, maximizing the financial value of every kilowatt-hour your system produces.</p>
+          <p>For a detailed breakdown of how NEM works and strategies to maximize your credits, see our <a href="/net-metering-california" class="text-solar-amber hover:text-solar-navy font-semibold underline underline-offset-2">complete guide to net metering in California</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Claim -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Step-by-Step</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">How to Claim Your Solar Incentives</h2>
+        <p class="text-slate leading-relaxed">Claiming your federal tax credit and state incentives is straightforward. Here is the process from start to finish.</p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="relative">
+          <div class="w-10 h-10 rounded-full bg-solar-amber text-white flex items-center justify-center font-bold font-label text-sm mb-4">1</div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Install Your System</h3>
+          <p class="text-slate text-sm leading-relaxed">Work with a licensed installer like Solar Center by Dura-Foam. We handle all permitting, interconnection paperwork, and utility coordination.</p>
+        </div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-full bg-solar-amber text-white flex items-center justify-center font-bold font-label text-sm mb-4">2</div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Receive Documentation</h3>
+          <p class="text-slate text-sm leading-relaxed">After installation, we provide your final contract, itemized receipt, and certification documents. Keep these for your tax records.</p>
+        </div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-full bg-solar-amber text-white flex items-center justify-center font-bold font-label text-sm mb-4">3</div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">File IRS Form 5695</h3>
+          <p class="text-slate text-sm leading-relaxed">When you file your federal taxes, complete IRS Form 5695 (Residential Energy Credits). Enter your total system cost and calculate 30% as your credit.</p>
+        </div>
+        <div class="relative">
+          <div class="w-10 h-10 rounded-full bg-solar-amber text-white flex items-center justify-center font-bold font-label text-sm mb-4">4</div>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">Apply State Incentives</h3>
+          <p class="text-slate text-sm leading-relaxed">SGIP and other state programs are typically applied for during installation. We submit applications on your behalf and track approval status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Savings Example -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Real Numbers</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Total Savings for a Typical Bakersfield Home</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Bakersfield averages over 270 sunny days per year, making it one of the best locations in the country for solar energy production. Here is what a typical residential installation looks like after all incentives are applied.</p>
+            <p>This example assumes a 7.5 kW system for a home with a $200/month average electric bill. Actual savings depend on your roof orientation, shading, energy usage, and chosen equipment.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Sample Savings Breakdown</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Gross system cost (7.5 kW)</span>
+              <span class="font-bold text-solar-navy font-headline">$25,000</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Federal ITC (30%)</span>
+              <span class="font-bold text-energy-green font-headline">-$7,500</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Property tax increase</span>
+              <span class="font-bold text-energy-green font-headline">$0</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Net cost after incentives</span>
+              <span class="font-bold text-solar-navy font-headline text-lg">$17,500</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Est. annual electric savings</span>
+              <span class="font-bold text-solar-navy font-headline">~$2,100</span>
+            </div>
+            <div class="flex justify-between items-center pt-2">
+              <span class="text-solar-navy font-semibold">Estimated payback period</span>
+              <span class="font-bold text-solar-amber font-headline text-lg">~8 years</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate mt-6">Estimates based on average Bakersfield energy costs and solar production. Your results may vary. Contact us for a personalized quote.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Common Questions</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Solar Incentive FAQs</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Can I claim the federal tax credit if I finance my solar system?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Yes. Whether you pay cash, take out a solar loan, or use a home equity line of credit, you can claim the full 30% ITC. The credit applies to the total system cost regardless of how you finance it. The only exception is solar leases and PPAs, where the leasing company (not the homeowner) claims the credit.</div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            What happens if my tax liability is less than the credit amount?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">The federal solar tax credit rolls forward. If you owe $5,000 in federal taxes but your credit is $7,500, the remaining $2,500 carries over to the following tax year. You can continue rolling the credit forward until it is fully used. Consult a tax professional for guidance specific to your situation.</div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Do battery storage systems qualify for incentives too?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Absolutely. Standalone battery storage now qualifies for the 30% federal ITC (this changed with the Inflation Reduction Act -- previously, batteries had to be paired with solar). In California, you may also qualify for SGIP rebates on battery systems. Combined, these incentives can reduce your battery cost by 40% or more depending on your utility territory and available SGIP funding.</div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Is there a deadline to take advantage of the 30% tax credit?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">The 30% rate is locked in through the end of 2032. After that, it drops to 26% in 2033 and 22% in 2034. Unless Congress extends it again, the residential credit is currently set to expire after 2034. Installing sooner means you lock in the highest credit rate and start saving on electricity bills right away.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Find Out Exactly How Much You Can Save</h2>
+      <p class="text-white/80 text-lg mb-8">Every home is different. Let our team calculate your specific incentives, tax credits, and projected savings based on your actual energy usage and roof.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form Section -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Free Consultation</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-4">Get a Personalized Incentive Estimate</h2>
+        <p class="text-slate leading-relaxed">Tell us about your home and we will calculate the exact incentives and credits available to you.</p>
+      </div>
+      <QuoteForm heading="Request Your Free Incentive Estimate" />
+    </div>
+  </section>
+
+</BaseLayout>

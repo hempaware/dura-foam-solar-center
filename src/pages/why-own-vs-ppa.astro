@@ -1,0 +1,459 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Solar Ownership vs PPA', href: '/why-own-vs-ppa' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Solar Ownership vs Power Purchase Agreement (PPA): Which Is Better?',
+  description: 'A comprehensive comparison of owning your solar panels versus signing a Power Purchase Agreement. Learn why solar ownership delivers far greater financial returns over 25 years.',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/why-own-vs-ppa',
+  },
+  datePublished: '2025-01-15',
+  dateModified: '2025-06-01',
+};
+---
+
+<BaseLayout
+  title="Solar Ownership vs PPA | Why Owning Beats Leasing | Solar Center by Dura-Foam"
+  description="Compare owning your solar system versus a Power Purchase Agreement (PPA). See the 25-year financial breakdown and learn why Solar Center by Dura-Foam recommends ownership for California homeowners."
+  schema={schema}
+>
+  <PageHero title="Solar Ownership vs PPA" subtitle="The most important decision you'll make about going solar isn't which panels to buy — it's whether to own them." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Introduction -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-slate leading-relaxed mb-6">
+          When you start exploring solar energy, you'll quickly encounter two main paths: <strong class="text-solar-navy">owning your solar system</strong> or signing a <strong class="text-solar-navy">Power Purchase Agreement (PPA)</strong>. While both put panels on your roof, the financial outcomes over 25 years are dramatically different.
+        </p>
+        <p class="text-lg text-slate leading-relaxed mb-6">
+          At Solar Center by Dura-Foam, we believe strongly in solar ownership — and this page explains exactly why. We'll walk you through the real numbers, the hidden costs of PPAs, and how ownership puts tens of thousands of dollars back in your pocket.
+        </p>
+        <div class="bg-clean-sky/20 border-l-4 border-solar-navy rounded-r-lg p-6">
+          <p class="text-solar-navy font-semibold font-headline text-lg mb-2">The Bottom Line</p>
+          <p class="text-slate">Over 25 years, a homeowner who owns their solar system typically saves <strong class="text-solar-navy">$30,000 to $50,000 more</strong> than someone who signs a PPA — and that's a conservative estimate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is Solar Ownership -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="What Is Solar Ownership?" badge="Option 1" align="left" />
+      <div class="grid gap-12 lg:grid-cols-2 items-start mt-10">
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>
+            When you own your solar system, the panels on your roof belong to <em>you</em> — just like your water heater or HVAC system. You purchase the system outright (with cash or a solar loan) and receive all the financial benefits: the federal tax credit, energy savings, and increased home value.
+          </p>
+          <p>
+            Most homeowners finance their solar system with a low-interest solar loan that keeps monthly payments below their current utility bill. Once the loan is paid off (typically 7–12 years), your electricity is essentially free for the remaining 15–18 years of the system's life.
+          </p>
+          <p>
+            You also own an appreciating asset. Studies consistently show that owned solar systems increase home value by $15,000 to $25,000, and homes with solar sell faster than homes without.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Ownership at a Glance</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-energy-green/20 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">You keep the 30% federal tax credit</strong> — worth $7,500+ on a typical system</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-energy-green/20 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Fixed or zero payments</strong> — no annual price increases</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-energy-green/20 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Increases home value</strong> — $15,000–$25,000 on average</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-energy-green/20 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Free electricity after payoff</strong> — 15–18 years of $0 bills</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-energy-green/20 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-energy-green"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Full control</strong> — add batteries, expand, or transfer with your home</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is a PPA -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="What Is a Power Purchase Agreement (PPA)?" badge="Option 2" align="left" />
+      <div class="grid gap-12 lg:grid-cols-2 items-start mt-10">
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>
+            With a PPA, a solar company installs panels on your roof at no upfront cost — but <em>they</em> own the system. You agree to buy the electricity the panels produce at a set rate, typically for 20–25 years. It sounds simple, but the fine print matters enormously.
+          </p>
+          <p>
+            The PPA company keeps the federal tax credit (that's how they fund the "free" installation). They also keep any renewable energy credits. And most PPAs include an <strong>annual escalator clause</strong> — your rate increases 1–3% every year, regardless of what utility rates do.
+          </p>
+          <p>
+            If you want to sell your home, the new buyer must qualify for and agree to take over your PPA contract — or you'll need to buy out the remaining contract, which can cost $10,000–$20,000 or more.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">PPA at a Glance</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">You don't get the tax credit</strong> — the PPA company keeps it</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Rates increase annually</strong> — 1–3% escalator clauses are standard</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">No home value increase</strong> — panels aren't yours to sell</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">Complicates home sales</strong> — buyers must assume your contract</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <span class="text-slate"><strong class="text-solar-navy">20–25 year commitment</strong> — expensive to exit early</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Side-by-Side Comparison Table -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Side-by-Side Comparison" subtitle="How ownership and PPAs stack up across every factor that matters." align="center" />
+      <div class="mt-12 overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <thead>
+            <tr class="bg-solar-navy text-white">
+              <th class="px-6 py-4 text-left text-sm font-bold font-headline">Factor</th>
+              <th class="px-6 py-4 text-left text-sm font-bold font-headline">Solar Ownership</th>
+              <th class="px-6 py-4 text-left text-sm font-bold font-headline">PPA / Lease</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Upfront Cost</td>
+              <td class="px-6 py-4 text-sm text-slate">$0 down with solar loan, or cash purchase</td>
+              <td class="px-6 py-4 text-sm text-slate">$0 down</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Monthly Payment</td>
+              <td class="px-6 py-4 text-sm text-slate">Fixed loan payment (often less than old utility bill); $0 after payoff</td>
+              <td class="px-6 py-4 text-sm text-slate">Monthly PPA rate that increases 1–3% annually</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">30% Federal Tax Credit</td>
+              <td class="px-6 py-4 text-sm text-energy-green font-semibold">You keep it ($7,500+)</td>
+              <td class="px-6 py-4 text-sm text-red-600 font-semibold">PPA company keeps it</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Home Value Impact</td>
+              <td class="px-6 py-4 text-sm text-energy-green font-semibold">Increases $15,000–$25,000</td>
+              <td class="px-6 py-4 text-sm text-red-600 font-semibold">No increase (may deter buyers)</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">System Control</td>
+              <td class="px-6 py-4 text-sm text-slate">Full control — expand, add batteries, modify</td>
+              <td class="px-6 py-4 text-sm text-slate">No modifications allowed without company approval</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Selling Your Home</td>
+              <td class="px-6 py-4 text-sm text-slate">System transfers with home; adds value</td>
+              <td class="px-6 py-4 text-sm text-slate">Buyer must assume contract or you pay buyout ($10K–$20K+)</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Contract Length</td>
+              <td class="px-6 py-4 text-sm text-slate">Loan: 7–20 years; then free electricity</td>
+              <td class="px-6 py-4 text-sm text-slate">20–25 years; payments never stop</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">25-Year Total Savings</td>
+              <td class="px-6 py-4 text-sm text-energy-green font-semibold">$50,000–$80,000+</td>
+              <td class="px-6 py-4 text-sm text-red-600 font-semibold">$15,000–$30,000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Maintenance</td>
+              <td class="px-6 py-4 text-sm text-slate">Covered by manufacturer warranty (25 years); minimal upkeep</td>
+              <td class="px-6 py-4 text-sm text-slate">PPA company handles maintenance</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 text-sm font-semibold text-solar-navy">Equipment Warranty</td>
+              <td class="px-6 py-4 text-sm text-slate">25-year manufacturer + installer warranty</td>
+              <td class="px-6 py-4 text-sm text-slate">PPA company responsible for equipment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 25-Year Financial Comparison -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="25-Year Financial Breakdown" subtitle="Real numbers for a typical 8 kW system on a Central Valley home with $250/month utility bills." align="center" />
+      <div class="mt-12 grid gap-8 lg:grid-cols-2">
+        <!-- Ownership Column -->
+        <div class="bg-white rounded-2xl shadow-sm border-2 border-energy-green p-8 relative">
+          <div class="absolute -top-4 left-6">
+            <span class="bg-energy-green text-white text-xs font-bold px-4 py-1.5 rounded-full font-label uppercase tracking-wider">Recommended</span>
+          </div>
+          <h3 class="text-2xl font-bold text-solar-navy font-headline mb-6 mt-2">Own Your System</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">System Cost (8 kW)</span>
+              <span class="text-solar-navy font-semibold">$24,000</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Federal Tax Credit (30%)</span>
+              <span class="text-energy-green font-semibold">-$7,200</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Net Cost After Credit</span>
+              <span class="text-solar-navy font-semibold">$16,800</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Monthly Loan Payment (10 yr @ 5.99%)</span>
+              <span class="text-solar-navy font-semibold">$187/mo</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Years 1–10: Total Loan Payments</span>
+              <span class="text-solar-navy font-semibold">$22,440</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Years 11–25: Electricity Cost</span>
+              <span class="text-energy-green font-semibold">$0</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Home Value Increase</span>
+              <span class="text-energy-green font-semibold">+$20,000</span>
+            </div>
+            <div class="flex justify-between items-center py-3 bg-energy-green/10 rounded-lg px-4 -mx-4">
+              <span class="text-solar-navy font-bold">25-Year Net Benefit</span>
+              <span class="text-energy-green font-bold text-xl">+$72,560</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate mt-4">*Based on $250/mo utility bill, 3.5% annual utility rate increases, 8 kW system at $3.00/W. Includes home value increase.</p>
+        </div>
+
+        <!-- PPA Column -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+          <h3 class="text-2xl font-bold text-solar-navy font-headline mb-6">PPA / Lease</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Upfront Cost</span>
+              <span class="text-solar-navy font-semibold">$0</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Federal Tax Credit</span>
+              <span class="text-red-600 font-semibold">$0 (company keeps)</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Starting Monthly PPA Rate</span>
+              <span class="text-solar-navy font-semibold">$150/mo</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Year 10 Monthly PPA Rate (2.9% escalator)</span>
+              <span class="text-solar-navy font-semibold">$200/mo</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Year 25 Monthly PPA Rate (2.9% escalator)</span>
+              <span class="text-red-600 font-semibold">$298/mo</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Total 25-Year PPA Payments</span>
+              <span class="text-red-600 font-semibold">$54,180</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+              <span class="text-slate text-sm">Home Value Increase</span>
+              <span class="text-red-600 font-semibold">$0</span>
+            </div>
+            <div class="flex justify-between items-center py-3 bg-red-50 rounded-lg px-4 -mx-4">
+              <span class="text-solar-navy font-bold">25-Year Net Benefit</span>
+              <span class="text-red-600 font-bold text-xl">+$20,820</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate mt-4">*Based on $250/mo utility bill, 3.5% annual utility rate increases, $0.15/kWh starting PPA rate with 2.9% annual escalator.</p>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <div class="inline-block bg-solar-navy text-white rounded-xl px-8 py-6">
+          <p class="text-lg font-headline font-bold">Ownership advantage over 25 years:</p>
+          <p class="text-4xl font-bold text-solar-amber mt-2 font-headline">$51,740 more in your pocket</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PPA Gotchas -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="5 PPA Gotchas Most People Don't See Coming" subtitle="Before you sign a 25-year PPA contract, make sure you understand what you're agreeing to." align="center" />
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-amber/20 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-solar-amber font-headline">1</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">The Escalator Clause</h3>
+          <p class="text-slate text-sm leading-relaxed">Most PPAs increase your rate 1–3% every year. A rate that starts at $0.15/kWh grows to $0.30/kWh by year 25. If utility rates drop or stay flat (thanks to more renewables on the grid), you could end up paying <em>more</em> for PPA electricity than grid power.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-amber/20 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-solar-amber font-headline">2</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">No Tax Credit for You</h3>
+          <p class="text-slate text-sm leading-relaxed">The 30% federal Investment Tax Credit is worth $7,200+ on a typical system. With a PPA, the solar company claims this credit — it's how they fund the "free" installation. That's your money going to their bottom line.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-amber/20 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-solar-amber font-headline">3</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Selling Your Home Gets Complicated</h3>
+          <p class="text-slate text-sm leading-relaxed">When you sell, the buyer must qualify for and agree to assume your PPA. Many buyers don't want a 15-year payment obligation they didn't choose. If they refuse, you'll need to buy out the contract — often $10,000–$20,000+. Some deals have fallen through entirely over this.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-amber/20 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-solar-amber font-headline">4</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">No Equity, No Asset</h3>
+          <p class="text-slate text-sm leading-relaxed">With a PPA, 25 years of payments buy you nothing. You never own the panels. You never build equity. When the contract ends, the company can remove the system entirely. With ownership, you have an asset that pays for itself many times over.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-xl bg-solar-amber/20 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-solar-amber font-headline">5</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Limited Roof Access</h3>
+          <p class="text-slate text-sm leading-relaxed">Need a new roof? The PPA company must remove and reinstall the panels — at your expense, or after lengthy coordination. Want to add a battery or expand your system? You'll need their permission, and they may say no. It's your roof, but it's their equipment.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-center items-center text-center">
+          <p class="text-solar-navy font-headline font-bold text-lg mb-4">Don't get locked in.</p>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-6 py-3 text-sm font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get an Ownership Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Solar Center Recommends Ownership -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <SectionHeading title="Why Solar Center Recommends Ownership" badge="Our Position" align="left" />
+        <div class="mt-10 space-y-6 text-slate leading-relaxed">
+          <p>
+            At Solar Center by Dura-Foam, we don't offer PPAs or leases. That's a deliberate choice, not a limitation. We believe every homeowner deserves the <em>full</em> financial benefit of going solar — not a fraction of it.
+          </p>
+          <p>
+            Here's our perspective: when a PPA company puts "free" panels on your roof, they're not doing you a favor. They're using your roof as real estate for their investment. They collect the tax credit, they collect your monthly payments, and they own the asset. You get a modest discount on electricity — at least at first.
+          </p>
+          <p>
+            We think you deserve better. Our $0-down solar loan options make ownership just as accessible as a PPA — with one critical difference: <strong class="text-solar-navy">everything you pay goes toward an asset you own</strong>. After your loan is paid off, you enjoy 15+ years of free electricity and a home that's worth more.
+          </p>
+          <p>
+            As a division of Dura-Foam Roofing, we also bring something PPA companies can't: deep roofing expertise. We know how to install solar systems that protect your roof's integrity and last for decades. When you own your system and it's installed by a company that understands roofing, you have the best of both worlds.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">Get Your Free Quote</a>
+          <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-solar-navy px-8 py-4 text-base font-bold text-solar-navy no-underline transition hover:bg-solar-navy hover:text-white font-label">Call (661) 596-2477</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Common Questions About Solar Ownership vs PPAs" align="center" />
+      <div class="mt-12 max-w-3xl mx-auto space-y-3">
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Can I really go solar with $0 down if I own the system?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Yes. Solar loans with $0 down are widely available. Your monthly loan payment is typically less than your current utility bill, so you start saving from day one. After the loan is paid off, your electricity is essentially free. You still receive the full 30% federal tax credit, which you can apply to the loan balance or keep.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            What if I can't use the full tax credit?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">The federal solar tax credit can be carried forward to future tax years. If your tax liability is lower than the credit amount in the year of installation, you can apply the remaining credit to subsequent years. We recommend consulting with a tax professional about your specific situation.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Are there any situations where a PPA makes sense?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">PPAs were originally designed for commercial properties and non-profits that can't use the federal tax credit. For homeowners with tax liability, ownership is almost always the better financial choice. If you've been told you "don't qualify" for ownership, call us — we work with multiple lenders and can usually find a path to ownership.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            What happens to my solar system if I sell my home?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">With an owned system, the solar panels transfer with your home and increase its value. Buyers see owned solar as a premium feature. With a PPA, the buyer must agree to take over your contract, which can delay or derail the sale. Some homeowners have had to pay $10,000–$20,000+ to buy out their PPA just to close on a home sale.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            How does Solar Center's warranty compare to a PPA?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Our owned systems come with 25-year manufacturer warranties on panels and inverters, plus our workmanship warranty backed by Dura-Foam's decades of experience. PPA companies handle maintenance, but that's because they own the equipment — not because they're doing you a favor. With ownership, your warranties are just as comprehensive, and you own the asset at the end.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with QuoteForm -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <SectionHeading title="Ready to Own Your Solar?" subtitle="Get a free, no-pressure quote and see how much you'll save with ownership." align="left" />
+          <div class="mt-8 space-y-4 text-slate leading-relaxed">
+            <p>Our solar consultants will design a system tailored to your home, show you the real numbers, and walk you through financing options that work for your budget — all with $0 down.</p>
+            <p>No PPA contracts. No escalator clauses. No surprises. Just solar that's truly yours.</p>
+          </div>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-solar-navy px-6 py-3 text-sm font-bold text-solar-navy no-underline transition hover:bg-solar-navy hover:text-white font-label">Call (661) 596-2477</a>
+          </div>
+        </div>
+        <div>
+          <QuoteForm heading="Get Your Free Ownership Quote" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

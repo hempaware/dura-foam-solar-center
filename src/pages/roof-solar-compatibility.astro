@@ -1,0 +1,360 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Roof Solar Compatibility', href: '/roof-solar-compatibility' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Is Your Roof Ready for Solar? A Compatibility Guide',
+  description: 'Learn which roof types work best for solar panels, how roof age affects installation, and why Dura-Foam\'s roofing expertise gives Solar Center a unique advantage.',
+  datePublished: '2025-01-15',
+  dateModified: '2025-06-01',
+  author: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solar Center by Dura-Foam',
+    url: 'https://solarcenterca.com',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://solarcenterca.com/roof-solar-compatibility',
+  },
+};
+---
+
+<BaseLayout
+  title="Is Your Roof Ready for Solar? Compatibility Guide | Solar Center by Dura-Foam"
+  description="Find out if your roof is ready for solar panels. Learn about compatible roof types, age considerations, orientation, shade analysis, and why Dura-Foam's roofing expertise matters."
+  schema={schema}
+>
+  <PageHero title="Is Your Roof Ready for Solar?" subtitle="Your roof is the foundation of your solar investment. Here is how to know if it is ready." />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Roof Types -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Roof Materials</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Roof Types That Work Best for Solar</h2>
+      <p class="text-slate leading-relaxed mb-10 max-w-3xl">Nearly every roof type can support solar panels, but the installation method and considerations vary. Here is what to expect for each common roofing material.</p>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold text-solar-navy font-headline">Composition Shingle</h3>
+            <span class="inline-block rounded-full bg-energy-green/10 px-3 py-0.5 text-xs font-bold text-energy-green font-label">Most Common</span>
+          </div>
+          <p class="text-slate text-sm leading-relaxed">The most popular residential roofing material and the easiest for solar installation. Panels mount using standard rail systems with lag bolts into the rafters. Installation is straightforward, cost-effective, and well-understood by every solar installer. Flashings seal each penetration point to maintain waterproof integrity.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold text-solar-navy font-headline">Concrete or Clay Tile</h3>
+            <span class="inline-block rounded-full bg-clean-sky/10 px-3 py-0.5 text-xs font-bold text-clean-sky font-label">Common in CA</span>
+          </div>
+          <p class="text-slate text-sm leading-relaxed">Very common throughout California, especially in the Central Valley and Southern California. Solar installation on tile roofs requires specialized tile hooks that slide under existing tiles to anchor the racking system. Tiles may need to be temporarily removed and replaced around the mounting points. It takes more labor, but the end result is equally secure and waterproof.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold text-solar-navy font-headline">Metal Standing Seam</h3>
+            <span class="inline-block rounded-full bg-energy-green/10 px-3 py-0.5 text-xs font-bold text-energy-green font-label">Excellent</span>
+          </div>
+          <p class="text-slate text-sm leading-relaxed">Standing seam metal roofs are ideal for solar. Panels attach using clamps that grip the raised seams -- no drilling or penetrations required. This preserves the roof warranty, speeds up installation, and eliminates any risk of leaks at mounting points. Metal roofs also last 40 to 60 years, so you will never need to remove panels for re-roofing.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold text-solar-navy font-headline">Flat or Low-Slope</h3>
+            <span class="inline-block rounded-full bg-clean-sky/10 px-3 py-0.5 text-xs font-bold text-clean-sky font-label">Great Flexibility</span>
+          </div>
+          <p class="text-slate text-sm leading-relaxed">Common on commercial buildings and some modern homes. Flat roofs offer great flexibility because tilt racks can be used to angle panels at the optimal degree for maximum production. Ballast-mounted systems use weight rather than penetrations to secure panels. The main consideration is ensuring the roof membrane is in good condition before installation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roof Age -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Timing Matters</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Roof Age: Should You Replace First?</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Solar panels are designed to last 25 to 30 years. If your roof only has 5 to 10 years of life remaining, you could find yourself in an expensive situation: paying to remove the panels, replace the roof, and reinstall the panels. That added cost can run $3,000 to $5,000 or more.</p>
+            <p>As a general guideline, if your roof is more than 15 years old for composition shingles or more than 25 years old for tile, it is worth having a professional assessment before installing solar. A roofing inspection will reveal the remaining useful life and whether any repairs are needed.</p>
+            <p>The best case scenario is combining a roof replacement with your solar installation. You get a brand-new roof optimized for solar, and you save money by doing both projects at once with one contractor. This is where Solar Center's connection to Dura-Foam Roofing makes a real difference.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Roof Lifespan Guide</h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Composition Shingle</span>
+              <span class="font-bold text-solar-navy">20-30 years</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Concrete Tile</span>
+              <span class="font-bold text-solar-navy">40-50 years</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Clay Tile</span>
+              <span class="font-bold text-solar-navy">50-100 years</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <span class="text-slate">Metal Standing Seam</span>
+              <span class="font-bold text-solar-navy">40-60 years</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate">Flat / Built-Up / TPO</span>
+              <span class="font-bold text-solar-navy">15-25 years</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate mt-6">If your roof has fewer than 10 years of remaining life, we strongly recommend a combined roof-plus-solar project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orientation and Tilt -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Sun Exposure</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Roof Orientation and Tilt</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100 text-center">
+          <div class="w-16 h-16 rounded-full bg-energy-green/10 flex items-center justify-center mb-4 mx-auto">
+            <span class="text-2xl font-extrabold text-energy-green font-headline">S</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-1">South-Facing</h3>
+          <p class="text-energy-green font-bold text-sm mb-2">100% Production</p>
+          <p class="text-slate text-xs">Ideal orientation. Receives the most direct sunlight throughout the day.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100 text-center">
+          <div class="w-16 h-16 rounded-full bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <span class="text-2xl font-extrabold text-solar-amber font-headline">W</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-1">West-Facing</h3>
+          <p class="text-solar-amber font-bold text-sm mb-2">85-90% Production</p>
+          <p class="text-slate text-xs">Excellent choice. Catches afternoon sun when electricity rates are highest under TOU plans.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100 text-center">
+          <div class="w-16 h-16 rounded-full bg-clean-sky/10 flex items-center justify-center mb-4 mx-auto">
+            <span class="text-2xl font-extrabold text-clean-sky font-headline">E</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-1">East-Facing</h3>
+          <p class="text-clean-sky font-bold text-sm mb-2">80-85% Production</p>
+          <p class="text-slate text-xs">Good option. Strong morning production, pairs well with west-facing panels on a split array.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 shadow-sm border border-gray-100 text-center">
+          <div class="w-16 h-16 rounded-full bg-slate/10 flex items-center justify-center mb-4 mx-auto">
+            <span class="text-2xl font-extrabold text-slate font-headline">N</span>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-1">North-Facing</h3>
+          <p class="text-slate font-bold text-sm mb-2">50-65% Production</p>
+          <p class="text-slate text-xs">Challenging. Significant production loss. Usually not recommended unless no other option exists.</p>
+        </div>
+      </div>
+      <div class="max-w-3xl">
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>The ideal roof tilt for solar in the Bakersfield area is approximately 30 to 35 degrees, which closely matches the latitude. However, most residential roof pitches between 15 and 45 degrees work well. The difference in annual production between a 20-degree and 35-degree tilt is typically only 5 to 8 percent.</p>
+          <p>Flat roofs actually offer an advantage here because tilt racks can be used to set the optimal angle regardless of the roof's natural pitch. Many of our commercial and flat-roof residential installations use this approach for maximum output.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shade Analysis -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Shade Assessment</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Understanding Shade and Its Impact</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Shade is the single biggest enemy of solar production. Even partial shading on one panel can reduce the output of an entire string if the system uses a traditional string inverter. Common shade sources include nearby trees, chimneys, satellite dishes, neighboring buildings, and HVAC equipment.</p>
+          <p>The good news is that modern technology has dramatically reduced shade's impact. Microinverters and power optimizers allow each panel to operate independently, so a shaded panel only affects its own output rather than dragging down the entire array. We use these technologies on any roof where shading is a factor.</p>
+          <p>During your free consultation, our team performs a comprehensive shade analysis using satellite imagery and modeling software. This analysis maps sun exposure across your roof throughout the day and across all seasons, identifying the best placement for your panels to maximize annual production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structural Requirements -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Engineering</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Structural Requirements</h2>
+        <div class="space-y-4 text-slate leading-relaxed">
+          <p>Solar panels and their mounting hardware add approximately 2.5 to 4 pounds per square foot to your roof's load. For most homes built to modern California building codes, this is well within the structural capacity. Homes built after 1970 almost always have sufficient rafter sizing and spacing to support solar without modifications.</p>
+          <p>Older homes or homes with unusual construction may require a structural engineering review. This is a standard part of the permitting process -- if your local building department requires it, we coordinate the engineering assessment and include it in the project scope.</p>
+          <p>Rafter condition also matters. During our roof assessment, we check for signs of damage, rot, or previous modifications that could affect the mounting system. If any repairs are needed, our roofing team handles them before the solar installation begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dura-Foam Advantage -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Our Advantage</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Why Dura-Foam's Roofing Expertise Matters</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Here is something most solar companies will not tell you: the majority of solar installers have little to no roofing experience. They drill holes in your roof, bolt on panels, and hope the flashing holds. When problems arise years later -- a slow leak around a mounting point, a damaged tile, a warranty question about your roof -- you are stuck between two contractors pointing fingers at each other.</p>
+            <p>Solar Center is different because we are a division of Dura-Foam Roofing and Solar Center. We have been working on California roofs since 1981. Our crews understand waterproofing, flashing details, load distribution, and how different roofing materials respond to penetrations. This expertise translates directly into better solar installations.</p>
+            <p>Every mounting point is flashed and sealed to our roofing standards, not just solar-industry minimums. We know which areas of your roof to avoid, where the structural support is strongest, and how to route conduit without compromising your roof's integrity.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-xl border border-gray-100">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">What Sets Us Apart</h3>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-solar-navy">40+ Years of Roofing Experience</p>
+                <p class="text-slate text-sm">Not a solar startup. A proven California roofing company that added solar expertise to an already-strong foundation.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-solar-navy">Proper Waterproofing Standards</p>
+                <p class="text-slate text-sm">Every penetration is sealed and flashed to roofing-industry standards, not solar-industry shortcuts.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-solar-amber/10 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-solar-navy">Honest Roof Assessments</p>
+                <p class="text-slate text-sm">We will tell you if your roof needs work before solar -- because we want your system to last the full 25+ years.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We Do Both -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">One Contractor, One Project</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">We Do Both: Roof + Solar Combined</h2>
+        <p class="text-slate leading-relaxed mb-10">When you need a new roof and solar panels, doing them together with one contractor saves time, money, and headaches. Here is why homeowners choose the combined approach.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Cost Savings</h3>
+          <p class="text-slate text-sm">Combined projects eliminate duplicate setup costs, scaffolding, and project management overhead. Most homeowners save $2,000 to $4,000 compared to doing projects separately.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">One Timeline</h3>
+          <p class="text-slate text-sm">No coordinating between a roofer and a solar company. One project manager, one schedule, one crew that handles both systems seamlessly.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100 text-center">
+          <div class="w-12 h-12 rounded-lg bg-solar-amber/10 flex items-center justify-center mb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-solar-amber" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mb-2">Clear Accountability</h3>
+          <p class="text-slate text-sm">If anything goes wrong with the roof or the solar system, you call one company. No finger-pointing between contractors. We stand behind both the roof and the panels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Frequently Asked Questions" subtitle="Common questions about roof compatibility and solar installation." />
+      <div class="space-y-3">
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Will solar panels damage my roof?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">When installed properly, solar panels should not damage your roof. In fact, they can actually extend roof life by shielding the surface from direct sun exposure and weather. The key is proper installation with correct flashing and sealing at every penetration point. This is where our roofing expertise makes a real difference -- we treat every mounting point with the same care we bring to a full roofing project.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            How much does it cost to remove and reinstall solar panels for a roof replacement?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Removing and reinstalling a solar system for a roof replacement typically costs $3,000 to $5,000 or more depending on system size and complexity. This includes disconnecting the electrical, removing the panels and racking, storing them safely, and then reinstalling everything after the new roof is complete. This is exactly why we recommend addressing roof condition before installing solar, and why our combined roof-plus-solar projects save homeowners significant money.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Can I install solar on a north-facing roof?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">While it is technically possible, we generally do not recommend installing panels on steeply north-facing roof sections because production drops to 50 to 65 percent of optimal. However, if your roof has a very low pitch (nearly flat), the orientation penalty is minimal. Many homes have multiple roof faces, and we often design systems using south and west-facing sections while avoiding the north side. During your consultation, we will identify the best placement for maximum production.</div>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+            Does my homeowners insurance cover solar panels?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-slate text-sm leading-relaxed">Most homeowners insurance policies cover solar panels as part of your home's structure once they are permanently attached. However, it is important to notify your insurer about the installation so your coverage amount reflects the added value. Some policies may require a rider or increased coverage. We recommend contacting your insurance provider before installation to confirm coverage and adjust your policy if needed.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-headline mb-6">Not Sure If Your Roof Is Ready? We Will Tell You for Free.</h2>
+      <p class="text-white/80 text-lg mb-8">Schedule a free roof and solar assessment with our expert team. We will evaluate your roof condition, orientation, shading, and structural capacity.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-[#e6951a] font-label">
+          Get Your Free Quote
+        </a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white no-underline transition hover:bg-white/10 font-label">
+          Call (661) 596-2477
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="py-16 lg:py-20 bg-warm-sand">
+    <div class="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</BaseLayout>
