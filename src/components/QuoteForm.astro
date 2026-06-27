@@ -83,6 +83,14 @@ const { heading = 'Request Your Free Quote', compact = false } = Astro.props;
       const phone = (document.getElementById('lead-phone') as HTMLInputElement)?.value.trim();
       if (!name || !email || !phone) return;
 
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          event_category: 'form',
+          event_label: 'quote_form_step1',
+          value: 1,
+        });
+      }
+
       const step1 = document.getElementById('quote-step-1');
       const step2 = document.getElementById('quote-step-2');
       if (step1) step1.style.display = 'none';
