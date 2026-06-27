@@ -38,8 +38,9 @@ const serviceAreas = {
     { href: '/locations/coalinga', label: 'Coalinga' },
     { href: '/locations/kingsburg', label: 'Kingsburg' },
   ],
-  'Sacramento': [
+  'Sacramento & San Joaquin': [
     { href: '/locations/sacramento', label: 'Sacramento' },
+    { href: '/locations/stockton', label: 'Stockton' },
   ],
   'Los Angeles Area': [
     { href: '/locations/los-angeles', label: 'Los Angeles' },
@@ -176,9 +177,9 @@ const isResourcePage = resourceLinks.some(r => currentPath === r.href);
                     </li>
                   ))}
                 </ul>
-                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2 mt-4">Sacramento</h3>
+                <h3 class="text-xs font-bold text-solar-amber uppercase tracking-wider font-label mb-2 mt-4">Sacramento & San Joaquin</h3>
                 <ul class="space-y-1 list-none p-0 m-0">
-                  {serviceAreas['Sacramento'].map((city) => (
+                  {serviceAreas['Sacramento & San Joaquin'].map((city) => (
                     <li>
                       <a href={city.href} class:list={['block text-sm py-0.5 no-underline transition-colors hover:text-solar-amber', currentPath === city.href ? 'text-solar-navy font-semibold' : 'text-slate']} role="menuitem">{city.label}</a>
                     </li>

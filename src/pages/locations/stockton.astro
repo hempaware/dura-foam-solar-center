@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/locations/bakersfield' },
+  { label: 'Stockton', href: '/locations/stockton' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Solar Center by Dura-Foam — Stockton',
+  telephone: '+1-661-596-2477',
+  url: 'https://solarcenterca.com/locations/stockton',
+  areaServed: [
+    { '@type': 'City', name: 'Stockton' },
+    { '@type': 'City', name: 'Lodi' },
+    { '@type': 'City', name: 'Tracy' },
+    { '@type': 'City', name: 'Manteca' },
+    { '@type': 'City', name: 'Lathrop' },
+    { '@type': 'City', name: 'Ripon' },
+  ],
+  priceRange: '$$',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dura-Foam Roofing & Solar Center',
+  },
+};
+---
+
+<BaseLayout
+  title="Solar Installation Stockton CA | Lodi, Tracy, Manteca Solar | Solar Center"
+  description="Stockton area solar installation by Solar Center by Dura-Foam. Serving Stockton, Lodi, Tracy, Manteca, and San Joaquin County. Free consultation. Call (661) 596-2477."
+  schema={schema}
+>
+  <PageHero
+    title="Solar Installation in Stockton"
+    subtitle="Serving Stockton, Lodi, Tracy, Manteca, and all of San Joaquin County."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Stockton Solar Installation</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Stockton homeowners are paying more for electricity every year as PG&E rates continue to climb. With some of the hottest summers in California's Central Valley, air conditioning costs alone can push monthly bills past $300. Solar energy is the most effective way to take control of those costs.</p>
+              <p>Solar Center by Dura-Foam serves the entire San Joaquin County region, including Stockton, Lodi, Tracy, Manteca, Lathrop, and Ripon. We understand the local permitting process, utility interconnection requirements, and NEM billing structures specific to PG&E territory.</p>
+              <p>Stockton's climate is ideal for solar — hot, dry summers and over 260 sunny days per year mean your panels produce at peak capacity when you need them most. Most Stockton homeowners see a full return on their solar investment within 6-8 years.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-warm-sand p-8">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Stockton Solar Facts</h3>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">262</p>
+                <p class="text-sm text-slate">Sunny days per year</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">5.3</p>
+                <p class="text-sm text-slate">Peak sun hours/day</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">6-8 yr</p>
+                <p class="text-sm text-slate">Typical payback period</p>
+              </div>
+              <div>
+                <p class="text-3xl font-extrabold text-solar-amber font-headline">$38K+</p>
+                <p class="text-sm text-slate">25-year savings potential</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Communities We Serve</h3>
+            <div class="grid gap-2 sm:grid-cols-3">
+              {['Stockton', 'Lodi', 'Tracy', 'Manteca', 'Lathrop', 'Ripon', 'Escalon', 'Linden', 'Woodbridge', 'Acampo', 'Mountain House', 'French Camp'].map((city) => (
+                <span class="text-sm text-ink">{city}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-4">Our Services</h3>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {[
+                { title: 'Solar Installation', desc: 'Custom residential solar systems.', href: '/services/solar-installation' },
+                { title: 'Battery Storage', desc: 'Backup power and peak shaving.', href: '/services/battery-storage' },
+                { title: 'Solar Financing', desc: '$0-down financing available.', href: '/services/solar-financing' },
+                { title: 'Solar + Roofing', desc: 'Combined roof and solar projects.', href: '/services/solar-roofing' },
+              ].map((svc) => (
+                <a href={svc.href} class="rounded-xl border border-gray-200 p-5 hover:border-solar-amber hover:shadow-md transition-all no-underline group">
+                  <h4 class="font-bold text-solar-navy group-hover:text-solar-amber transition-colors mb-1">{svc.title}</h4>
+                  <p class="text-sm text-slate">{svc.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24 space-y-6">
+            <QuoteForm heading="Get Your Stockton Solar Quote" />
+            <div class="rounded-xl bg-white border border-gray-200 p-6">
+              <h3 class="text-lg font-bold text-solar-navy font-headline mb-3">Contact Us</h3>
+              <div class="text-sm text-slate space-y-2">
+                <p class="font-semibold text-ink">Solar Center by Dura-Foam</p>
+                <p>Serving Stockton & San Joaquin County</p>
+                <a href="tel:+16615962477" class="block text-solar-navy font-semibold no-underline hover:text-solar-amber transition-colors">(661) 596-2477</a>
+                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
