@@ -1,23 +1,18 @@
+import durafoam from './tailwind.preset.mjs';
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Brand tokens come from the Dura-Foam Design System. tailwind.preset.mjs is
+  // GENERATED — never edit it; change tokens upstream and run `npm run sync` there.
+  presets: [durafoam],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
   theme: {
     extend: {
-      colors: {
-        'solar-amber': '#F8A623',
-        'sunrise-orange': '#EC6B2D',
-        midnight: '#0C2230',
-        'clean-sky': '#2BA9C4',
-        'solar-navy': '#00345C',
-        'energy-green': '#6BA630',
-        'warm-sand': '#F6F1E7',
-        ink: '#14222E',
-        slate: '#65737F',
-        'logo-gold': '#DB9833',
-      },
+      // Repo-local escapes only. Anything here that other properties also need
+      // belongs upstream in the design system instead.
       fontFamily: {
+        // Legacy aliases — `headline`/`body` are now `display`/`body` in the preset.
         headline: ['"Archivo"', 'sans-serif'],
-        body: ['"Public Sans"', 'sans-serif'],
         label: ['"Space Mono"', 'monospace'],
       },
     },
