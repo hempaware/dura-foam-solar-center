@@ -168,15 +168,15 @@ const colors = {
 // Deprecated — Solar Center's pre-design-system names. Scheduled for removal
 // in v1.0.0; migrate usages to the names above.
 const deprecated = {
-  'solar-amber': 'var(--df-gold-500)', // was #F8A623 — collapsed into the shared brand gold #F7A22A (delta-E ~1, an eyedropper artefact)
-  'sunrise-orange': 'var(--df-orange-500)', // renamed to accent-secondary
-  'midnight': 'var(--df-navy-900)', // renamed to surface-inverse
-  'clean-sky': 'var(--df-sky-500)', // renamed to feedback-info
-  'solar-navy': 'var(--df-navy-700)', // renamed to navy-700
-  'energy-green': 'var(--df-green-500)', // renamed to feedback-success
-  'warm-sand': 'var(--df-sand-100)', // renamed to surface-subtle
-  'ink': 'var(--df-navy-800)', // renamed to fg-primary
-  'logo-gold': 'var(--df-brandmark-gold)', // ARTWORK ONLY — #DB9833 is the colour inside the logo file and must never be used for UI
+  'solar-amber': 'var(--df-gold-500)', // was #F8A623 — collapsed into the shared brand gold (delta-E ~1)
+  'sunrise-orange': 'var(--df-orange-500)', // now accent-secondary
+  'midnight': 'var(--df-navy-900)', // now surface-inverse
+  'clean-sky': 'var(--df-sky-500)', // now feedback-info
+  'solar-navy': 'var(--df-navy-700)', // now navy-700
+  'energy-green': 'var(--df-green-500)', // now feedback-success
+  'warm-sand': 'var(--df-sand-100)', // now surface-subtle
+  'ink': 'var(--df-navy-800)', // now fg-primary
+  'logo-gold': 'var(--df-brandmark-gold)', // ARTWORK ONLY — never use for UI
 };
 
 export default {
