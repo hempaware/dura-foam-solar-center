@@ -7,7 +7,6 @@ const { currentPath = '/' } = Astro.props;
 
 const navLinks = [
   { href: '/services/solar-installation', label: 'Solar Installation' },
-  { href: '/services/battery-storage', label: 'Battery Storage' },
   { href: '/about', label: 'About' },
   { href: '/reviews', label: 'Reviews' },
 ];
@@ -62,6 +61,7 @@ const serviceAreas = {
 };
 
 const resourceLinks = [
+  { href: '/services/battery-storage', label: 'Battery Storage' },
   { href: '/how-solar-panels-work', label: 'How Solar Panels Work' },
   { href: '/process', label: 'Our Solar Process' },
   { href: '/solar-incentives-california', label: 'Solar Incentives & Tax Credits' },
@@ -85,18 +85,16 @@ const isResourcePage = resourceLinks.some(r => currentPath === r.href);
       </a>
 
       <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
-        {navLinks.slice(0, 2).map((link) => (
-          <a
-            href={link.href}
-            class:list={[
-              'text-sm font-medium transition-colors hover:text-solar-navy no-underline',
-              currentPath === link.href ? 'text-solar-navy font-semibold' : 'text-slate',
-            ]}
-            aria-current={currentPath === link.href ? 'page' : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
+        <a
+          href={navLinks[0].href}
+          class:list={[
+            'text-sm font-medium transition-colors hover:text-solar-navy no-underline',
+            currentPath === navLinks[0].href ? 'text-solar-navy font-semibold' : 'text-slate',
+          ]}
+          aria-current={currentPath === navLinks[0].href ? 'page' : undefined}
+        >
+          {navLinks[0].label}
+        </a>
 
         <!-- Resources Dropdown -->
         <div class="relative" id="resources-dropdown">
@@ -202,7 +200,7 @@ const isResourcePage = resourceLinks.some(r => currentPath === r.href);
           </div>
         </div>
 
-        {navLinks.slice(2).map((link) => (
+        {navLinks.slice(1).map((link) => (
           <a
             href={link.href}
             class:list={[
@@ -241,18 +239,16 @@ const isResourcePage = resourceLinks.some(r => currentPath === r.href);
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white pb-6 px-4 sm:px-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
     <nav class="flex flex-col gap-1 pt-4" aria-label="Mobile navigation">
-      {navLinks.slice(0, 2).map((link) => (
-        <a
-          href={link.href}
-          class:list={[
-            'rounded-lg px-4 py-3 text-base font-medium transition-colors no-underline',
-            currentPath === link.href ? 'bg-warm-sand text-solar-navy font-semibold' : 'text-ink hover:bg-gray-50',
-          ]}
-          aria-current={currentPath === link.href ? 'page' : undefined}
-        >
-          {link.label}
-        </a>
-      ))}
+      <a
+        href={navLinks[0].href}
+        class:list={[
+          'rounded-lg px-4 py-3 text-base font-medium transition-colors no-underline',
+          currentPath === navLinks[0].href ? 'bg-warm-sand text-solar-navy font-semibold' : 'text-ink hover:bg-gray-50',
+        ]}
+        aria-current={currentPath === navLinks[0].href ? 'page' : undefined}
+      >
+        {navLinks[0].label}
+      </a>
 
       <!-- Mobile Resources Accordion -->
       <div class="rounded-lg">
@@ -317,7 +313,7 @@ const isResourcePage = resourceLinks.some(r => currentPath === r.href);
         </div>
       </div>
 
-      {navLinks.slice(2).map((link) => (
+      {navLinks.slice(1).map((link) => (
         <a
           href={link.href}
           class:list={[
