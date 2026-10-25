@@ -1,0 +1,463 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+// Every fact here comes from Dura-Foam/seo-pages/asphalt-shingle-roof-replacement/sources.md, plus
+// solarcenter-sources.md in the same folder for the climate zones of our cities. Keep both pages in sync.
+
+// TODO: set to 'https://dura-foam.com/products-services/asphalt-shingle-roof-replacement/' once that
+// page (WordPress page 17320) is published. The "full roofing guide" link stays hidden until then.
+const duraFoamGuideUrl: string | null = null;
+
+const pageUrl = 'https://solarcenterca.com/services/asphalt-shingle-roof-replacement';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/solar-installation' },
+  { label: 'Shingle Roof Replacement', href: '/services/asphalt-shingle-roof-replacement' },
+];
+
+// Fixr, "How Much Does It Cost to Replace a Roof in California?", updated August 29, 2025 (statewide).
+const [lowPerSqFt, highPerSqFt] = [5.5, 11.5];
+const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+const costRows = [1500, 2000, 2500].map((area) => ({ area, low: usd(area * lowPerSqFt), high: usd(area * highPerSqFt) }));
+
+// CEC Building Climate Zones by ZIP Code, checked 2026-10-23. Cool-roof rule: 2025 Energy Code 150.2(b)1I.
+const climateZones = [
+  { areas: 'Bakersfield, Oildale, Rosedale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft', zone: '13', rule: 'Required' },
+  { areas: 'Fresno, Clovis, Sanger, Selma, Reedley, Kerman, Kingsburg, Coalinga', zone: '13', rule: 'Required' },
+  { areas: 'Sacramento, Stockton', zone: '12', rule: 'Required' },
+  { areas: 'Lancaster, Palmdale, Ridgecrest, California City', zone: '14', rule: 'Required' },
+  { areas: 'Glendale, Burbank, Pasadena, Pomona, El Monte, West Covina, most of Santa Clarita', zone: '9', rule: 'Required' },
+  { areas: 'Downey, Inglewood, Norwalk', zone: '8', rule: 'Required' },
+  { areas: 'Los Angeles, Long Beach, Torrance', zone: '6, 8, 9', rule: 'By ZIP: required in Zones 8 and 9, not in Zone 6' },
+  { areas: 'Tehachapi', zone: '16', rule: 'Not required' },
+];
+
+const faqs = [
+  {
+    q: 'Should I replace my roof before installing solar?',
+    a: 'If your shingles are more than halfway through their expected life, yes. Architectural shingles are commonly estimated to last about 30 years and 3-tab shingles about 20 (InterNACHI). Replacing the roof first means your panels go onto new shingles instead of coming off for a reroof later. We assess the roof and the solar site in the same visit.',
+  },
+  {
+    q: 'What happens to my existing solar panels during a roof replacement?',
+    a: 'Our crew disconnects and removes the panels before tear-off, replaces the roof, then reinstalls the panels with the mounts flashed into the new shingles. Removal and reinstall is priced separately in your estimate. Because one company does both, you have one call to make if a mount ever leaks.',
+  },
+  {
+    q: 'How much does an asphalt shingle roof replacement cost in California?',
+    a: 'Fixr\'s 2025 California data puts asphalt shingles at $5.50 to $11.50 per square foot, with a typical replacement around $12,000 to $20,000 (about $15,000 for a 1,700 sq ft shingle roof). Extra layers to remove, deck repair, steep pitches and solar panel removal add cost. These are market ranges, not a Solar Center quote.',
+  },
+  {
+    q: 'Do I need cool-roof shingles in Bakersfield or Fresno?',
+    a: 'In most cases, yes. Bakersfield and Fresno are in Climate Zone 13. There, replacing more than half of a pitched roof requires a cool-roof product under the 2025 California Energy Code, unless the home meets an exception such as R-38 ceiling insulation or an attic radiant barrier. We use GAF Timberline HDZ RS, which GAF says can be used to meet the rule in every color.',
+  },
+  {
+    q: 'Can new shingles go over my old roof?',
+    a: 'Not if the roof already has two layers, or if the existing roof is water-soaked or too deteriorated to serve as a base (2025 California Residential Code R908.4). We tear off to the deck on every replacement, so the sheathing is inspected and repaired before the new roof and the panels go on.',
+  },
+  {
+    q: 'Are composition shingles and asphalt shingles the same thing?',
+    a: 'Yes. GAF notes that composition roofs are usually called asphalt-shingle roofs. The shingles are made of fiberglass, asphalt and granules, in 3-tab, architectural and designer styles.',
+  },
+  {
+    q: 'Does the GAF System Plus warranty cover installation errors?',
+    a: 'No. System Plus covers manufacturing defects in GAF shingles and qualifying accessories. GAF only covers workmanship under its Silver Pledge and Golden Pledge warranties, which require a higher GAF certification tier. The installation is covered by Dura-Foam\'s 2-year workmanship warranty instead.',
+  },
+  {
+    q: 'Does the GAF warranty transfer if I sell my home?',
+    a: 'Once. The buyer must notify GAF in writing within one year of the sale. If the sale happens within 20 years of installation, the buyer gets the same coverage. After that, coverage drops to two years from the change of ownership.',
+  },
+  {
+    q: 'Does the 25% roofing rule apply in California?',
+    a: 'No. The 25 percent rule comes from the Florida Building Code. The 2025 California Residential and Building Codes have no such rule. California\'s statewide reroof triggers start at half the roof: Class A in fire hazard zones when 50 percent or more is replaced within 12 months, and the cool-roof rule when more than half is replaced.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'Asphalt Shingle Roof Replacement for Solar Homes',
+  serviceType: 'Asphalt (composition) shingle roof replacement',
+  url: pageUrl,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Solar Center by Dura-Foam',
+    telephone: '+1-661-596-2477',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6730 Charity Ave, #5',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93308',
+    },
+  },
+  areaServed: { '@type': 'State', name: 'California' },
+  description: 'Residential asphalt shingle roof replacement before or during solar installation: full tear-off, a GAF shingle system from a GAF Certified Residential Roofing Contractor, and solar panel removal and reinstall by one company.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${pageUrl}#faq`,
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const check = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-energy-green flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const link = 'text-clean-sky underline hover:text-solar-navy';
+---
+
+<BaseLayout
+  title="Asphalt Shingle Roof Replacement for Solar Homes | Solar Center"
+  description="Replace your asphalt shingle roof before or during solar. One GAF Certified team handles the tear-off, the new roof, and solar panel removal and reinstall. Free roof and solar assessment."
+  schema={[schema, faqSchema]}
+>
+  <PageHero
+    title="Asphalt Shingle Roof Replacement for Solar Homes"
+    subtitle="Replace the roof before (or during) your solar install. One GAF Certified team handles the shingles, the panels and every penetration in between."
+  />
+  <Breadcrumb items={breadcrumbs} />
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-3 space-y-8">
+          <div>
+            <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Roof First, Then Solar</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-solar-navy font-headline mb-4">Put a new roof under your panels, not an old one</h2>
+            <div class="space-y-4 text-slate leading-relaxed">
+              <p>Solar panels stay on your roof for decades. If the shingles underneath wear out first, the panels have to come off before the roof can be replaced, then go back on afterward. Replacing a tired shingle roof before the panels go up avoids paying for that work later.</p>
+              <p>In 2026, Dura-Foam added asphalt shingle roof replacement with its own in-house crews. That means Solar Center by Dura-Foam can now replace your composition shingle roof and install your solar as one project, from one company. The roof crew finishes the shingles, and the solar crew flashes every mount into a roof our own company installed.</p>
+              <p>Shingle replacement is a new service for us. Roofing is not: Dura-Foam has been a licensed California roofing contractor since 1981, and it is a GAF Certified Residential Roofing Contractor.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="flex items-center gap-4 rounded-xl bg-warm-sand p-5">
+              <img src="/images/gaf-certified-residential.webp" alt="GAF Certified Residential Roofing Contractor" width="48" height="48" loading="lazy" class="h-12 w-12 object-contain" />
+              <p class="text-sm font-semibold text-solar-navy">GAF Certified Residential Roofing Contractor</p>
+            </div>
+            <div class="rounded-xl bg-warm-sand p-5">
+              <p class="text-sm font-semibold text-solar-navy">Dura-Foam CSLB License #435836</p>
+              <p class="text-xs text-slate mt-1">Licensed roofing contractor since 1981</p>
+            </div>
+            <div class="rounded-xl bg-warm-sand p-5">
+              <p class="text-sm font-semibold text-solar-navy">In-house roofing and solar crews</p>
+              <p class="text-xs text-slate mt-1">One company responsible for the roof and the panels</p>
+            </div>
+            <div class="rounded-xl bg-warm-sand p-5">
+              <p class="text-sm font-semibold text-solar-navy">Full tear-off on every job</p>
+              <p class="text-xs text-slate mt-1">Deck inspected and repaired before the new roof</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="sticky top-24">
+            <QuoteForm heading="Get a Roof + Solar Assessment" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timing -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        badge="Pick Your Timing"
+        title="Three ways to pair a new shingle roof with solar"
+        subtitle="Where you are in your solar plans decides the order of work. Each path ends with panels on a new roof."
+      />
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <span class="text-3xl font-extrabold text-solar-amber/40 font-headline">01</span>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mt-2 mb-3">Before solar</h3>
+          <p class="text-slate text-sm leading-relaxed">Planning solar on an aging roof? We replace the shingles first. Your system then goes onto a roof with its full service life ahead of it, so the panels are not coming off for a reroof down the road.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <span class="text-3xl font-extrabold text-solar-amber/40 font-headline">02</span>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mt-2 mb-3">During solar</h3>
+          <p class="text-slate text-sm leading-relaxed">Roof and solar in one project: one assessment, one schedule and one company coordinating both crews. The roofers finish the shingles, and the solar installers mount and flash the racking into the new roof.</p>
+        </div>
+        <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+          <span class="text-3xl font-extrabold text-solar-amber/40 font-headline">03</span>
+          <h3 class="text-xl font-bold text-solar-navy font-headline mt-2 mb-3">Already have solar</h3>
+          <p class="text-slate text-sm leading-relaxed">Your shingles are failing under an existing system? We remove the panels, replace the roof and reinstall the panels. Removal and reinstall is priced separately, so you see exactly what the solar work adds.</p>
+        </div>
+      </div>
+      <p class="mt-10 max-w-3xl mx-auto text-center text-slate leading-relaxed">When the roofer and the solar installer are different companies, a leak at a panel mount turns into an argument about whose work failed. Here, the same company installed the roof and flashed the mounts, so there is nobody else to blame. Read more in our <a href="/roof-solar-compatibility" class={link}>roof and solar compatibility guide</a>.</p>
+    </div>
+  </section>
+
+  <!-- Signs -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Check Before You Go Solar</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">Will your shingles outlast your panels?</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>InterNACHI's life expectancy guideline puts architectural asphalt shingles at about 30 years and 3-tab shingles at about 20. Those are estimates, not guarantees, and sun, heat and installation quality move them in both directions.</p>
+            <p>If your roof is past the halfway mark, or you see two or more of the signs on this list, have it assessed before the solar design is final. Our roof assessment is part of the free solar consultation.</p>
+          </div>
+        </div>
+        <ul class="space-y-4 list-none p-0 m-0">
+          {[
+            { t: 'Edges curling or cracking.', d: 'Shingles that have dried out and lifted let wind get underneath them.' },
+            { t: 'Granules in the gutters.', d: 'The granules shield the asphalt from UV. Piles at the downspouts or bare patches on the roof mean that shield is wearing off.' },
+            { t: 'Stains on ceilings or in the attic.', d: 'Water is getting past the shingles, the underlayment or the flashing.' },
+            { t: 'Soft spots or a dipping roofline.', d: 'These point to damp or rotted decking, which a replacement has to fix.' },
+            { t: 'Dark streaks.', d: 'Usually algae (Gloeocapsa magma). ARMA, the asphalt roofing trade group, does not say it damages shingles, but it warns that pressure washing can.' },
+            { t: 'A roof near the end of its estimated life.', d: 'Panels you install today stay up a long time. Start them on a roof with plenty of life left.' },
+          ].map((s) => (
+            <li class="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+              <Fragment set:html={check} />
+              <p class="text-sm text-slate"><strong class="text-solar-navy">{s.t}</strong> {s.d}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white font-headline text-center mb-4">How a roof and solar project runs</h2>
+      <p class="text-white/70 text-center max-w-2xl mx-auto mb-12">Every step is done by Dura-Foam and Solar Center crews. Your written scope lists what is included.</p>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { step: '01', title: 'Roof + solar assessment', desc: 'One visit covers both. We inspect the shingles, flashing, attic and decking, review sun exposure, and give you a written scope.' },
+          { step: '02', title: 'Permits', desc: 'We apply for the reroof permit your city requires, plus the solar permit when panels are part of the job, and schedule the inspections.' },
+          { step: '03', title: 'Panels off', desc: 'If you already have solar, our crew disconnects and removes the panels and racking before any roofing starts.' },
+          { step: '04', title: 'Tear-off and deck repair', desc: 'The old shingles and underlayment come off down to the deck. Soft or rotted sheathing is replaced so the new roof has a solid base.' },
+          { step: '05', title: 'GAF roof system', desc: 'Starter strips, leak barrier, roof deck protection, Timberline shingles, ridge caps and ventilation, installed to GAF specifications. Timberline HDZ RS where Title 24 calls for a cool roof.' },
+          { step: '06', title: 'Solar on a new roof', desc: 'Mounts are flashed into the new shingles and the panels go up, or back up. After the final inspection, we register your GAF warranty.' },
+        ].map((item) => (
+          <div>
+            <span class="text-3xl font-extrabold text-solar-amber/40 font-headline">{item.step}</span>
+            <h3 class="text-lg font-bold text-white font-headline mt-2 mb-2">{item.title}</h3>
+            <p class="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Warranty -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        badge="Warranty"
+        title="Two warranties on the roof, one company to call"
+        subtitle="GAF's enhanced warranties are only available through GAF-certified contractors, who register them for you. As a GAF Certified Residential Roofing Contractor, Dura-Foam registers the GAF System Plus Limited Warranty on qualifying roofs."
+      />
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="/images/gaf-certified-residential.webp" alt="GAF Certified" width="48" height="48" loading="lazy" class="h-12 w-12 object-contain" />
+            <h3 class="text-xl font-bold text-solar-navy font-headline">GAF System Plus Limited Warranty</h3>
+          </div>
+          <ul class="space-y-3 list-none p-0 m-0">
+            {[
+              'Qualifies when Timberline shingles go on with at least three qualifying GAF accessories: ridge caps, starter strips, leak barrier, roof deck protection or attic ventilation. We install the full system.',
+              'Lifetime coverage for manufacturing defects in GAF shingles and qualifying accessories on a single-family detached home owned by individuals. Other owners and building types get 40 years.',
+              '50-year non-prorated period, which GAF calls Smart Choice Protection. The standard GAF warranty gives 10.',
+              'Tear-off and disposal covered when a covered defect means the roof has to come off.',
+              'Transfers once. The buyer notifies GAF in writing within a year of the sale.',
+              '"Lifetime" is a warranty term, not a promise about how long the roof lasts. System Plus covers materials, not installation.',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} />{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-warm-sand p-8">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-6">Dura-Foam workmanship warranty</h3>
+          <ul class="space-y-3 list-none p-0 m-0">
+            <li class="flex items-start gap-3 text-sm text-slate">
+              <Fragment set:html={check} />
+              2-year Dura-Foam workmanship warranty on the roof installation, separate from GAF's materials coverage.
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} /><span>Solar work is covered by our <a href="/warranty" class={link}>solar warranty</a>, including the roof penetrations.</span></li>
+            <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} />One company answers for the shingles, the flashing and the panels, so a leak never turns into a dispute between contractors.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div>
+          <span class="inline-block text-solar-amber font-semibold text-sm uppercase tracking-wider mb-2 font-label">Pricing</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-solar-navy font-headline leading-tight mb-6">What does a shingle roof replacement cost in California?</h2>
+          <div class="space-y-4 text-slate leading-relaxed">
+            <p>Fixr's statewide California data puts asphalt shingles at <strong class="text-solar-navy">$5.50 to $11.50 per square foot</strong> of roof, with a typical replacement around $12,000 to $20,000, or about $15,000 for a 1,700 sq ft shingle roof (<a href="https://www.fixr.com/costs/roof-replacement-california" class={link} rel="noopener">Fixr</a>, updated August 2025). Modernize's 2026 statewide figure for asphalt shingles on a 2,000 sq ft home is $9,000 to $15,000.</p>
+            <p>These are market ranges, not a Solar Center quote. Sources measure differently and disagree, so use them as a guide and ask for an itemized scope.</p>
+          </div>
+          <h3 class="text-lg font-bold text-solar-navy font-headline mt-8 mb-4">What moves the price</h3>
+          <ul class="space-y-3 list-none p-0 m-0">
+            {[
+              'Layers under the shingles. More layers or old wood shakes mean more labor and disposal.',
+              'Deck condition. Rotted sheathing is replaced sheet by sheet.',
+              'Pitch, height and access. Steep or two-story roofs need more safety setup.',
+              'Valleys, dormers, skylights and chimneys, which all add flashing work.',
+              'Cool-roof shingles where your climate zone requires them.',
+              'Solar. Removing and reinstalling existing panels is priced separately.',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} />{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white overflow-hidden">
+          <div class="bg-solar-navy px-6 py-4">
+            <h3 class="text-lg font-bold text-white font-headline">California market range by roof size</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-gray-200 bg-gray-50">
+                  <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">Roof area</th>
+                  <th class="px-6 py-3 text-sm font-bold text-solar-navy font-label">At $5.50 to $11.50 / sq ft</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                {costRows.map((r, i) => (
+                  <tr class={i % 2 ? 'bg-gray-50' : undefined}>
+                    <td class="px-6 py-3 text-sm text-slate whitespace-nowrap">{r.area.toLocaleString('en-US')} sq ft</td>
+                    <td class="px-6 py-3 text-sm font-bold text-solar-navy">{r.low} to {r.high}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="px-6 py-4 text-xs text-slate">Rows apply Fixr's 2025 California range for asphalt shingles. Roof area is larger than floor area, because pitched slopes and overhangs add surface. Solar removal and reinstall are not included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- California rules -->
+  <section class="py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        badge="California Code"
+        title="California rules that shape your new roof"
+        subtitle="These statewide rules apply to most of the homes we roof. We confirm the requirements for your address during the permit."
+      />
+
+      <div class="rounded-2xl border border-gray-200 bg-white overflow-hidden mb-10">
+        <div class="bg-solar-navy px-6 py-4">
+          <h3 class="text-lg font-bold text-white font-headline">Cool-roof shingles: required in most of our service area</h3>
+        </div>
+        <div class="px-6 py-5 text-sm text-slate leading-relaxed space-y-3">
+          <p>Under the 2025 California Energy Code (Section 150.2), replacing more than half of a pitched roof in Climate Zones 4 and 8 through 15 requires a cool-roof product: aged solar reflectance of at least 0.20 and thermal emittance of at least 0.75, or an SRI of at least 16. Nearly every city we serve falls in those zones.</p>
+          <p>A home is exempt if it meets an exception: ceiling insulation of R-38 or better (or a U-factor of 0.025 or lower), an attic radiant barrier, R-2 or greater continuous insulation above or below the deck, or, in Zones 2, 4, 9, 10, 12 and 14 only, no ducts in the attic. That last exception does not apply in Zone 13, which covers Bakersfield and Fresno. Roof area covered by building-integrated photovoltaics, meaning solar that is itself the roof covering, is also exempt.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-y border-gray-200 bg-gray-50">
+                <th class="px-3 sm:px-6 py-3 text-sm font-bold text-solar-navy font-label">Cities we serve</th>
+                <th class="px-3 sm:px-6 py-3 text-sm font-bold text-solar-navy font-label">Zone</th>
+                <th class="px-3 sm:px-6 py-3 text-sm font-bold text-solar-navy font-label">Cool roof on a 50%+ reroof</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {climateZones.map((c, i) => (
+                <tr class={i % 2 ? 'bg-gray-50' : undefined}>
+                  <td class="px-3 sm:px-6 py-3 text-sm text-slate">{c.areas}</td>
+                  <td class="px-3 sm:px-6 py-3 text-sm text-slate">{c.zone}</td>
+                  <td class="px-3 sm:px-6 py-3 text-sm font-semibold text-solar-navy">{c.rule}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="px-6 py-4 text-xs text-slate">"Required" means required unless the home meets an exception above. Zones from the <a href="https://www.energy.ca.gov/media/3560" class={link} rel="noopener">California Energy Commission ZIP code list</a>. The CEC's official climate zone map controls where a ZIP code straddles two zones. GAF says every color of its Timberline HDZ RS shingle can be used to meet the 2025 Title 24 cool roof rule for steep-slope homes, and that is the shingle we use where the rule applies. <a href="https://codes.iccsafe.org/content/CAEC2025P1/subchapter-9-single-family-residential-buildings-additions-and-alterations-to-existing-residential-buildings" class={link} rel="noopener">2025 California Energy Code 150.2</a></p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {[
+          {
+            title: 'Class A roofs in fire hazard zones',
+            body: 'In a mapped Fire Hazard Severity Zone, replacing 50 percent or more of a roof within 12 months requires a Class A roof covering. GAF Timberline HDZ, HDZ RS and UHDZ shingles carry a UL 790 Class A fire rating. We check your address against CAL FIRE\'s maps.',
+            src: '2025 California WUI Code 507.1; Health & Safety Code 13132.7',
+            href: 'https://codes.iccsafe.org/content/CAWUIC2025P1/chapter-5-special-building-construction-regulations',
+          },
+          {
+            title: 'Shingles need a 2 in 12 pitch',
+            body: 'Asphalt shingles are only allowed on roofs with at least 2 inches of rise per 12 inches of run. Pitches from 2 in 12 to under 4 in 12 need two layers of underlayment. Flatter roofs get a Dura-Foam foam roof instead.',
+            src: '2025 California Residential Code R905.2.2',
+            href: 'https://codes.iccsafe.org/content/CARC2025P2/chapter-9-roof-assemblies',
+          },
+          {
+            title: 'Limits on roofing over old shingles',
+            body: 'Code does not allow a new layer over a roof that already has two layers, or over one that is water-soaked or deteriorated. We tear off to the deck on every replacement, so rot under the shingles gets found before panels go back on.',
+            src: '2025 California Residential Code R908.4',
+            href: 'https://codes.iccsafe.org/content/CARC2025P2/chapter-9-roof-assemblies',
+          },
+          {
+            title: 'The "25% rule" is a Florida rule',
+            body: 'You will read that repairing more than 25 percent of a roof forces a full replacement to current code. That comes from the Florida Building Code. California\'s statewide reroof triggers start at half the roof, as described above.',
+            src: 'Florida Building Code, Existing Building 706.1.1',
+            href: 'https://floridabuilding.org/fbc/Commission/FBC_0421/DEC_Statement/DS-2021-007_Staff_Analysis.pdf',
+          },
+        ].map((card) => (
+          <div class="rounded-xl bg-white p-8 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-solar-navy font-headline mb-3">{card.title}</h3>
+            <p class="text-slate text-sm leading-relaxed mb-4">{card.body}</p>
+            <a href={card.href} class={`text-xs ${link}`} rel="noopener">{card.src}</a>
+          </div>
+        ))}
+      </div>
+      <p class="mt-8 text-xs text-slate text-center">This is general guidance, not legal advice. Your city's building department has the final word.</p>
+
+      {duraFoamGuideUrl && (
+        <div class="mt-10 rounded-2xl bg-warm-sand p-8 text-center">
+          <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Want the full roofing guide?</h3>
+          <p class="text-slate text-sm mb-4">Dura-Foam's asphalt shingle roof replacement page covers repair versus replacement, roof types and more.</p>
+          <a href={duraFoamGuideUrl} class={`text-sm font-semibold ${link}`}>Read the Dura-Foam shingle roof replacement guide</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading title="Shingle Roof Replacement FAQ" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-base font-semibold text-solar-navy font-headline">
+              {faq.q}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180 text-slate flex-shrink-0 ml-4" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-4 text-slate text-sm leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <p class="mt-8 text-xs text-slate text-center">Page updated October 2026. Lifespan figures: <a href="https://www.nachi.org/life-expectancy.htm" class={link} rel="noopener">InterNACHI</a>. Algae: <a href="https://www.asphaltroofing.org/algae-discoloration/" class={link} rel="noopener">ARMA</a>. Warranty terms: <a href="https://www.gaf.com/en-us/resources/warranties/residential" class={link} rel="noopener">GAF</a>.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-solar-navy via-midnight to-solar-navy">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white font-headline mb-4">Book one assessment for your roof and your solar</h2>
+      <p class="text-white/80 text-lg mb-8">We inspect the shingles, check the solar site and tell you which order makes sense for your home. Free, with a written scope.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-solar-amber px-8 py-4 text-base font-bold text-midnight no-underline transition hover:bg-accent-hover font-label">Schedule My Free Assessment</a>
+        <a href="tel:+16615962477" class="inline-flex items-center justify-center rounded-lg border-2 border-white/40 px-8 py-4 text-base font-bold text-white no-underline transition hover:border-white font-label">Call (661) 596-2477</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
