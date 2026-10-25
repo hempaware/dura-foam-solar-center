@@ -8,10 +8,6 @@ import QuoteForm from '../../components/QuoteForm.astro';
 // Every fact here comes from Dura-Foam/seo-pages/asphalt-shingle-roof-replacement/sources.md, plus
 // solarcenter-sources.md in the same folder for the climate zones of our cities. Keep both pages in sync.
 
-// TODO: set to 'https://dura-foam.com/products-services/asphalt-shingle-roof-replacement/' once that
-// page (WordPress page 17320) is published. The "full roofing guide" link stays hidden until then.
-const duraFoamGuideUrl: string | null = null;
-
 const pageUrl = 'https://solarcenterca.com/services/asphalt-shingle-roof-replacement';
 
 const breadcrumbs = [
@@ -64,7 +60,7 @@ const faqs = [
   },
   {
     q: 'Does the GAF System Plus warranty cover installation errors?',
-    a: 'No. System Plus covers manufacturing defects in GAF shingles and qualifying accessories. GAF only covers workmanship under its Silver Pledge and Golden Pledge warranties, which require a higher GAF certification tier. The installation is covered by Dura-Foam\'s 2-year workmanship warranty instead.',
+    a: 'No. System Plus covers manufacturing defects in GAF shingles and qualifying accessories. GAF only covers workmanship under its Silver Pledge and Golden Pledge warranties, which require a higher GAF certification tier. The installation is covered by Dura-Foam\'s 2-year written workmanship warranty, which comes on top of System Plus on every shingle replacement.',
   },
   {
     q: 'Does the GAF warranty transfer if I sell my home?',
@@ -283,7 +279,7 @@ const link = 'text-clean-sky underline hover:text-solar-navy';
           <ul class="space-y-3 list-none p-0 m-0">
             <li class="flex items-start gap-3 text-sm text-slate">
               <Fragment set:html={check} />
-              2-year Dura-Foam workmanship warranty on the roof installation, separate from GAF's materials coverage.
+              2-year Dura-Foam workmanship warranty, in writing, on every shingle replacement. It covers the installation and comes on top of the GAF System Plus Limited Warranty.
             </li>
             <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} /><span>Solar work is covered by our <a href="/warranty" class={link}>solar warranty</a>, including the roof penetrations.</span></li>
             <li class="flex items-start gap-3 text-sm text-slate"><Fragment set:html={check} />One company answers for the shingles, the flashing and the panels, so a leak never turns into a dispute between contractors.</li>
@@ -422,13 +418,11 @@ const link = 'text-clean-sky underline hover:text-solar-navy';
       </div>
       <p class="mt-8 text-xs text-slate text-center">This is general guidance, not legal advice. Your city's building department has the final word.</p>
 
-      {duraFoamGuideUrl && (
-        <div class="mt-10 rounded-2xl bg-warm-sand p-8 text-center">
-          <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Want the full roofing guide?</h3>
-          <p class="text-slate text-sm mb-4">Dura-Foam's asphalt shingle roof replacement page covers repair versus replacement, roof types and more.</p>
-          <a href={duraFoamGuideUrl} class={`text-sm font-semibold ${link}`}>Read the Dura-Foam shingle roof replacement guide</a>
-        </div>
-      )}
+      <div class="mt-10 rounded-2xl bg-warm-sand p-8 text-center">
+        <h3 class="text-xl font-bold text-solar-navy font-headline mb-2">Want the full roofing guide?</h3>
+        <p class="text-slate text-sm mb-4">Dura-Foam's asphalt shingle roof replacement page covers repair versus replacement, roof types and more.</p>
+        <a href="https://dura-foam.com/products-services/asphalt-shingle-roof-replacement/" class={`text-sm font-semibold ${link}`}>Read the Dura-Foam shingle roof replacement guide</a>
+      </div>
     </div>
   </section>
 
